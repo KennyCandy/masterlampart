@@ -178,14 +178,14 @@ abstract class BaseModel
 
     public function take($params = 0)
     {   
-        $this->_take = $param ;
+        $this->_take = $params ;
 
         return $this;
     }
 
     public function skip($params = 0)
     {   
-        $this->_skip = $param ;
+        $this->_skip = $params ;
 
         return $this;
     }

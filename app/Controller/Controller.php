@@ -18,13 +18,8 @@ abstract class Controller extends BaseController
     {   
         parent::__construct();
         $this->_model->load('user');
-        $this->_model->load('follow');
-        $this->_model->load('friend_list');
-        $this->_model->load('friend_request');
-        $this->_model->load('message_log');
         $this->_model->load('user_log');
         $this->_model->load('user_log_view');
-        $this->_model->load('follow');
         $this->_model->load('group');
         $this->_model->load('token');
         //check session
