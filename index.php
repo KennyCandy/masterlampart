@@ -23,7 +23,7 @@ $app                    = $router->match($_SERVER);
 
 
 if ($app === null) {
-	$controller = "App\\Controller\\IndexController";
+	$controller = "App\\Controller\\WelcomeController";
 	$method     = "error_404";
 	$args       = [];
 } else {

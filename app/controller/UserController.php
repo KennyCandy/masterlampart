@@ -31,11 +31,11 @@ class UserController extends Controller
         }
     }
 
+
 	/**
-     * action registration
-     *
-     */
-    public function registration()
+	 *
+	 */
+	public function registration()
     {	
         try {
             if (isset($_SESSION['user_id'])) {
@@ -58,7 +58,7 @@ class UserController extends Controller
                 $user_service = new UserService;
                 $data = $user_service->registration($data);
                 if ($data["error"] == false) {
-                    redirect("/successful");
+                    redirect("/user/successful");
                 }
             }
             $this->_view->load_view('registration', $data);

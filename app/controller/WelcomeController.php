@@ -6,7 +6,7 @@ namespace App\Controller;
  * Class IndexController
  * @package App\Controller
  */
-class IndexController extends Controller
+class WelcomeController extends Controller
 {   
     public function __construct()
     {   
