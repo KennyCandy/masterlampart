@@ -4,9 +4,10 @@ namespace App\Core\DB;
 use \PDO;
 
 /**
- * This is a class DBMysql inplements DB
+ * Class DBMysql
+ * @package App\Core\DB
  */
-class DBMysql implements DB
+class DBMysql
 {
     protected  $db;
 
