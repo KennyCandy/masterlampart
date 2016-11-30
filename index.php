@@ -1,4 +1,14 @@
 <?php
+
+
+define('DS', DIRECTORY_SEPARATOR);
+define('ROOT', dirname(dirname(__FILE__)));
+$uri = $_SERVER['REQUEST_URI'];
+
+print_r($uri);
+
+die();
+
 // start session and define PATH
 session_start();
 define('PATH', __DIR__);
@@ -10,41 +20,43 @@ use App\Core\Router;
 
 // init router
 $router = new Router();
-$route = new Route($router);
+$route  = new Route($router);
 $router = $route->getRoute();
 
 // parse uri to controller, method and argument
 $server = $_SERVER;
 
 $server['REQUEST_URI'] = str_replace("/masterlampart", "", $server['REQUEST_URI']);
-$app = $router->match($server);
+$app                   = $router->match($server);
 
 if ($app === null) {
 	$controller = "App\\Controller\\IndexController";
-	$method = "error_404";
-	$args = [];
+	$method     = "error_404";
+	$args       = [];
 } else {
 	$controller = "App\\Controller\\" . $app['controller'];
-	$method = $app['method'];
-	$args = $app['args'];
+	$method     = $app['method'];
+	$args       = $app['args'];
 }
 
 
 // init database
-$DB_driver = "DB" . ucfirst(strtolower(Database::DB_TYPE));
+$DB_driver       = "DB" . ucfirst(strtolower(Database::DB_TYPE));
 $DB_driver_class = "App\\Core\\DB\\$DB_driver";
-$db = new $DB_driver_class();
-$db->connect("mysql:host=" . Database::DB_HOST . ";dbname=". Database::DB_NAME, Database::DB_USER, Database::DB_PASS);
+$db              = new $DB_driver_class();
+$db->connect("mysql:host=" . Database::DB_HOST . ";dbname=" . Database::DB_NAME, Database::DB_USER, Database::DB_PASS);
 
 // call instance
-function get_instance(){
+function get_instance()
+{
 	global $controller;
+
 	return $controller::get_instance();
 }
 
-// call controller and run behavie
-if (class_exists ($controller)) {
-	$ctrl= new $controller();
+// call controller and run
+if (class_exists($controller)) {
+	$ctrl = new $controller();
 
 	if (count($args) == 0) {
 		$ctrl->{$method}();

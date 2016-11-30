@@ -7,9 +7,9 @@ use GuzzleHttp\Handler\Proxy;
 use GuzzleHttp\Handler\StreamHandler;
 
 /**
- * Expands a URI template
+ * Expands a URI layout
  *
- * @param string $template  URI template
+ * @param string $template  URI layout
  * @param array  $variables Template variables
  *
  * @return string

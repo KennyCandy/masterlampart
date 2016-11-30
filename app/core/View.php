@@ -2,7 +2,12 @@
 namespace App\Core;
 
 /**
- * This is a class View
+ * Class View
+ * @package App\Core
+ */
+/**
+ * Class View
+ * @package App\Core
  */
 class View
 {   
@@ -33,7 +38,7 @@ class View
         extract($data);
 
         ob_start();
-        require_once PATH . "/view/$view.php";
+        require_once PATH . "/app/view/$view.php";
         $content = ob_get_contents();
         ob_end_clean();
 
@@ -52,7 +57,7 @@ class View
     {
         extract($data);
         ob_start();
-        require_once PATH . "/view/template/$view.php";
+        require_once PATH . "/app/view/layout/$view.php";
         $content = ob_get_contents();
         ob_end_clean();
 
@@ -67,22 +72,24 @@ class View
      * @param string $data contain variable need extract.
      *
      */
+
+
     public function load_template_after($view, $data = array())
     {
         extract($data);
         ob_start();
-        require_once PATH . "/view/template/$view.php";
+        require_once PATH . "/app/view/layout/$view.php";
         $content = ob_get_contents();
         ob_end_clean();
 
         $this->_after_content[] = $content;
     }
 
-    /**
-     * show all.
-     *
-     */
-    public function show()
+
+	/**
+	 *
+	 */
+	public function show()
     {   
         foreach ($this->_before_content as $before_content) {
             echo $before_content;

@@ -3,7 +3,6 @@ namespace App\Service;
 use App\Model\User;
 use App\Model\Token;
 use App\Model\Group;
-use App\Model\FriendRequest;
 use \Exception;
 /**
  * This is a class UserService

@@ -39,9 +39,9 @@ abstract class FileDumper implements DumperInterface
     private $backup = true;
 
     /**
-     * Sets the template for the relative paths to files.
+     * Sets the layout for the relative paths to files.
      *
-     * @param string $relativePathTemplate A template for the relative paths to files
+     * @param string $relativePathTemplate A layout for the relative paths to files
      */
     public function setRelativePathTemplate($relativePathTemplate)
     {

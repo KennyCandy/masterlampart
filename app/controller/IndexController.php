@@ -1,10 +1,10 @@
 <?php
 namespace App\Controller;
 
-use \Exception;
 
 /**
- * This is a class IndexController
+ * Class IndexController
+ * @package App\Controller
  */
 class IndexController extends Controller
 {   

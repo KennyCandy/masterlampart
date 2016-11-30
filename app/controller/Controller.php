@@ -4,18 +4,16 @@ namespace App\Controller;
 use App\Core\Controller as BaseController;
 use App\Service\HeaderService;
 use \Exception;
-use \Exception\UserException as UserException;
-use \Exception\CheckException as CheckException;
 
 /**
  * This is a class FollowController
  */
 abstract class Controller extends BaseController
-{   
+{
     protected $_data = array ();
 
     public function __construct()
-    {   
+    {
         parent::__construct();
         $this->_model->load('user');
         $this->_model->load('user_log');
@@ -35,7 +33,7 @@ abstract class Controller extends BaseController
             if ($data["error"] == true) {
                 session_unset('user_id');
                 throw new Exception("Error");
-            } 
+            }
 
             $this->_data['user'] = $data["user"];
             $this->load_template_before('header', $data);
@@ -47,5 +45,5 @@ abstract class Controller extends BaseController
         }
     }
 
-    
+
 }
