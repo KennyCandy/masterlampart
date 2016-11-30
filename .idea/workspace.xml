@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6225378-c09d-4437-8d84-8e17ad8f9994" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/core/BaseController.php" afterPath="$PROJECT_DIR$/app/core/BaseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/core/BaseModel.php" afterPath="$PROJECT_DIR$/app/core/BaseModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/core/BaseView.php" afterPath="$PROJECT_DIR$/app/core/BaseView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/core/db/DB.php" afterPath="$PROJECT_DIR$/app/core/db/DB.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/core/db/DBMysql.php" afterPath="$PROJECT_DIR$/app/core/db/DBMysql.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/service/UserService.php" afterPath="$PROJECT_DIR$/app/service/UserService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/change-email.php" afterPath="$PROJECT_DIR$/app/view/change-email.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/change-password.php" afterPath="$PROJECT_DIR$/app/view/change-password.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/confirm/result.php" afterPath="$PROJECT_DIR$/app/view/confirm/result.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/follow.php" afterPath="$PROJECT_DIR$/app/view/follow.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/management.php" afterPath="$PROJECT_DIR$/app/view/management.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/registration.php" afterPath="$PROJECT_DIR$/app/view/registration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/user/registration.js" afterPath="$PROJECT_DIR$/public/js/user/registration.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClassDiagram.uml" afterPath="$PROJECT_DIR$/ClassDiagram.uml" />
     </list>
     <ignored path="masterlampart.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,41 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="management.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/management.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/profile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1208">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="successful.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/successful.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+            <state relative-caret-position="-78">
+              <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -119,12 +76,142 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+              <folding>
+                <element signature="e#161#181#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="follow.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/follow.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Router.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/core/Router.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2166">
+              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassDiagram.uml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ClassDiagram.uml">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>PHP</ID>
+              <OriginalElement>\App\Controller\Controller</OriginalElement>
+              <nodes>
+                <node x="369.75" y="385.0">\App\Service\Service</node>
+                <node x="85.0" y="311.0">\App\Model\UserLog</node>
+                <node x="82.25" y="79.0">\App\Controller\Controller</node>
+                <node x="418.0" y="464.0">\App\Service\UserService</node>
+                <node x="141.0" y="464.0">\App\Service\Confirm\ConfirmEmail</node>
+                <node x="291.0" y="464.0">\App\Service\HeaderService</node>
+                <node x="89.0" y="385.0">\App\Service\Confirm\Confirm</node>
+                <node x="0.0" y="158.0">\App\Controller\UserController</node>
+                <node x="385.0" y="311.0">\App\Model\User</node>
+                <node x="126.0" y="538.0">\App\Core\DB\DBMysql</node>
+                <node x="0.0" y="538.0">\App\Core\BaseView</node>
+                <node x="180.0" y="311.0">\App\Model\Group</node>
+                <node x="0.0" y="464.0">\App\Service\Confirm\ConfirmAccount</node>
+                <node x="128.0" y="158.0">\App\Controller\WelcomeController</node>
+                <node x="167.5" y="232.0">\App\Core\BaseModel</node>
+                <node x="265.0" y="311.0">\App\Model\UserLogView</node>
+                <node x="0.0" y="311.0">\App\Model\Token</node>
+                <node x="250.0" y="538.0">\App\Core\Router</node>
+                <node x="70.25" y="0.0">\App\Core\BaseController</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="\App\Model\Token" target="\App\Core\BaseModel">
+                  <point x="0.0" y="-14.5" />
+                  <point x="32.5" y="281.0" />
+                  <point x="176.5" y="281.0" />
+                  <point x="-36.0" y="14.5" />
+                </edge>
+                <edge source="\App\Model\Group" target="\App\Core\BaseModel">
+                  <point x="0.0" y="-14.5" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="\App\Service\Confirm\ConfirmEmail" target="\App\Service\Confirm\Confirm">
+                  <point x="0.0" y="-14.5" />
+                  <point x="193.5" y="439.0" />
+                  <point x="146.0" y="439.0" />
+                  <point x="19.0" y="14.5" />
+                </edge>
+                <edge source="\App\Service\HeaderService" target="\App\Service\Service">
+                  <point x="0.0" y="-14.5" />
+                  <point x="344.5" y="439.0" />
+                  <point x="387.0" y="439.0" />
+                  <point x="-17.25" y="14.5" />
+                </edge>
+                <edge source="\App\Model\User" target="\App\Core\BaseModel">
+                  <point x="0.0" y="-14.5" />
+                  <point x="412.5" y="281.0" />
+                  <point x="248.5" y="281.0" />
+                  <point x="36.0" y="14.5" />
+                </edge>
+                <edge source="\App\Controller\WelcomeController" target="\App\Controller\Controller">
+                  <point x="0.0" y="-14.5" />
+                  <point x="195.5" y="133.0" />
+                  <point x="146.0" y="133.0" />
+                  <point x="21.25" y="14.5" />
+                </edge>
+                <edge source="\App\Service\UserService" target="\App\Service\Service">
+                  <point x="0.0" y="-14.5" />
+                  <point x="464.0" y="439.0" />
+                  <point x="421.5" y="439.0" />
+                  <point x="17.25" y="14.5" />
+                </edge>
+                <edge source="\App\Model\UserLog" target="\App\Core\BaseModel">
+                  <point x="0.0" y="-14.5" />
+                  <point x="122.5" y="291.0" />
+                  <point x="194.5" y="291.0" />
+                  <point x="-18.0" y="14.5" />
+                </edge>
+                <edge source="\App\Controller\UserController" target="\App\Controller\Controller">
+                  <point x="0.0" y="-14.5" />
+                  <point x="54.0" y="133.0" />
+                  <point x="103.5" y="133.0" />
+                  <point x="-21.25" y="14.5" />
+                </edge>
+                <edge source="\App\Service\Confirm\ConfirmAccount" target="\App\Service\Confirm\Confirm">
+                  <point x="0.0" y="-14.5" />
+                  <point x="60.5" y="439.0" />
+                  <point x="108.0" y="439.0" />
+                  <point x="-19.0" y="14.5" />
+                </edge>
+                <edge source="\App\Model\UserLogView" target="\App\Core\BaseModel">
+                  <point x="0.0" y="-14.5" />
+                  <point x="315.0" y="291.0" />
+                  <point x="230.5" y="291.0" />
+                  <point x="18.0" y="14.5" />
+                </edge>
+                <edge source="\App\Controller\Controller" target="\App\Core\BaseController">
+                  <point x="0.0" y="-14.5" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="255.0" y="283.5" />
+              <SelectedNodes>
+                <node>\App\Controller\Controller</node>
+              </SelectedNodes>
+              <Categories />
+              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
@@ -504,6 +591,10 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -521,7 +612,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lesson" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -624,12 +715,12 @@
       <workItem from="1480493478464" duration="2867000" />
       <workItem from="1480496362700" duration="2474000" />
       <workItem from="1480498881383" duration="1581000" />
-      <workItem from="1480516403528" duration="12236000" />
+      <workItem from="1480516403528" duration="12436000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37264000" />
+    <option name="totallyTimeSpent" value="37464000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -784,117 +875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ClassDiagram.uml">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>PHP</ID>
-          <OriginalElement>\App\Controller\Controller</OriginalElement>
-          <nodes>
-            <node x="369.75" y="385.0">\App\Service\Service</node>
-            <node x="245.0" y="311.0">\App\Model\UserLog</node>
-            <node x="76.75" y="79.0">\App\Controller\Controller</node>
-            <node x="128.0" y="158.0">\App\Controller\WelcomeController</node>
-            <node x="418.0" y="464.0">\App\Service\UserService</node>
-            <node x="141.0" y="464.0">\App\Service\Confirm\ConfirmEmail</node>
-            <node x="291.0" y="464.0">\App\Service\HeaderService</node>
-            <node x="89.0" y="385.0">\App\Service\Confirm\Confirm</node>
-            <node x="0.0" y="158.0">\App\Controller\UserController</node>
-            <node x="170.0" y="311.0">\App\Model\User</node>
-            <node x="555.0" y="464.0">\App\Core\DB\DBMysql</node>
-            <node x="0.0" y="538.0">\App\Core\BaseView</node>
-            <node x="0.0" y="311.0">\App\Model\Group</node>
-            <node x="0.0" y="464.0">\App\Service\Confirm\ConfirmAccount</node>
-            <node x="152.5" y="232.0">\App\Core\BaseModel</node>
-            <node x="340.0" y="311.0">\App\Model\UserLogView</node>
-            <node x="85.0" y="311.0">\App\Model\Token</node>
-            <node x="571.0" y="385.0">\App\Core\DB\DB</node>
-            <node x="126.0" y="538.0">\App\Core\Router</node>
-            <node x="64.75" y="0.0">\App\Core\BaseController</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="\App\Model\Token" target="\App\Core\BaseModel">
-              <point x="0.0" y="-14.5" />
-              <point x="117.5" y="291.0" />
-              <point x="179.5" y="291.0" />
-              <point x="-18.0" y="14.5" />
-            </edge>
-            <edge source="\App\Model\Group" target="\App\Core\BaseModel">
-              <point x="0.0" y="-14.5" />
-              <point x="32.5" y="281.0" />
-              <point x="161.5" y="281.0" />
-              <point x="-36.0" y="14.5" />
-            </edge>
-            <edge source="\App\Core\DB\DBMysql" target="\App\Core\DB\DB">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="\App\Service\Confirm\ConfirmEmail" target="\App\Service\Confirm\Confirm">
-              <point x="0.0" y="-14.5" />
-              <point x="193.5" y="439.0" />
-              <point x="146.0" y="439.0" />
-              <point x="19.0" y="14.5" />
-            </edge>
-            <edge source="\App\Service\HeaderService" target="\App\Service\Service">
-              <point x="0.0" y="-14.5" />
-              <point x="344.5" y="439.0" />
-              <point x="387.0" y="439.0" />
-              <point x="-17.25" y="14.5" />
-            </edge>
-            <edge source="\App\Model\User" target="\App\Core\BaseModel">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="\App\Controller\WelcomeController" target="\App\Controller\Controller">
-              <point x="0.0" y="-14.5" />
-              <point x="184.5" y="133.0" />
-              <point x="140.5" y="133.0" />
-              <point x="21.25" y="14.5" />
-            </edge>
-            <edge source="\App\Service\UserService" target="\App\Service\Service">
-              <point x="0.0" y="-14.5" />
-              <point x="464.0" y="439.0" />
-              <point x="421.5" y="439.0" />
-              <point x="17.25" y="14.5" />
-            </edge>
-            <edge source="\App\Model\UserLog" target="\App\Core\BaseModel">
-              <point x="0.0" y="-14.5" />
-              <point x="282.5" y="291.0" />
-              <point x="215.5" y="291.0" />
-              <point x="18.0" y="14.5" />
-            </edge>
-            <edge source="\App\Controller\UserController" target="\App\Controller\Controller">
-              <point x="0.0" y="-14.5" />
-              <point x="54.0" y="133.0" />
-              <point x="98.0" y="133.0" />
-              <point x="-21.25" y="14.5" />
-            </edge>
-            <edge source="\App\Service\Confirm\ConfirmAccount" target="\App\Service\Confirm\Confirm">
-              <point x="0.0" y="-14.5" />
-              <point x="60.5" y="439.0" />
-              <point x="108.0" y="439.0" />
-              <point x="-19.0" y="14.5" />
-            </edge>
-            <edge source="\App\Model\UserLogView" target="\App\Core\BaseModel">
-              <point x="0.0" y="-14.5" />
-              <point x="390.0" y="281.0" />
-              <point x="233.5" y="281.0" />
-              <point x="36.0" y="14.5" />
-            </edge>
-            <edge source="\App\Controller\Controller" target="\App\Core\BaseController">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.7836456558773425" x="26.052173913043475" y="296.2608695652174" />
-          <SelectedNodes>
-            <node>\App\Core\DB\DB</node>
-          </SelectedNodes>
-          <Categories />
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-152">
@@ -910,24 +890,6 @@
         <state relative-caret-position="144">
           <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/core/Router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-          <folding>
-            <element signature="e#161#181#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1243,9 +1205,133 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        <state relative-caret-position="-78">
+          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <folding>
+            <element signature="e#161#181#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/core/Router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2166">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ClassDiagram.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>PHP</ID>
+          <OriginalElement>\App\Controller\Controller</OriginalElement>
+          <nodes>
+            <node x="369.75" y="385.0">\App\Service\Service</node>
+            <node x="85.0" y="311.0">\App\Model\UserLog</node>
+            <node x="82.25" y="79.0">\App\Controller\Controller</node>
+            <node x="418.0" y="464.0">\App\Service\UserService</node>
+            <node x="141.0" y="464.0">\App\Service\Confirm\ConfirmEmail</node>
+            <node x="291.0" y="464.0">\App\Service\HeaderService</node>
+            <node x="89.0" y="385.0">\App\Service\Confirm\Confirm</node>
+            <node x="0.0" y="158.0">\App\Controller\UserController</node>
+            <node x="385.0" y="311.0">\App\Model\User</node>
+            <node x="126.0" y="538.0">\App\Core\DB\DBMysql</node>
+            <node x="0.0" y="538.0">\App\Core\BaseView</node>
+            <node x="180.0" y="311.0">\App\Model\Group</node>
+            <node x="0.0" y="464.0">\App\Service\Confirm\ConfirmAccount</node>
+            <node x="128.0" y="158.0">\App\Controller\WelcomeController</node>
+            <node x="167.5" y="232.0">\App\Core\BaseModel</node>
+            <node x="265.0" y="311.0">\App\Model\UserLogView</node>
+            <node x="0.0" y="311.0">\App\Model\Token</node>
+            <node x="250.0" y="538.0">\App\Core\Router</node>
+            <node x="70.25" y="0.0">\App\Core\BaseController</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="\App\Model\Token" target="\App\Core\BaseModel">
+              <point x="0.0" y="-14.5" />
+              <point x="32.5" y="281.0" />
+              <point x="176.5" y="281.0" />
+              <point x="-36.0" y="14.5" />
+            </edge>
+            <edge source="\App\Model\Group" target="\App\Core\BaseModel">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="\App\Service\Confirm\ConfirmEmail" target="\App\Service\Confirm\Confirm">
+              <point x="0.0" y="-14.5" />
+              <point x="193.5" y="439.0" />
+              <point x="146.0" y="439.0" />
+              <point x="19.0" y="14.5" />
+            </edge>
+            <edge source="\App\Service\HeaderService" target="\App\Service\Service">
+              <point x="0.0" y="-14.5" />
+              <point x="344.5" y="439.0" />
+              <point x="387.0" y="439.0" />
+              <point x="-17.25" y="14.5" />
+            </edge>
+            <edge source="\App\Model\User" target="\App\Core\BaseModel">
+              <point x="0.0" y="-14.5" />
+              <point x="412.5" y="281.0" />
+              <point x="248.5" y="281.0" />
+              <point x="36.0" y="14.5" />
+            </edge>
+            <edge source="\App\Controller\WelcomeController" target="\App\Controller\Controller">
+              <point x="0.0" y="-14.5" />
+              <point x="195.5" y="133.0" />
+              <point x="146.0" y="133.0" />
+              <point x="21.25" y="14.5" />
+            </edge>
+            <edge source="\App\Service\UserService" target="\App\Service\Service">
+              <point x="0.0" y="-14.5" />
+              <point x="464.0" y="439.0" />
+              <point x="421.5" y="439.0" />
+              <point x="17.25" y="14.5" />
+            </edge>
+            <edge source="\App\Model\UserLog" target="\App\Core\BaseModel">
+              <point x="0.0" y="-14.5" />
+              <point x="122.5" y="291.0" />
+              <point x="194.5" y="291.0" />
+              <point x="-18.0" y="14.5" />
+            </edge>
+            <edge source="\App\Controller\UserController" target="\App\Controller\Controller">
+              <point x="0.0" y="-14.5" />
+              <point x="54.0" y="133.0" />
+              <point x="103.5" y="133.0" />
+              <point x="-21.25" y="14.5" />
+            </edge>
+            <edge source="\App\Service\Confirm\ConfirmAccount" target="\App\Service\Confirm\Confirm">
+              <point x="0.0" y="-14.5" />
+              <point x="60.5" y="439.0" />
+              <point x="108.0" y="439.0" />
+              <point x="-19.0" y="14.5" />
+            </edge>
+            <edge source="\App\Model\UserLogView" target="\App\Core\BaseModel">
+              <point x="0.0" y="-14.5" />
+              <point x="315.0" y="291.0" />
+              <point x="230.5" y="291.0" />
+              <point x="18.0" y="14.5" />
+            </edge>
+            <edge source="\App\Controller\Controller" target="\App\Core\BaseController">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="255.0" y="283.5" />
+          <SelectedNodes>
+            <node>\App\Controller\Controller</node>
+          </SelectedNodes>
+          <Categories />
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>

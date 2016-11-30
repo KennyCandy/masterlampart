@@ -4,49 +4,36 @@
   <OriginalElement>\App\Controller\Controller</OriginalElement>
   <nodes>
     <node x="369.75" y="385.0">\App\Service\Service</node>
-    <node x="245.0" y="311.0">\App\Model\UserLog</node>
-    <node x="76.75" y="79.0">\App\Controller\Controller</node>
-    <node x="128.0" y="158.0">\App\Controller\IndexController</node>
+    <node x="85.0" y="311.0">\App\Model\UserLog</node>
+    <node x="82.25" y="79.0">\App\Controller\Controller</node>
     <node x="418.0" y="464.0">\App\Service\UserService</node>
     <node x="141.0" y="464.0">\App\Service\Confirm\ConfirmEmail</node>
     <node x="291.0" y="464.0">\App\Service\HeaderService</node>
     <node x="89.0" y="385.0">\App\Service\Confirm\Confirm</node>
     <node x="0.0" y="158.0">\App\Controller\UserController</node>
-    <node x="170.0" y="311.0">\App\Model\User</node>
-    <node x="555.0" y="464.0">\App\Core\DB\DBMysql</node>
+    <node x="385.0" y="311.0">\App\Model\User</node>
+    <node x="126.0" y="538.0">\App\Core\DB\DBMysql</node>
     <node x="0.0" y="538.0">\App\Core\BaseView</node>
-    <node x="0.0" y="311.0">\App\Model\Group</node>
+    <node x="180.0" y="311.0">\App\Model\Group</node>
     <node x="0.0" y="464.0">\App\Service\Confirm\ConfirmAccount</node>
-    <node x="152.5" y="232.0">\App\Core\BaseModel</node>
-    <node x="340.0" y="311.0">\App\Model\UserLogView</node>
-    <node x="85.0" y="311.0">\App\Model\Token</node>
-    <node x="571.0" y="385.0">\App\Core\DB\DB</node>
-    <node x="126.0" y="538.0">\App\Core\Router</node>
-    <node x="64.75" y="0.0">\App\Core\BaseController</node>
+    <node x="128.0" y="158.0">\App\Controller\WelcomeController</node>
+    <node x="167.5" y="232.0">\App\Core\BaseModel</node>
+    <node x="265.0" y="311.0">\App\Model\UserLogView</node>
+    <node x="0.0" y="311.0">\App\Model\Token</node>
+    <node x="250.0" y="538.0">\App\Core\Router</node>
+    <node x="70.25" y="0.0">\App\Core\BaseController</node>
   </nodes>
   <notes />
   <edges>
     <edge source="\App\Model\Token" target="\App\Core\BaseModel">
       <point x="0.0" y="-14.5" />
-      <point x="117.5" y="291.0" />
-      <point x="179.5" y="291.0" />
-      <point x="-18.0" y="14.5" />
+      <point x="32.5" y="281.0" />
+      <point x="176.5" y="281.0" />
+      <point x="-36.0" y="14.5" />
     </edge>
     <edge source="\App\Model\Group" target="\App\Core\BaseModel">
       <point x="0.0" y="-14.5" />
-      <point x="32.5" y="281.0" />
-      <point x="161.5" y="281.0" />
-      <point x="-36.0" y="14.5" />
-    </edge>
-    <edge source="\App\Core\DB\DBMysql" target="\App\Core\DB\DB">
-      <point x="0.0" y="-14.5" />
       <point x="0.0" y="14.5" />
-    </edge>
-    <edge source="\App\Controller\IndexController" target="\App\Controller\Controller">
-      <point x="0.0" y="-14.5" />
-      <point x="184.5" y="133.0" />
-      <point x="140.5" y="133.0" />
-      <point x="21.25" y="14.5" />
     </edge>
     <edge source="\App\Service\Confirm\ConfirmEmail" target="\App\Service\Confirm\Confirm">
       <point x="0.0" y="-14.5" />
@@ -62,7 +49,15 @@
     </edge>
     <edge source="\App\Model\User" target="\App\Core\BaseModel">
       <point x="0.0" y="-14.5" />
-      <point x="0.0" y="14.5" />
+      <point x="412.5" y="281.0" />
+      <point x="248.5" y="281.0" />
+      <point x="36.0" y="14.5" />
+    </edge>
+    <edge source="\App\Controller\WelcomeController" target="\App\Controller\Controller">
+      <point x="0.0" y="-14.5" />
+      <point x="195.5" y="133.0" />
+      <point x="146.0" y="133.0" />
+      <point x="21.25" y="14.5" />
     </edge>
     <edge source="\App\Service\UserService" target="\App\Service\Service">
       <point x="0.0" y="-14.5" />
@@ -72,14 +67,14 @@
     </edge>
     <edge source="\App\Model\UserLog" target="\App\Core\BaseModel">
       <point x="0.0" y="-14.5" />
-      <point x="282.5" y="291.0" />
-      <point x="215.5" y="291.0" />
-      <point x="18.0" y="14.5" />
+      <point x="122.5" y="291.0" />
+      <point x="194.5" y="291.0" />
+      <point x="-18.0" y="14.5" />
     </edge>
     <edge source="\App\Controller\UserController" target="\App\Controller\Controller">
       <point x="0.0" y="-14.5" />
       <point x="54.0" y="133.0" />
-      <point x="98.0" y="133.0" />
+      <point x="103.5" y="133.0" />
       <point x="-21.25" y="14.5" />
     </edge>
     <edge source="\App\Service\Confirm\ConfirmAccount" target="\App\Service\Confirm\Confirm">
@@ -90,18 +85,18 @@
     </edge>
     <edge source="\App\Model\UserLogView" target="\App\Core\BaseModel">
       <point x="0.0" y="-14.5" />
-      <point x="390.0" y="281.0" />
-      <point x="233.5" y="281.0" />
-      <point x="36.0" y="14.5" />
+      <point x="315.0" y="291.0" />
+      <point x="230.5" y="291.0" />
+      <point x="18.0" y="14.5" />
     </edge>
     <edge source="\App\Controller\Controller" target="\App\Core\BaseController">
       <point x="0.0" y="-14.5" />
       <point x="0.0" y="14.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.7836456558773425" x="317.0" y="283.5" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="255.0" y="283.5" />
   <SelectedNodes>
-    <node>\App\Core\DB\DB</node>
+    <node>\App\Controller\Controller</node>
   </SelectedNodes>
   <Categories />
   <VISIBILITY>private</VISIBILITY>
