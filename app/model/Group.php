@@ -1,10 +1,12 @@
 <?php
 namespace App\Model;
 
-use App\Core\DB\BaseModel as BaseModel;
+use App\Core\BaseModel as BaseModel;
+
 
 /**
- * This is a class Group
+ * Class Group
+ * @package App\Model
  */
 class Group extends BaseModel
 {

@@ -1,15 +1,12 @@
 <?php
 namespace App\Core;
 
+
 /**
  * Class View
  * @package App\Core
  */
-/**
- * Class View
- * @package App\Core
- */
-class View
+class BaseView
 {   
     /** @var array $_content contains content to body view */
     protected $_content = array();

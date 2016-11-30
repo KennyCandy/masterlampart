@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\App\Controller\Controller</OriginalElement>
+  <nodes>
+    <node x="45.0" y="-183.0">\App\Service\Service</node>
+    <node x="-155.0" y="130.0">\App\Model\UserLog</node>
+    <node x="-271.0" y="-159.0">\App\Controller\Controller</node>
+    <node x="-363.5" y="-98.5">\App\Controller\IndexController</node>
+    <node x="-28.0" y="-101.0">\App\Service\UserService</node>
+    <node x="231.0" y="49.0">\App\Service\Confirm\ConfirmEmail</node>
+    <node x="90.0" y="-103.0">\App\Service\HeaderService</node>
+    <node x="97.0" y="-3.0">\App\Service\Confirm\Confirm</node>
+    <node x="-194.5" y="-98.5">\App\Controller\UserController</node>
+    <node x="-120.0" y="74.0">\App\Model\User</node>
+    <node x="273.0" y="-107.0">\App\Core\DB\DBMysql</node>
+    <node x="330.0" y="-33.0">\App\Core\BaseView</node>
+    <node x="-218.0" y="78.0">\App\Model\Group</node>
+    <node x="87.0" y="56.0">\App\Service\Confirm\ConfirmAccount</node>
+    <node x="-219.0" y="-28.0">\App\Core\BaseModel</node>
+    <node x="-294.0" y="136.0">\App\Model\UserLogView</node>
+    <node x="-337.0" y="75.0">\App\Model\Token</node>
+    <node x="275.0" y="-174.0">\App\Core\DB\DB</node>
+    <node x="349.0" y="13.0">\App\Core\Router</node>
+    <node x="-277.0" y="-229.0">\App\Core\BaseController</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\App\Model\Token" target="\App\Core\BaseModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\App\Model\Group" target="\App\Core\BaseModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\App\Core\DB\DBMysql" target="\App\Core\DB\DB">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\App\Controller\IndexController" target="\App\Controller\Controller">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\App\Service\Confirm\ConfirmEmail" target="\App\Service\Confirm\Confirm">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\App\Service\HeaderService" target="\App\Service\Service">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\App\Model\User" target="\App\Core\BaseModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\App\Service\UserService" target="\App\Service\Service">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\App\Model\UserLog" target="\App\Core\BaseModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\App\Controller\UserController" target="\App\Controller\Controller">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\App\Service\Confirm\ConfirmAccount" target="\App\Service\Confirm\Confirm">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\App\Model\UserLogView" target="\App\Core\BaseModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\App\Controller\Controller" target="\App\Core\BaseController">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="43.0" y="-5.0" />
+  <SelectedNodes />
+  <Categories />
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

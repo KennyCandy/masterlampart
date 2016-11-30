@@ -1,10 +1,12 @@
 <?php
 namespace App\Model;
 
-use App\Core\DB\BaseModel as BaseModel;
+use App\Core\BaseModel as BaseModel;
+
 
 /**
- * This is a class Token
+ * Class Token
+ * @package App\Model
  */
 class Token extends BaseModel
 {

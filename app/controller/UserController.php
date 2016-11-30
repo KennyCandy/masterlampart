@@ -3,8 +3,6 @@ namespace App\Controller;
 
 use App\Service\UserService;
 use \Exception;
-use App\Exception\UserException;
-use App\Exception\CheckException;
 
 /**
  * This is a class UserController
@@ -44,7 +42,7 @@ class UserController extends Controller
 				throw new Exception("");
         }
             $data = array();
-            
+
             if (isset($_POST['fullname'])) {
                 $data = array(
                     'code' => htmlspecialchars($_POST['code']),
@@ -69,11 +67,11 @@ class UserController extends Controller
         }
     }
 
-    /**
-     * action successfull after regist
-     *
-     */
-    public function successful()
+
+	/**
+	 *
+	 */
+	public function successful()
     {	
         try {
             if (!isset($this->_data["error"])) {
@@ -109,7 +107,7 @@ class UserController extends Controller
 
                 if ($data["error"] == false) {
                     $_SESSION['user_id'] = $data["user"]["id"];
-                    redirect('/friend/index');
+	                redirect('/user/successful');
 		        }
 			}
 			
@@ -120,51 +118,8 @@ class UserController extends Controller
 	}
 
 	/**
-     * action profile
-     *
-     */
-	public function profile($params)
-	{	
-		if (!isset($_SESSION['user_id'])) {
-			redirect();
-		} else {
-			$data = $this->_data;
-			$data['page'] = 'Profile';
-
-			// if edit status = true is edit mode, if false is view mode
-			$data['edit_status'] = false;
-			
-			if (isset($_POST['fullname'])) {
-				$id = $this->_data['user']['id'];
-				$edit_data = array(
-	                'fullname' => htmlspecialchars($_POST['fullname']),
-	                'address' => htmlspecialchars($_POST['address']),
-	                'birthday' => $_POST['birthday'],
-	                'sex' => $_POST['sex']
-	            );
-				
-				$user_service = new UserService();
-				$change_result = $user_service->change_profile($id, $edit_data);
-
-				if($change_result["error"]) {
-					$data["edit_status"] = true;
-					$data["message"] = $change_result["message"];
-				} else {
-					$data['user']['fullname'] = $change_result['fullname'];
-					$data['user']['address'] = $change_result['address'];
-					$data['user']['birthday'] = $change_result['birthday'];
-					$data['user']['sex'] = $change_result['sex'];
-				}
-			}
-			
-			$this->_view->load_view('profile', $data);
-		}
-	}
-
-	/**
-     * action change email
-     *
-     */
+	 *
+	 */
 	public function change_email()
 	{	
 		try {
@@ -196,10 +151,10 @@ class UserController extends Controller
 		
 	}
 
+
 	/**
-     * action change password
-     *
-     */
+	 *
+	 */
 	public function change_password()
 	{	
 		try {
@@ -284,74 +239,5 @@ class UserController extends Controller
 		} catch (Exception $e) {
 			redirect('/user/home');
 		}
-	}
-
-	/**
-     * action management users
-     *
-     */
-	public function manage()
-	{	
-		try {
-			$data = $this->_data;
-			
-			if (isset($data['error'])) {
-				throw new UserException("Please login");
-			}
-			
-			$user_service = new UserService;
-			$user_info = array(
-				"group_id" => $data["user"]["group_id"]
-			);
-			$result = $user_service->manage($user_info);
-
-			if ($result["error"] == true) {
-				throw new CheckException("Not have permisson");
-			}
-
-			$data['users'] = $result["users"];
-			$data['groups'] = $result["groups"];
-		} catch (CheckException $e) {
-			redirect('/friend/index');
-		} catch (UserException $e) {
-			redirect();
-		}
-	    
-	    $this->_view->load_view('management', $data);
-	}
-
-	/**
-     * action search user
-     *
-     */
-	public function search()
-	{	
-		$data = $this->_data;
-		try {
-			
-			if (isset($data['error'])) {
-				throw new UserException("Please login");
-			}
-			
-			if (!isset($_POST['s'])) {
-				throw new CheckException("Not have content search");
-			}
-			
-			$id = $data['user']['id'];
-			$key = htmlspecialchars($_POST['s']);
-			if ($key == "") {
-				throw new CheckException("Not have content search");
-			}
-
-			$user_service = new UserService;
-			$data["users"] = $user_service->search($id, $key);
-			$data['search_content'] = $key;
-		} catch (CheckException $e) {
-			$data['message'][]=$e->getMessage();
-		} catch (UserException $e) {
-			redirect();
-		}
-		
-		$this->_view->load_view('friend.search', $data);
 	}
 }

@@ -1,7 +1,6 @@
 <?php
 
 // this is the ‘entry-point’ file
-
 // start session and define PATH
 session_start();
 define('PATH', __DIR__);
