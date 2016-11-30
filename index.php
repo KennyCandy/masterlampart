@@ -1,15 +1,15 @@
-<?php 
+<?php
 // start session and define PATH
 session_start();
 define('PATH', __DIR__);
 
 require_once PATH . "/vendor/autoload.php";
-use Config\DB;
+use Config\Database;
 use Config\Route;
-use Core\Router;
+use App\Core\Router;
 
 // init router
-$router = new Router;
+$router = new Router();
 $route = new Route($router);
 $router = $route->getRoute();
 
@@ -29,11 +29,12 @@ if ($app === null) {
 	$args = $app['args'];
 }
 
+
 // init database
-$DB_driver = "DB" . ucfirst(strtolower(DB::DB_TYPE));
-$DB_driver_class = "Core\\DB\\$DB_driver";
+$DB_driver = "DB" . ucfirst(strtolower(Database::DB_TYPE));
+$DB_driver_class = "App\\Core\\DB\\$DB_driver";
 $db = new $DB_driver_class();
-$db->connect("mysql:host=" . DB::DB_HOST . ";dbname=". DB::DB_NAME, DB::DB_USER, DB::DB_PASS);
+$db->connect("mysql:host=" . Database::DB_HOST . ";dbname=". Database::DB_NAME, Database::DB_USER, Database::DB_PASS);
 
 // call instance
 function get_instance(){
@@ -53,3 +54,4 @@ if (class_exists ($controller)) {
 } else {
 	die("Error : Not exist controller");
 }
+

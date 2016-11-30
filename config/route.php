@@ -9,7 +9,7 @@ class Route
     private $_router;
 
     public function __construct($router){
-        
+
         $this->_router = $router;
 
         $this->_router->get("/","IndexController@index");
