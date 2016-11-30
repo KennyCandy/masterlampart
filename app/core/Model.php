@@ -5,14 +5,17 @@ namespace App\Core;
  * This is a class Model
  */
 class Model
-{   
+{
     /** @var string|null $_conn store connection */
     protected $_conn;
-    
+
     public function __construct()
-    {   
+    {
         //
     }
+
+
+
 
     /**
      * load new model and create new property.

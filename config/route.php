@@ -1,8 +1,8 @@
 <?php
 namespace Config;
-
 /**
- * This is a class Route
+ * Class Route
+ * @package Config
  */
 class Route
 {

@@ -1,8 +1,10 @@
 <?php
 namespace App\Core;
 
+
 /**
- * This is a class Router
+ * Class Router
+ * @package App\Core
  */
 class Router
 {
@@ -87,26 +89,26 @@ class Router
 
         foreach ($this->_routes[$method]  as $resource) {
 
-            $args    = array(); 
-            $route   = key($resource); 
+            $args    = array();
+            $route   = key($resource);
             $handler = reset($resource);
 
             if(preg_match(self::REGVAL, $route)){
-                list($args, $uri, $route) = $this->parse_regex_route($request_uri, $route);  
+                list($args, $uri, $route) = $this->parse_regex_route($request_uri, $route);
             }
-           
+
             if(!preg_match("#^$route$#", $request_uri)){
                 unset($this->routes[$method]);
                 continue ;
-            } 
+            }
 
             if(is_string($handler) && strpos($handler, '@')){
-                list($ctrl, $method) = explode('@', $handler); 
+                list($ctrl, $method) = explode('@', $handler);
                 return ['controller' => $ctrl, 'method' => $method, 'args' => $args];
             }
 
             if(empty($args)){
-                return $handler(); 
+                return $handler();
             }
 
              return call_user_func_array($handler, $args);
@@ -126,19 +128,19 @@ class Router
      */
     protected function parse_regex_route($request_uri, $resource){
         $route = preg_replace_callback(self::REGVAL, function($matches) {
-            $patterns = $this->patterns; 
+            $patterns = $this->patterns;
             $matches[0] = str_replace(array('{', '}'), '', $matches[0]);
 
-            if(in_array($matches[0], array_keys($patterns))){                       
+            if(in_array($matches[0], array_keys($patterns))){
                 return  $patterns[$matches[0]];
             }
 
         }, $resource);
 
-        $reg_uri = explode('/', $resource); 
+        $reg_uri = explode('/', $resource);
 
-        $args = array_diff(array_replace($reg_uri, explode('/', $request_uri)), $reg_uri);  
+        $args = array_diff(array_replace($reg_uri, explode('/', $request_uri)), $reg_uri);
 
-        return array(array_values($args), $resource, $route); 
+        return array(array_values($args), $resource, $route);
     }
 }

@@ -1,13 +1,6 @@
 <?php
 
-
-define('DS', DIRECTORY_SEPARATOR);
-define('ROOT', dirname(dirname(__FILE__)));
-$uri = $_SERVER['REQUEST_URI'];
-
-print_r($uri);
-
-die();
+// this is the ‘entry-point’ file
 
 // start session and define PATH
 session_start();
@@ -18,16 +11,17 @@ use Config\Database;
 use Config\Route;
 use App\Core\Router;
 
+
 // init router
 $router = new Router();
 $route  = new Route($router);
 $router = $route->getRoute();
 
 // parse uri to controller, method and argument
-$server = $_SERVER;
 
-$server['REQUEST_URI'] = str_replace("/masterlampart", "", $server['REQUEST_URI']);
-$app                   = $router->match($server);
+$_SERVER['REQUEST_URI'] = str_replace("/masterlampart", "", $_SERVER['REQUEST_URI']);
+$app                    = $router->match($_SERVER);
+
 
 if ($app === null) {
 	$controller = "App\\Controller\\IndexController";

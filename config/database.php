@@ -1,8 +1,10 @@
 <?php 
 namespace Config;
 
+
 /**
- * This is a class DB
+ * Class Database
+ * @package Config
  */
 class Database
 {
