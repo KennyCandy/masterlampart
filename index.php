@@ -39,7 +39,7 @@ $DB_driver_class = "App\\Core\\DB\\$DB_driver";
 $db              = new $DB_driver_class();
 $db->connect("mysql:host=" . Database::DB_HOST . ";dbname=" . Database::DB_NAME, Database::DB_USER, Database::DB_PASS);
 
-// call instance
+// call instance (here is controller)
 function get_instance()
 {
 	global $controller;
