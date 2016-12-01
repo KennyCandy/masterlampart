@@ -154,9 +154,9 @@ class UserService extends Service
 			}
 
 			// check active status
-			if ($user['status'] == 0) {
-				// throw new Exception("Please active account before login");
-			}
+//			if ($user['status'] == 0) {
+//				 throw new Exception("Please active account before login");
+//			}
 
 			$result = ["error" => false, "user" => $user];
 		} catch (Exception $e) {

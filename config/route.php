@@ -36,6 +36,7 @@ class Route
 		$this->_route->get("/user/logout", "UserController@logout");
 		$this->_route->get("/user/successful", "UserController@successful");
 		$this->_route->get("/user/home", "UserController@home");
+		$this->_route->get("/user/main", "UserController@main");
 		$this->_route->any("/user/changeemail", "UserController@change_email");
 		$this->_route->any("/user/changepassword", "UserController@change_password");
 		$this->_route->get("/user/confirm/{:any}", "UserController@confirm");
