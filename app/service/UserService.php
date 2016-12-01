@@ -3,101 +3,107 @@ namespace App\Service;
 
 use App\Model\User;
 use App\Model\Token;
-use App\Model\Group;
 use \Exception;
 
 /**
- * This is a class UserService
+ * Class UserService
+ * @package App\Service
  */
 class UserService extends Service
 {
+
 	/**
-	 * registration new user
+	 * validate data to register a new user
 	 *
+	 * @param array $data
+	 *
+	 * @return array
 	 */
 	public function registration($data = [])
 	{
-		$data["error"]   = false;
-		$data["message"] = [];
+		$result            = [];
+		$result['error']   = false;
+		$result['message'] = [];
 
 		if (!validate($data['fullname'], 'fullname')) {
-			$data['error']     = true;
-			$data['message'][] = 'Fullname a-Z, length 4-30';
+			$result['error']     = true;
+			$result['message'][] = 'Fullname contains a-Z and letters, length : 4-30';
 		}
 
 		if (!validate($data['username'], 'username')) {
-			$data['error']     = true;
-			$data['message'][] = 'Username a-Z0-9 and underscore, length 4-30';
+			$result['error']     = true;
+			$result['message'][] = 'Username contains a-Z0-9 and underscore, length : 4-30';
 		}
 
 		if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-			$data['error']     = true;
-			$data['message'][] = 'Email invalid';
+			$result['error']     = true;
+			$result['message'][] = 'Email invalid';
 		}
 
 		if (!validate($data['password'], 'password')) {
-			$data['error']     = true;
-			$data['message'][] = 'Password a-Z0-9, special characters !@#$%, length 3-20';
+			$result['error']     = true;
+			$result['message'][] = 'Password contains a-Z0-9, special characters follow: @#$%!, length : 3-20';
 		}
 
 		if ($data['password'] != $data['re_password']) {
-			$data['error']     = true;
-			$data['message'][] = 'Re-password invalid';
+			$result['error']     = true;
+			$result['message'][] = 'Re-password invalid';
 		}
 
 		if ($data['password'] == $data['username']) {
-			$data['error']     = true;
-			$data['message'][] = 'Username and password must different';
+			$result['error']     = true;
+			$result['message'][] = 'Username and password must different';
 		}
 
 		if (strlen($data['address']) == 0) {
-			$data['error']     = true;
-			$data['message'][] = 'Address is required';
+			$result['error']     = true;
+			$result['message'][] = 'Address is required';
 		}
 
-		if ($data['code'] != $_SESSION['code_capcha']) {
-			//$data['error'] = true;
-			$data['message'][] = 'Sercurity code invalid';
-		}
+//		if ($data['code'] != $_SESSION['code_capcha']) {
+//			//$result['error'] = true;
+//			$result['message'][] = 'Sercurity code invalid';
+//		}
 
 		if (!(($data['sex'] == 1) || ($data['sex'] == 2))) {
-			$data['error']     = true;
-			$data['message'][] = 'Sex invalid';
+			$result['error']     = true;
+			$result['message'][] = 'Sex invalid';
 		}
 
-		if (!(checkdate(explode('-', $data['birthday'])[1], explode('-', $data['birthday'])[2], explode('-', $data['birthday'])[0]) && (strtotime($data['birthday']) < time()))) {
-			$data['error']     = true;
-			$data['message'][] = 'Birthday invalid';
+		if (!(checkdate(explode('-', $data['birthday'])[1], explode('-', $data['birthday'])[2],
+				explode('-', $data['birthday'])[0]) && (strtotime($data['birthday']) < time()))
+		) {
+			$result['error']     = true;
+			$result['message'][] = 'Birthday invalid';
 		}
 
-		if ($data['error'] == false) {
+		if ($result['error'] == false) {
 			$user = new User;
 
-			//check exist username
+			// check duplicate username
 			$username_check = $user->where('username', $data['username'])->first();
 			if ($username_check) {
-				$data['error']     = true;
-				$data['message'][] = 'Username is exist';
+				$result['error']     = true;
+				$result['message'][] = 'Username is existed';
 			}
 
-			//check exist email
+			// check duplicate email
 			$email_check = $user->where('email', $data['email'])->first();
 
 			if ($email_check) {
-				$data['error']     = true;
-				$data['message'][] = 'Email is exist';
+				$result['error']     = true;
+				$result['message'][] = 'Email is existed';
 			}
-
-			if ($data['error'] == false) {
-				unset($data['error']);
-				unset($data['message']);
+			// If there is no any errors -> create
+			if ($result['error'] == false) {
+				unset($result['error']);
+				unset($result['message']);
 				unset($data['re_password']);
 				unset($data['code']);
 				$data['password'] = md5($data['password']);
 
 				//insert
 				if ($user->insert($data)) {
-
 					$current_user = $user->get_insert();
 
 					//create token
@@ -114,15 +120,13 @@ class UserService extends Service
 						$content_email = "Click <a href='http://masterlampart.me/user/confirm/$token_code'>here</a> to active account in <a href='http://dev.lampart.com.vn'>http://dev.lampart.com.vn</a> \n ";
 						@mail('@lampart-vn.com', 'Active account', $content_email, $header);
 					}
-
-					$data = ["error" => false];
+					$result['error']     = false;
 				} else {
-					$data['error']     = true;
-					$data['message'][] = 'Error when create new user';
+					$result['error']     = true;
+					$result['message'][] = 'Error when create a new user -- Not defined yet';
 				}
 			}
 		}
-		$result = $data;
 
 		return $result;
 	}

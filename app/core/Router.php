@@ -6,31 +6,47 @@ namespace App\Core;
  * Class Router
  * @package App\Core
  */
+/**
+ * Class Router
+ * @package App\Core
+ */
+/**
+ * Class Router
+ * @package App\Core
+ */
 class Router
 {
 
-	/** @var array|null $_routes store route config */
-	protected $_routes = [
+
+	/**
+	 * @var array
+	 */
+	protected $routes = [
 		'GET'    => [],
 		'POST'   => [],
 		'PUT'    => [],
 		'DELETE' => [],
 	];
 
+	/**
+	 * @var array
+	 */
 	public $patterns = [
 		':any'  => '.*',
 		':id'   => '[0-9]+',
-		':slug' => '[a-z\-]+',
+		':slug' => '[a-z-0-9\-]+',
 		':name' => '[a-zA-Z]+',
 	];
 
+	/**
+	 *
+	 */
 	const REGVAL = '/({:.+?})/';
 
+
 	/**
-	 * load new model and create new property.
-	 *
-	 * @param string $model name of model, format is lowercase and divided by underscore.
-	 *
+	 * @param $path
+	 * @param $handler
 	 */
 	public function any($path, $handler)
 	{
@@ -40,61 +56,70 @@ class Router
 		$this->add_route('DELETE', $path, $handler);
 	}
 
+	/**
+	 * @param $path
+	 * @param $handler
+	 */
 	public function get($path, $handler)
 	{
 		$this->add_route('GET', $path, $handler);
 	}
 
+	/**
+	 * @param $path
+	 * @param $handler
+	 */
 	public function post($path, $handler)
 	{
 		$this->add_route('POST', $path, $handler);
 	}
 
+	/**
+	 * @param $path
+	 * @param $handler
+	 */
 	public function put($path, $handler)
 	{
 		$this->add_route('PUT', $path, $handler);
 	}
 
+	/**
+	 * @param $path
+	 * @param $handler
+	 */
 	public function delete($path, $handler)
 	{
 		$this->add_route('DELETE', $path, $handler);
 	}
 
 	/**
-	 * add route to $this->_routes
-	 *
-	 * @param $method GET,POST,PUT,DELETE
-	 *
-	 * @param $path   uri
-	 *
-	 * @param $handle contain controller and method or funtion handle uri
-	 *
+	 * @param $method
+	 * @param $path
+	 * @param $handler
 	 */
 	protected function add_route($method, $path, $handler)
 	{
-		array_push($this->_routes[$method], [$path => $handler]);
+		array_push($this->routes[$method], [$path => $handler]);
 	}
 
+
 	/**
-	 * match uri width routes
+	 * @param array $server
 	 *
-	 * @param $server
-	 *
-	 * @return BaseController, method and argument or do fuction handle
-	 *
+	 * @return array|bool|mixed
 	 */
 	public function match(array $server = [])
 	{
 		$request_method = $server['REQUEST_METHOD'];
 		$request_uri    = $server['REQUEST_URI'];
 
-		if (!in_array($request_method, array_keys($this->_routes))) {
+		if (!in_array($request_method, array_keys($this->routes))) {
 			return false;
 		}
 
 		$method = $request_method;
-
-		foreach ($this->_routes[$method] as $resource) {
+		#@TODO: Implement REST method.
+		foreach ($this->routes[$method] as $resource) {
 
 			$args    = [];
 			$route   = key($resource);
@@ -123,16 +148,13 @@ class Router
 
 		}
 
-//          header('HTTP/1.1 404');
 	}
 
 	/**
-	 * parse uri
+	 * @param $request_uri
+	 * @param $resource
 	 *
-	 * @param $request_uri , $resource
-	 *
-	 * @return $arg, $resource and $route
-	 *
+	 * @return array
 	 */
 	protected function parse_regex_route($request_uri, $resource)
 	{
@@ -152,4 +174,20 @@ class Router
 
 		return [array_values($args), $resource, $route];
 	}
+
+	/**
+	 * @param $postVar
+	 *
+	 * @return string
+	 */
+	protected function getRestfullMethod($postVar)
+	{
+		if (array_key_exists('_method', $postVar)) {
+			$method = strtoupper($postVar['_method']);
+			if (in_array($method, array_keys($this->routes))) {
+				return $method;
+			}
+		}
+	}
+
 }

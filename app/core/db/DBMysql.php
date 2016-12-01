@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Core\DB;
 
 use \PDO;
@@ -9,38 +9,44 @@ use \PDO;
  */
 class DBMysql
 {
-    protected  $db;
+	/**
+	 * @var
+	 */
+	protected $db;
 
-    /**
-     * connect databse
-     *
-     * @param  $dsn, $user, $pass info to connect MYSQL DATABASE
-     *
-     */
-    public function connect($dsn='phplampart', $user = '', $pass = '')
-    {   
-        $this->db = new PDO($dsn, $user, $pass);
-    }
+	/**
+	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * Creates a PDO instance representing a connection to a database
+	 * @link http://php.net/manual/en/pdo.construct.php
+	 * @param $dsn
+	 * @param $username [optional]
+	 * @param $passwd [optional]
+	 * @param $options [optional]
+	 */
+	public function connect($dsn = '', $user = '', $pass = '')
+	{
+		$this->db = new PDO($dsn, $user, $pass);
 
-    /**
-     * run query
-     *
-     * @return  result
-     *
-     */
-    public function query($query)
-    {
-        return $this->db->query($query);
-    }
+		return 'PDO is created';
+	}
 
-    /**
-     * run query
-     *
-     * @return  result
-     *
-     */
-    public function lastInsertId()
-    {
-        return $this->db->lastInsertId();
-    }
+
+	/**
+	 * @param $query
+	 *
+	 * @return mixed
+	 */
+	public function query($query)
+	{
+		return $this->db->query($query);
+	}
+
+
+	/**
+	 * @return mixed
+	 */
+	public function lastInsertId()
+	{
+		return $this->db->lastInsertId();
+	}
 }

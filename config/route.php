@@ -13,6 +13,7 @@ class Route
 	{
 		$this->_route = $route;
 	}
+
 	/**
 	 * @return mixed
 	 */
@@ -20,6 +21,7 @@ class Route
 	{
 		return $this->_route;
 	}
+
 	private $_route;
 
 	public function __construct($router)
@@ -28,7 +30,7 @@ class Route
 		$this->_route = $router;
 
 		$this->_route->get("/", "WelcomeController@index");
-
+		// UserController
 		$this->_route->any("/user/registration", "UserController@registration");
 		$this->_route->any("/user/login", "UserController@login");
 		$this->_route->get("/user/logout", "UserController@logout");
@@ -37,5 +39,10 @@ class Route
 		$this->_route->any("/user/changeemail", "UserController@change_email");
 		$this->_route->any("/user/changepassword", "UserController@change_password");
 		$this->_route->get("/user/confirm/{:any}", "UserController@confirm");
+		$this->_route->any("/user/profile/{:id}","UserController@profile");
+		$this->_route->get("/user/manage","UserController@manage");
+		$this->_route->get("/user/confirm/{:any}","UserController@confirm");
+		$this->_route->any("/user/search","UserController@search");
+		//
 	}
 }

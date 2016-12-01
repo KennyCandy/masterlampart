@@ -1,5 +1,6 @@
 <?php
 
+
 // this is the ‘entry-point’ file
 // start session and define PATH
 session_start();
@@ -19,7 +20,10 @@ $router = $route->getRoute();
 // parse uri to controller, method and argument
 
 $_SERVER['REQUEST_URI'] = str_replace("/masterlampart", "", $_SERVER['REQUEST_URI']);
-$app                    = $router->match($_SERVER);
+if (strpos($_SERVER['REQUEST_URI'], 'XDEBUG') !== false) {
+	$_SERVER['REQUEST_URI'] = '/';
+}
+$app = $router->match($_SERVER);
 
 
 if ($app === null) {
@@ -37,20 +41,13 @@ if ($app === null) {
 $DB_driver       = "DB" . ucfirst(strtolower(Database::DB_TYPE));
 $DB_driver_class = "App\\Core\\DB\\$DB_driver";
 $db              = new $DB_driver_class();
-$db->connect("mysql:host=" . Database::DB_HOST . ";dbname=" . Database::DB_NAME, Database::DB_USER, Database::DB_PASS);
-
-// call instance (here is controller)
-function get_instance()
-{
-	global $controller;
-
-	return $controller::get_instance();
-}
+$is_created      = $db->connect("mysql:host=" . Database::DB_HOST . ";dbname=" . Database::DB_NAME,
+	Database::DB_USER, Database::DB_PASS);
+echo("<script>console.log('PHP: " . $is_created . "');</script>");
 
 // call controller and run
 if (class_exists($controller)) {
 	$ctrl = new $controller();
-
 	if (count($args) == 0) {
 		$ctrl->{$method}();
 	} else {
