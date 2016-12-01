@@ -23,6 +23,7 @@
 	<script src="/public/js/main.js"></script>
 </head>
 <body>
+<h1>HEADER</h1>
 <div class="wrapper">
 	<div class="container">
 		<div class="row">
