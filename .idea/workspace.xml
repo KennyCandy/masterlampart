@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6225378-c09d-4437-8d84-8e17ad8f9994" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/core/db/DB.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/masterlampart.iml" afterPath="$PROJECT_DIR$/.idea/masterlampart.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/UserController.php" afterPath="$PROJECT_DIR$/app/controller/UserController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/core/BaseController.php" afterPath="$PROJECT_DIR$/app/core/BaseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/core/Router.php" afterPath="$PROJECT_DIR$/app/core/Router.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/core/db/DBMysql.php" afterPath="$PROJECT_DIR$/app/core/db/DBMysql.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/Test.php" afterPath="$PROJECT_DIR$/app/model/Test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/service/UserService.php" afterPath="$PROJECT_DIR$/app/service/UserService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/registration.php" afterPath="$PROJECT_DIR$/app/view/registration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/route.php" afterPath="$PROJECT_DIR$/config/route.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connection.php" afterPath="$PROJECT_DIR$/connection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="masterlampart.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,8 +29,8 @@
       <file leaf-file-name="BaseController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/core/BaseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="39" column="6" lean-forward="false" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+            <state relative-caret-position="330">
+              <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -476,12 +463,12 @@
       <workItem from="1480516403528" duration="13058000" />
       <workItem from="1480554099814" duration="3904000" />
       <workItem from="1480559185513" duration="7569000" />
-      <workItem from="1480572668503" duration="10453000" />
+      <workItem from="1480572668503" duration="10541000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60012000" />
+    <option name="totallyTimeSpent" value="60100000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1099,8 +1086,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/core/BaseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="39" column="6" lean-forward="false" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+        <state relative-caret-position="330">
+          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
           <folding />
         </state>
       </provider>

@@ -37,7 +37,7 @@ abstract class BaseController
 
 		$this->_view = new BaseView();
 
-	}``
+	}
 
 	/**
 	 * @param       $view
