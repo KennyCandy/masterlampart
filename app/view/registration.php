@@ -107,16 +107,25 @@
                                 <label class="control-label col-sm-3">Birthday <span
                                             class="text-danger">*</span></label>
                                 <input type="hidden" id="birthday" name="birthday">
-                                <div class="col-md-6">
+                                <div class="col-md-9 col-sm-9">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <select id="form-date" class="form-control" name="date"></select>
+                                            <label for="form-date">Date</label>
+                                            <select id="form-date" class="form-control" name="date">
+                                            </select>
                                         </div>
                                         <div class="col-md-4">
-                                            <select id="form-month" class="form-control" name="month"></select>
+                                            <label for="form-month">Month</label>
+                                            <select id="form-month"
+                                                    class="form-control"
+                                                    name="month">
+                                            </select>
                                         </div>
                                         <div class="col-md-4">
-                                            <select id="form-year" class="form-control" name="year"></select>
+                                            <label for="form-year">Year</label>
+                                            <select id="form-year"
+                                                    class="form-control" name="year">
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
