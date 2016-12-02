@@ -120,7 +120,7 @@ class UserService extends Service
 						$content_email = "Click <a href='http://masterlampart.me/user/confirm/$token_code'>here</a> to active account in <a href='http://dev.lampart.com.vn'>http://dev.lampart.com.vn</a> \n ";
 						@mail('@lampart-vn.com', 'Active account', $content_email, $header);
 					}
-					$result['error']     = false;
+					$result['error'] = false;
 				} else {
 					$result['error']     = true;
 					$result['message'][] = 'Error when create a new user -- Not defined yet';
@@ -192,6 +192,50 @@ class UserService extends Service
 			$result["message"] = $confirm_result["message"];
 		} catch (Exception $e) {
 			$result = ["error" => true, "message" => $e->getMessage()];
+		}
+
+		return $result;
+	}
+//if (!validate($data['fullname'], 'fullname')) {
+//$result['error']     = true;
+//$result['message'][] = 'Fullname contains a-Z and letters, length : 4-30';
+//}
+	public function change_profile($id, $params = [])
+	{
+		$result = $params;
+		$error   = false;
+		// validate
+		if (!validate($params['fullname'], 'fullname')) {
+			$error                = true;
+			$result['message'][] = 'Fullname contains a-Z and letters, length : 4-30';
+		}
+		if (!validate($params['address'], 'address')) {
+			$error                = true;
+			$result['message'][] = 'Address is required';
+		}
+		if (!validate($params['sex'],'sex')) {
+			$error                = true;
+			$result['message'][] = 'Sex is invalid';
+		}
+
+		// from yy-mm-dd to mm-dd-yy
+		if (!(checkdate(explode('-', $params['birthday'])[1], explode('-', $params['birthday'])[2], explode('-', $params['birthday'])[0]) && (strtotime($params['birthday']) < time()))) {
+			$error                = true;
+			$result['message'][] = 'Birthday is invalid';
+			$result['message'][] = 'Birthday is invalid';
+		}
+		// update user
+		if (!$error) {
+			$user = new User();
+			if ($user->update_id($id, $params)) {
+				$result          = $params;
+				$result['error'] = false;
+			} else {
+				$result['error']     = false;
+				$result['message'][] = '(Error)- Please check you data again.';
+			}
+		} else {
+			$result['error'] = true;
 		}
 
 		return $result;

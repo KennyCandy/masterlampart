@@ -93,7 +93,6 @@
                                                 <label for="form-date">Date</label>
                                                 <select id="form-date" class="form-control" name="date"
                                                         value="<?php echo explode('-', $user['birthday'])[2]; ?>">
-                                                    <option value="0" selected>DATE</option>
                                                 </select>
                                             </div>
                                             <div class="col-md-4">

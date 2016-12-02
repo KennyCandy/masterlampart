@@ -102,6 +102,7 @@ $(document).ready(function () {
 
     // switch edit model in profile page
     $("#change-button").on("click", function () {
+        updateDate();
         $(".edit-hide").removeClass("hide");
         $(".edit-show").addClass("hide");
     });
