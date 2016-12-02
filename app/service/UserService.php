@@ -21,6 +21,8 @@ class UserService extends Service
 	 */
 	public function registration($data = [])
 	{
+
+
 		$result            = [];
 		$result['error']   = false;
 		$result['message'] = [];
@@ -196,31 +198,28 @@ class UserService extends Service
 
 		return $result;
 	}
-//if (!validate($data['fullname'], 'fullname')) {
-//$result['error']     = true;
-//$result['message'][] = 'Fullname contains a-Z and letters, length : 4-30';
-//}
+
 	public function change_profile($id, $params = [])
 	{
 		$result = $params;
-		$error   = false;
+		$error  = false;
 		// validate
 		if (!validate($params['fullname'], 'fullname')) {
-			$error                = true;
+			$error               = true;
 			$result['message'][] = 'Fullname contains a-Z and letters, length : 4-30';
 		}
 		if (!validate($params['address'], 'address')) {
-			$error                = true;
+			$error               = true;
 			$result['message'][] = 'Address is required';
 		}
-		if (!validate($params['sex'],'sex')) {
-			$error                = true;
+		if (!validate($params['sex'], 'sex')) {
+			$error               = true;
 			$result['message'][] = 'Sex is invalid';
 		}
 
 		// from yy-mm-dd to mm-dd-yy
 		if (!(checkdate(explode('-', $params['birthday'])[1], explode('-', $params['birthday'])[2], explode('-', $params['birthday'])[0]) && (strtotime($params['birthday']) < time()))) {
-			$error                = true;
+			$error               = true;
 			$result['message'][] = 'Birthday is invalid';
 			$result['message'][] = 'Birthday is invalid';
 		}
@@ -236,6 +235,80 @@ class UserService extends Service
 			}
 		} else {
 			$result['error'] = true;
+		}
+
+		return $result;
+	}
+
+	public function change_password($params = [])
+	{
+		try {
+			$id               = $params["id"];
+			$password         = $params["password"];
+			$new_password     = $params["new_password"];
+			$confirm_password = $params["confirm_password"];
+			// validate
+			if (($password == '') || ($new_password == '') || ($confirm_password == '')) {
+				throw new Exception("Please enter all fields");
+			}
+			if (!(validate($password, 'password') && validate($new_password, 'password'))) {
+				throw new Exception("Password a-Z0-9, special characters !@#$%, length 3-20");
+			}
+			if ($new_password != $confirm_password) {
+				throw new Exception("Confirm password invalid");
+			}
+			if ($password == $new_password) {
+				throw new Exception("New password is current password");
+			}
+			$user   = new User();
+			$result = $user->where('id', $id)->where('password', md5($password))->first();
+
+			if (!$result) {
+				throw new Exception("Current password is invalid");
+			}
+			// update
+			$result = $user->where('id', $id)->update(['password' => md5($new_password)]);
+			if (!$result) {
+				throw new Exception("Update password failed");
+			}
+			$result = ["error" => false];
+		} catch (Exception $e) {
+			$result = ["error" => true, "message" => $e->getMessage()];
+		}
+
+		return $result;
+	}
+
+	public function change_email($params = [])
+	{
+		try {
+			// validate
+			if ($params['email'] == '') {
+				throw new Exception("Email is empty");
+			}
+			if(!filter_var($params['email'],FILTER_VALIDATE_EMAIL)){
+				throw new Exception("Email is invalid");
+			}
+			$id     = $params['id'];
+			$email  = $params['email'];
+			$user   = new User();
+			$result = $user->where('id',$id)->update(['email'=>$email]);
+			if (!$result) {
+				throw new Exception("Update email failed");
+			}
+			$result = ["error" => false];
+
+			$to      = 'nguyenquoctrinhctt3@gmail.com';
+			$subject = 'the subject';
+			$message = 'hello';
+			$headers = 'From: nguyenquoctrinhctt3@gmail.com' . "\r\n" .
+				'Reply-To: nguyenquoctrinhctt3@gmail.com' . "\r\n" .
+				'X-Mailer: PHP/' . phpversion();
+
+			$res = mail($to, $subject, $message, $headers);
+
+		} catch (Exception $e) {
+			$result = ["error" => true, "message" => $e->getMessage()];
 		}
 
 		return $result;

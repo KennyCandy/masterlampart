@@ -139,10 +139,13 @@ class UserController extends Controller
 			$data['edit_status'] = true;
 
 			if (isset($_POST['email'])) {
-				$id            = $this->_data['user']['id'];
-				$email         = $_POST['email'];
+				$data_change = [
+					'id'    => $this->_data['user']['id'],
+					'email' => htmlspecialchars($_POST['email']),
+				];
+
 				$user_service  = new UserService();
-				$change_result = $user_service->change_email($id, $email);
+				$change_result = $user_service->change_email($data_change);
 
 				if (!$change_result["error"]) {
 					$data['edit_status'] = false;
@@ -215,10 +218,10 @@ class UserController extends Controller
 	 */
 	public function profile($params)
 	{
-		$userModal           = new User();
-		$user                = $userModal->find_id($params[0]);
-		$data['user']        = $user;
-		// if edit status = true is edit mode, if false is view mode
+		$userModal    = new User();
+		$user         = $userModal->find_id($params[0]);
+		$data['user'] = $user;
+		// if edit_status = true is edit mode, if false is view mode
 		$data['edit_status'] = false;
 		if (!isset($_SESSION['user_id'])) {
 			//$_SESSION['user_id'] = '101';
@@ -248,7 +251,7 @@ class UserController extends Controller
 					$data["edit_status"] = true;
 					$data["message"]     = $change_result["message"];
 				} else {
-					$data['edit_status'] = false;
+					$data['edit_status']      = false;
 					$data['user']['fullname'] = $change_result['fullname'];
 					$data['user']['address']  = $change_result['address'];
 					$data['user']['birthday'] = $change_result['birthday'];
