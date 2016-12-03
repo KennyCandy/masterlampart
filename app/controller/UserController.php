@@ -111,13 +111,11 @@ class UserController extends Controller
 					$_SESSION['user_id'] = $data["user"]["id"];
 					$GLOBALS['user_id']  = $data["user"]["id"];
 					echo("<script>console.log('PHP: " . 'user_id is set' . "');</script>");
-					//redirect('/user/home');
-					$this->_view->load_view('home', $data);
-
+					redirect('/user/home');
 				}
 			}
-
 			$this->_view->load_view('login', $data);
+
 		} catch (Exception $e) {
 			echo("<script>console.log('PHP: " . 'fail' . "');</script>");
 			redirect('/user/home');
@@ -269,9 +267,9 @@ class UserController extends Controller
 	public function confirm($params)
 	{
 		try {
-			if (!isset($this->_data['error'])) {
-				throw new Exception("Error");
-			}
+//			if (!isset($this->_data['error'])) {
+//				throw new Exception("Error");
+//			}
 			$data = $this->_data;
 			try {
 				$key = $params[0];

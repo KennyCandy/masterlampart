@@ -3,6 +3,8 @@ namespace App\Service;
 
 use App\Model\User;
 use App\Model\Token;
+use Config\Env;
+use DoctrineTest\InstantiatorTestAsset\ExceptionAsset;
 use \Exception;
 
 /**
@@ -286,26 +288,52 @@ class UserService extends Service
 			if ($params['email'] == '') {
 				throw new Exception("Email is empty");
 			}
-			if(!filter_var($params['email'],FILTER_VALIDATE_EMAIL)){
+			if (!filter_var($params['email'], FILTER_VALIDATE_EMAIL)) {
 				throw new Exception("Email is invalid");
 			}
-			$id     = $params['id'];
-			$email  = $params['email'];
-			$user   = new User();
-			$result = $user->where('id',$id)->update(['email'=>$email]);
-			if (!$result) {
-				throw new Exception("Update email failed");
+			$id    = $params['id'];
+			$email = $params['email'];
+			$user  = new User();
+
+			// check duplicate
+			$result = $user->where('email', $email)->first();
+			if ($result) {
+				throw new Exception("Email is existed");
 			}
-			$result = ["error" => false];
+			// Check whether request is exist or not
+			$token  = new Token();
+			$result = $token->where('content', $email)->where("user_id", $id)
+				->where("status", 0)->first();
+			if ($result) {
+				throw  new Exception("The request is existed");
+			}
+
+			// if not, then create a new token
+			$token_code = md5(time() . Env::SECRET_TOKEN);
+			$data_token = [
+				'token'   => $token_code,
+				'user_id' => $id,
+				'content' => $email,
+				'type'    => "email",
+				'status'  => 0,
+			];
+			$result     = $token->insert($data_token);
+			if (!$result) {
+				throw new Exception("Update email failed (Can not insert token)");
+			}
 
 			$to      = 'nguyenquoctrinhctt3@gmail.com';
-			$subject = 'the subject';
-			$message = 'hello';
-			$headers = 'From: nguyenquoctrinhctt3@gmail.com' . "\r\n" .
-				'Reply-To: nguyenquoctrinhctt3@gmail.com' . "\r\n" .
-				'X-Mailer: PHP/' . phpversion();
+			$subject = 'Change your email in masterlampart';
+			$message = "Click <a href='" . Env::APP_URL . "/user/confirm/$token_code'>here</a>
+ 				to agree to change email for $email \n ";
+			$headers = get_mail_header();
 
 			$res = mail($to, $subject, $message, $headers);
+			if (!$res) {
+				throw new Exception("Mail is not sent yet or not accepted");
+			}
+
+			$result = ["error" => false];
 
 		} catch (Exception $e) {
 			$result = ["error" => true, "message" => $e->getMessage()];

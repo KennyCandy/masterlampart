@@ -1,6 +1,6 @@
 {
   "autoload": {
-    //include PHP classes without having to use statements like require and include
+    // include PHP classes without having to use statements like require and include
     "psr-4": {
       "Core\\": "core/",
       "Model\\": "model/",

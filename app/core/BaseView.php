@@ -35,7 +35,7 @@ class BaseView
 		extract($data);
 
 		ob_start();
-		require_once PATH . "/app/view/$view.php";
+		require_once DIR_PATH . "/app/view/$view.php";
 		$content = ob_get_contents();
 		ob_end_clean();
 
@@ -54,7 +54,7 @@ class BaseView
 	{
 		extract($data);
 		ob_start();
-		require_once PATH . "/app/view/layout/$view.php";
+		require_once DIR_PATH . "/app/view/layout/$view.php";
 		$content = ob_get_contents();
 		$buffer_length = ob_get_length();
 		ob_end_clean();
@@ -76,7 +76,7 @@ class BaseView
 	{
 		extract($data);
 		ob_start();
-		require_once PATH . "/app/view/layout/$view.php";
+		require_once DIR_PATH . "/app/view/layout/$view.php";
 		$content = ob_get_contents();
 		ob_end_clean();
 

@@ -1,14 +1,21 @@
 <?php
 namespace App\Service\Confirm;
-use Model\User;
-use Model\Token;
+
+use App\Model\Token;
+use App\Model\User;
 use \Exception;
+
 /**
- * This is a class ConfirmAccount
+ * Class ConfirmAccount
+ * @package App\Service\Confirm
  */
 class ConfirmAccount extends Confirm
-{   
-    public function confirm()
+{
+
+	/**
+	 * @return array
+	 */
+	public function confirm()
     {   
         $user = new User();
         $token = new Token();

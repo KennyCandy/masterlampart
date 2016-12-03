@@ -14,18 +14,18 @@ class DBMysql
 	 */
 	protected $db;
 
+
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
-	 * Creates a PDO instance representing a connection to a database
-	 * @link http://php.net/manual/en/pdo.construct.php
-	 * @param $dsn
-	 * @param $username [optional]
-	 * @param $passwd [optional]
-	 * @param $options [optional]
+	 * @param string $dsn
+	 * @param string $username
+	 * @param string $passwd
+	 * @param null   $options
+	 *
+	 * @return string
 	 */
-	public function connect($dsn = '', $user = '', $pass = '')
+	public function connect($dsn = '', $username = '', $passwd = '', $options = null)
 	{
-		$this->db = new PDO($dsn, $user, $pass);
+		$this->db = new PDO($dsn, $username, $passwd);
 
 		return 'PDO is created';
 	}

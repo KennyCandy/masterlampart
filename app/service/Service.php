@@ -8,5 +8,9 @@ namespace App\Service;
  */
 abstract class Service
 {
+	public function __construct()
+	{
+		
+	}
 	
 }

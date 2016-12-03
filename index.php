@@ -1,12 +1,14 @@
 <?php
 
-
 // this is the ‘entry-point’ file
-// start session and define PATH
+// start session and define DIR_PATH
 session_start();
-define('PATH', __DIR__);
+/**
+ * Directory path
+ */
+define('DIR_PATH', __DIR__);
 
-require_once PATH . "/vendor/autoload.php";
+require_once DIR_PATH . "/vendor/autoload.php";
 use Config\Database;
 use Config\Route;
 use App\Core\Router;
@@ -18,14 +20,14 @@ $route  = new Route($router);
 $router = $route->getRoute();
 
 // parse uri to controller, method and argument
-
 $_SERVER['REQUEST_URI'] = str_replace("/masterlampart", "", $_SERVER['REQUEST_URI']);
-if (strpos($_SERVER['REQUEST_URI'], 'XDEBUG') !== false) {
+// accept if in debug mode with Xdebug without redirect to 404 page
+if (strpos($_SERVER['REQUEST_URI'], 'XDEBUG_SESSION_START') !== false) {
 	$_SERVER['REQUEST_URI'] = '/';
 }
+
+// create a app by checking the route if it is matched.
 $app = $router->match($_SERVER);
-
-
 if ($app === null) {
 	$controller = "App\\Controller\\WelcomeController";
 	$method     = "error_404";
@@ -36,14 +38,8 @@ if ($app === null) {
 	$args       = $app['args'];
 }
 
-
-// init database
-$DB_driver       = "DB" . ucfirst(strtolower(Database::DB_TYPE));
-$DB_driver_class = "App\\Core\\DB\\$DB_driver";
-$db              = new $DB_driver_class();
-$is_created      = $db->connect("mysql:host=" . Database::DB_HOST . ";dbname=" . Database::DB_NAME,
-	Database::DB_USER, Database::DB_PASS);
-echo("<script>console.log('PHP: " . $is_created . "');</script>");
+// connect database and create CONNECTION_VAR to use global in BaseModel Class
+$CONNECTION_VAR = Database::connect_database();
 
 // call controller and run
 if (class_exists($controller)) {

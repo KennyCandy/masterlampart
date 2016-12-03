@@ -56,8 +56,8 @@ abstract class BaseModel
 
 	public function __construct()
 	{
-		global $db;
-		$this->_conn = $db;
+		global $CONNECTION_VAR;
+		$this->_conn = $CONNECTION_VAR;
 	}
 
 

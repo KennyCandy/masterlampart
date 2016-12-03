@@ -1,17 +1,30 @@
 <?php
 namespace App\Service\Confirm;
+
 /**
- * This is a class Confirm
+ * Class Confirm
+ * @package App\Service\Confirm
  */
 abstract class Confirm
-{   
+{
 
-    protected $_token = array();
+	/**
+	 * @var array
+	 */
+	protected $_token = array();
 
-    public function __construct($token)
+	/**
+	 * Confirm constructor.
+	 *
+	 * @param $token
+	 */
+	public function __construct($token)
     {
         $this->_token = $token;
     }
 
-    abstract public function confirm();
+	/**
+	 * @return mixed
+	 */
+	abstract public function confirm();
 }
