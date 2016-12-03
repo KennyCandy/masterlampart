@@ -62,7 +62,7 @@ abstract class BaseController
 	 */
 	public function __destruct()
 	{
-		$this->_view->show();
+		$this->_view->render_page();
 	}
 
 	/**

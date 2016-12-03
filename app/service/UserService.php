@@ -120,9 +120,9 @@ class UserService extends Service
 					];
 					$token      = new Token;
 					if ($token->insert($data_token)) {
-						$header        = mail_header();
+						$headers        = get_mail_header();
 						$content_email = "Click <a href='http://masterlampart.me/user/confirm/$token_code'>here</a> to active account in <a href='http://dev.lampart.com.vn'>http://dev.lampart.com.vn</a> \n ";
-						@mail('@lampart-vn.com', 'Active account', $content_email, $header);
+						@mail('@lampart-vn.com', 'Active account', $content_email, $headers);
 					}
 					$result['error'] = false;
 				} else {

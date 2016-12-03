@@ -38,6 +38,8 @@ class DBMysql
 	 */
 	public function query($query)
 	{
+//		/$this->db = new PDO('aaa');
+
 		return $this->db->query($query);
 	}
 

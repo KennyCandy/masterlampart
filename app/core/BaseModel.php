@@ -14,10 +14,19 @@ abstract class BaseModel
 	/** @var string|null $_db_host , $_db_name, $_db_user, $_db_pass config param to connect database */
 	protected $_db_host;
 
+	/**
+	 * @var
+	 */
 	protected $_db_name;
 
+	/**
+	 * @var
+	 */
 	protected $_db_user;
 
+	/**
+	 * @var
+	 */
 	protected $_db_pass;
 
 	/** @var string|null $_conn store connection */
@@ -29,31 +38,67 @@ abstract class BaseModel
 	/** @var store all param before run query */
 	protected $_query;
 
+	/**
+	 * @var
+	 */
 	protected $_num_row;
 
+	/**
+	 * @var string
+	 */
 	protected $_select = '*';
 
+	/**
+	 * @var array
+	 */
 	protected $_where = [];
 
+	/**
+	 * @var array
+	 */
 	protected $_or_where = [];
 
+	/**
+	 * @var string
+	 */
 	protected $_where_exist = '';
 
+	/**
+	 * @var string
+	 */
 	protected $_where_not_exist = '';
 
+	/**
+	 * @var array
+	 */
 	protected $_join = [];
 
+	/**
+	 * @var string
+	 */
 	protected $_sort_by = '';
 
+	/**
+	 * @var string
+	 */
 	protected $_group_by = '';
 
+	/**
+	 * @var int
+	 */
 	protected $_take = 0;
 
+	/**
+	 * @var int
+	 */
 	protected $_skip = 0;
 
 	/** @var bool insert status flag */
 	protected $_insert_status = false;
 
+	/**
+	 * BaseModel constructor.
+	 */
 	public function __construct()
 	{
 		global $CONNECTION_VAR;
@@ -66,7 +111,7 @@ abstract class BaseModel
 	 *
 	 * @param array|null $params data need insert.
 	 *
-	 * @return if insert success, store insert id to $_result, enable flag $_insert_status
+	 * @return array if insert success, store insert id to $_result, enable flag $_insert_status
 	 */
 	public function insert($params = [])
 	{
@@ -90,7 +135,7 @@ abstract class BaseModel
 	/**
 	 * check status flag $_insert_status, get row last query INSERT.
 	 *
-	 * @return return result and disable flag $_insert_status
+	 * @return bool result and disable flag $_insert_status
 	 *
 	 */
 	public function get_insert()
@@ -159,6 +204,12 @@ abstract class BaseModel
 		return $this;
 	}
 
+	/**
+	 * @param $table
+	 * @param $condition
+	 *
+	 * @return $this
+	 */
 	public function join($table, $condition)
 	{
 		$this->_join[] = [
@@ -169,6 +220,12 @@ abstract class BaseModel
 		return $this;
 	}
 
+	/**
+	 * @param        $key
+	 * @param string $value
+	 *
+	 * @return $this
+	 */
 	public function sort_by($key, $value = 'DESC')
 	{
 		$this->_sort_by = "ORDER BY $key $value";
@@ -176,6 +233,11 @@ abstract class BaseModel
 		return $this;
 	}
 
+	/**
+	 * @param int $params
+	 *
+	 * @return $this
+	 */
 	public function take($params = 0)
 	{
 		$this->_take = $params;
@@ -183,6 +245,11 @@ abstract class BaseModel
 		return $this;
 	}
 
+	/**
+	 * @param int $params
+	 *
+	 * @return $this
+	 */
 	public function skip($params = 0)
 	{
 		$this->_skip = $params;
@@ -290,6 +357,12 @@ abstract class BaseModel
 		}
 	}
 
+	/**
+	 * @param string $query
+	 * @param string $type
+	 *
+	 * @return array|bool
+	 */
 	public function query($query = "", $type = "select")
 	{
 		$result = $this->_conn->query($query);
@@ -316,6 +389,11 @@ abstract class BaseModel
 		}
 	}
 
+	/**
+	 * @param string $query
+	 *
+	 * @return int
+	 */
 	public function count_raw($query = "")
 	{
 		$result = $this->_conn->query($query);
@@ -328,6 +406,11 @@ abstract class BaseModel
 		}
 	}
 
+	/**
+	 * @param array $params
+	 *
+	 * @return bool
+	 */
 	public function update($params = [])
 	{
 		if (count($params) > 0) {
@@ -354,6 +437,9 @@ abstract class BaseModel
 		}
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function delete()
 	{
 		if ($this->_table != "") {
@@ -372,6 +458,11 @@ abstract class BaseModel
 		}
 	}
 
+	/**
+	 * @param array $params
+	 *
+	 * @return string
+	 */
 	public function parse_where($params = [])
 	{
 		$string = "";
@@ -387,6 +478,12 @@ abstract class BaseModel
 		return $string;
 	}
 
+	/**
+	 * @param array  $params
+	 * @param string $type
+	 *
+	 * @return string
+	 */
 	public function parse_join($params = [], $type = "join")
 	{
 		$string = "";
@@ -423,6 +520,11 @@ abstract class BaseModel
 		return $string;
 	}
 
+	/**
+	 * @param string $query
+	 *
+	 * @return $this
+	 */
 	public function where_exist($query = "")
 	{
 		$this->_where_exist = ($query == "") ? "" : "AND EXISTS ($query)";
@@ -430,6 +532,11 @@ abstract class BaseModel
 		return $this;
 	}
 
+	/**
+	 * @param string $query
+	 *
+	 * @return $this
+	 */
 	public function where_not_exist($query = "")
 	{
 		$this->_where_not_exist = ($query == "") ? "" : "AND NOT EXISTS ($query)";
@@ -437,6 +544,11 @@ abstract class BaseModel
 		return $this;
 	}
 
+	/**
+	 * @param string $query
+	 *
+	 * @return $this
+	 */
 	public function group_by($query = "")
 	{
 		$this->_group_by = "GROUP BY $query";
