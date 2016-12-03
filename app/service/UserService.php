@@ -120,9 +120,16 @@ class UserService extends Service
 					];
 					$token      = new Token;
 					if ($token->insert($data_token)) {
-						$headers        = get_mail_header();
-						$content_email = "Click <a href='http://masterlampart.me/user/confirm/$token_code'>here</a> to active account in <a href='http://dev.lampart.com.vn'>http://dev.lampart.com.vn</a> \n ";
-						@mail('@lampart-vn.com', 'Active account', $content_email, $headers);
+						$to      = 'nguyenquoctrinhctt3@gmail.com';
+						$subject = 'Active your account in masterlampart';
+						$message = "Click <a href='" . Env::APP_URL . "user/confirm/$token_code'>here</a>
+ 				                    to active your account in masterlampart \n ";
+						$headers = get_mail_header();
+
+						$res = mail($to, $subject, $message, $headers);
+						if (!$res) {
+							throw new Exception("Mail is not sent yet or not accepted");
+						}
 					}
 					$result['error'] = false;
 				} else {
@@ -177,12 +184,12 @@ class UserService extends Service
 			$token      = new Token();
 			$token_info = $token->where('token', $key)->where('status', 0)->first();
 			if (!$token_info) {
-				throw new Exception("Token not exists");
+				throw new Exception("Token does not exists");
 			}
 
 			$confirm_class = "App\\Service\\Confirm\\Confirm" . ucfirst(strtolower($token_info["type"]));
 			if (!class_exists($confirm_class)) {
-				throw new Exception("Type token not exists");
+				throw new Exception("Token type does not exists");
 			}
 
 			$confirm        = new  $confirm_class($token_info);
@@ -291,12 +298,15 @@ class UserService extends Service
 			if (!filter_var($params['email'], FILTER_VALIDATE_EMAIL)) {
 				throw new Exception("Email is invalid");
 			}
-			$id    = $params['id'];
-			$email = $params['email'];
-			$user  = new User();
+			$id        = $params['id'];
+			$email     = $params['email'];
+			$user      = new User();
+			$old_email = $user->find_id($id)['email'] !== null ?
+				$user->find_id($id)['email'] : '';
 
 			// check duplicate
 			$result = $user->where('email', $email)->first();
+
 			if ($result) {
 				throw new Exception("Email is existed");
 			}
@@ -322,9 +332,9 @@ class UserService extends Service
 				throw new Exception("Update email failed (Can not insert token)");
 			}
 
-			$to      = 'nguyenquoctrinhctt3@gmail.com';
+			$to      = $old_email;
 			$subject = 'Change your email in masterlampart';
-			$message = "Click <a href='" . Env::APP_URL . "/user/confirm/$token_code'>here</a>
+			$message = "Click <a href='" . Env::APP_URL . "user/confirm/$token_code'>here</a>
  				to agree to change email for $email \n ";
 			$headers = get_mail_header();
 

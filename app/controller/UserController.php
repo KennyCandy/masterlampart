@@ -275,7 +275,7 @@ class UserController extends Controller
 				$key = $params[0];
 
 				if (!validate($key, 'token')) {
-					throw new Exception("Token invalid");
+					throw new Exception("Token is invalid");
 				}
 
 				$user_service   = new UserService;
