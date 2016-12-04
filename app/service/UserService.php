@@ -64,10 +64,10 @@ class UserService extends Service
 			$result['message'][] = 'Address is required';
 		}
 
-//		if ($data['code'] != $_SESSION['code_capcha']) {
-//			//$result['error'] = true;
-//			$result['message'][] = 'Sercurity code invalid';
-//		}
+		if ($data['code'] != $_SESSION['captcha']['code']) {
+			$result['error'] = true;
+			$result['message'][] = 'Security code is invalid';
+		}
 
 		if (!(($data['sex'] == 1) || ($data['sex'] == 2))) {
 			$result['error']     = true;

@@ -96,7 +96,6 @@ class Router
 
 	/**
 	 * @param array $server
-	 *
 	 * @return array|bool|mixed
 	 */
 	public function match(array $server = [])

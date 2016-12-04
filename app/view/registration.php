@@ -255,8 +255,6 @@
 									<!--<img id="capcha-image" src="/public/libs/capcha/capcha.php"/>-->
 <!--									<img id="capcha-image" src="/public/images/captcha-ex.png"/>-->
 									<img id="capcha-image" src="<?php echo $_SESSION['captcha']['image_src'] ?>"/>
-
-
 								</div>
 							</div>
 							<div class="form-group">

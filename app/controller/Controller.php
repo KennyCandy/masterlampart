@@ -28,7 +28,6 @@ abstract class Controller extends BaseController
             $data = $header_service->load_data($_SESSION['user_id']);
 
 			if ($data["error"] == true) {
-				//session_unset('user_id');
 				session_unset();
 				throw new Exception("Error");
 			}

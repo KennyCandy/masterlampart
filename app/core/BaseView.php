@@ -21,7 +21,6 @@ class BaseView
 	 * load content for before body view and save to $_content.
 	 *
 	 * @param string       $view is file view in folder view.
-	 *
 	 * @param array|string $data contain variable need extract.
 	 */
 	public function load_template_before($view, $data = [])
@@ -29,7 +28,7 @@ class BaseView
 		extract($data);
 		ob_start();
 		require_once DIR_PATH . "/app/view/layout/$view.php";
-		$content       = ob_get_contents();
+		$content = ob_get_contents();
 		//$buffer_length = ob_get_length();
 		ob_end_clean();
 
@@ -40,7 +39,6 @@ class BaseView
 	 * load content for after body view and save to $_content.
 	 *
 	 * @param string       $view is file view in folder view.
-	 *
 	 * @param array|string $data contain variable need extract.
 	 */
 	public function load_template_after($view, $data = [])
@@ -58,11 +56,11 @@ class BaseView
 	 * load content for body view and save to $_content.
 	 *
 	 * @param string       $view is file view in folder view.
-	 *
 	 * @param array|string $data contain variable need extract.
 	 */
 	public function load_view($view, $data = [])
 	{
+		// standardize url
 		if (preg_match("/\./", $view)) {
 			$view = explode(".", $view);
 			$view = implode("/", $view);

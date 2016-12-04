@@ -178,9 +178,7 @@ abstract class BaseModel
 	 * store key and value in where
 	 *
 	 * @param string|null $key  and $value need import
-	 *
 	 * @param string|= $condition is =,!=,>=,<=,LIKE default =
-	 *
 	 * @param string  $type is AND or OR, default AND
 	 *
 	 * @return $this

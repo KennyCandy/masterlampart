@@ -293,7 +293,7 @@ class UserController extends Controller
 				$data['message'][] = $e->getMessage();
 			}
 
-			$this->_view->load_view('confirm.result', $data);
+			$this->_view->load_view('confirm/confirm-result', $data);
 		} catch (Exception $e) {
 			redirect('/user/home');
 		}
