@@ -1,12 +1,11 @@
 <?php
 namespace Config;
 /**
- * Class Route to control user's URL
+ * Class Route
  * @package Config
  */
 class Route
 {
-	private $_route;
 	/**
 	 * @param mixed $route
 	 */
@@ -23,9 +22,11 @@ class Route
 		return $this->_route;
 	}
 
+	private $_route;
 
 	public function __construct($router)
 	{
+
 		$this->_route = $router;
 
 		$this->_route->get("/", "WelcomeController@index");
@@ -39,8 +40,9 @@ class Route
 		$this->_route->any("/user/changeemail", "UserController@change_email");
 		$this->_route->any("/user/changepassword", "UserController@change_password");
 		$this->_route->get("/user/confirm/{:any}", "UserController@confirm");
-		$this->_route->any("/user/profile/{:id}", "UserController@profile");
-		$this->_route->get("/user/manage", "UserController@manage");
-		$this->_route->get("/user/confirm/{:any}", "UserController@confirm");
+		$this->_route->any("/user/profile/{:id}","UserController@profile");
+		$this->_route->get("/user/manage","UserController@manage");
+		$this->_route->get("/user/confirm/{:any}","UserController@confirm");
+
 	}
 }

@@ -49,11 +49,14 @@ $(document).ready(function () {
             for (var i = 1; i <= date; i++) {
                 input_date.append("<option value='" + i + "'" + ((c_date == i) ? "selected" : "") + ">" + i + "</option>");
             }
+
         } else {
             date = 31;
+
             if (c_date >= date) {
                 input_date.val(1);
             }
+
             input_date.html("");
             $('#form-date').empty();
 

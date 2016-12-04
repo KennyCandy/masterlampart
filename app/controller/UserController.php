@@ -1,9 +1,10 @@
 <?php
 namespace App\Controller;
 
+use App\Model\Test;
 use App\Model\User;
 use App\Service\UserService;
-use Exception;
+use \Exception;
 
 /**
  * This is a class UserController
@@ -206,16 +207,15 @@ class UserController extends Controller
 	 */
 	public function logout()
 	{
-		session_unset();
+		session_unset('user_id');
 		redirect();
 	}
 
 	/**
 	 * action profile
 	 *
-	 * @param array $params
 	 */
-	public function profile($params=[])
+	public function profile($params)
 	{
 		$userModal    = new User();
 		$user         = $userModal->find_id($params[0]);
@@ -223,6 +223,7 @@ class UserController extends Controller
 		// if edit_status = true is edit mode, if false is view mode
 		$data['edit_status'] = false;
 		if (!isset($_SESSION['user_id'])) {
+			//$_SESSION['user_id'] = '101';
 			//redirect();
 			echo '<pre>';
 			print_r('user_id is not found');
@@ -263,9 +264,8 @@ class UserController extends Controller
 	/**
 	 * action confirm
 	 *
-	 * @param $params
 	 */
-	public function confirm($params=[])
+	public function confirm($params)
 	{
 		try {
 //			if (!isset($this->_data['error'])) {

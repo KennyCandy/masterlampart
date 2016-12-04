@@ -10,10 +10,6 @@ use App\Model\User;
  */
 class ConfirmEmail extends Confirm
 {
-	public function __construct($token)
-	{
-		parent::__construct($token);
-	}
 	/**
 	 * @return array
 	 */
@@ -23,7 +19,6 @@ class ConfirmEmail extends Confirm
         $user_info = $user->where('email', $this->_token['content'])->first();
 
         $result["status"] = true;
-	    // Check whether email is existed
         if ($user_info) {
             $result = array("status" => false, "message" => "Email is existed");
         } else {

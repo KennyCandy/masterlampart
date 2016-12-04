@@ -14,9 +14,19 @@ abstract class BaseController
 	protected static $_instance;
 
 	/**
+	 * @var
+	 */
+	protected $_config;
+
+	/**
 	 * @var BaseView
 	 */
 	protected $_view;
+
+	/**
+	 * @var
+	 */
+	protected $_helper;
 
 	/**
 	 * BaseController constructor.
@@ -24,7 +34,9 @@ abstract class BaseController
 	public function __construct()
 	{
 		self::$_instance = &$this;
-		$this->_view     = new BaseView();
+
+		$this->_view = new BaseView();
+
 	}
 
 	/**
@@ -46,7 +58,7 @@ abstract class BaseController
 	}
 
 	/**
-	 * render page when controller shuts down.
+	 *
 	 */
 	public function __destruct()
 	{

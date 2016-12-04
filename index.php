@@ -20,7 +20,7 @@ $route  = new Route($router);
 $router = $route->getRoute();
 
 // parse uri to controller, method and argument
-//$_SERVER['REQUEST_URI'] = str_replace("/masterlampart", "", $_SERVER['REQUEST_URI']);
+$_SERVER['REQUEST_URI'] = str_replace("/masterlampart", "", $_SERVER['REQUEST_URI']);
 // accept if in debug mode with Xdebug without redirect to 404 page
 if (strpos($_SERVER['REQUEST_URI'], 'XDEBUG_SESSION_START') !== false) {
 	$_SERVER['REQUEST_URI'] = '/';
@@ -39,21 +39,6 @@ if ($app === null) {
 }
 require_once DIR_PATH . "/public/libs/simple-php-captcha/simple-php-captcha.php";
 $_SESSION['captcha'] = simple_php_captcha(
-//	[
-//		'min_length'      => 5,
-//		'max_length'      => 5,
-//		'backgrounds'     => ['captcha_bg.png'],
-//		'characters'      => 'ABCDEFGHJKLMNPRSTUVWXYZabcdefghjkmnprstuvwxyz23456789',
-//		'min_font_size'   => 28,
-//		'max_font_size'   => 28,
-//		'color'           => '#666',
-//		'angle_min'       => 0,
-//		'angle_max'       => 10,
-//		'shadow'          => true,
-//		'shadow_color'    => '#fff',
-//		'shadow_offset_x' => -1,
-//		'shadow_offset_y' => 1,
-//	]
 );
 
 
@@ -62,13 +47,13 @@ $CONNECTION_VAR = Database::connect_database();
 
 // call controller and run
 if (class_exists($controller)) {
-	$controller_in_charged = new $controller();
+	$ctrl = new $controller();
 	if (count($args) == 0) {
-		$controller_in_charged->{$method}();
+		$ctrl->{$method}();
 	} else {
-		$controller_in_charged->{$method}($args);
+		$ctrl->{$method}($args);
 	}
 } else {
-	die("Error : Do not exist this controller!");
+	die("Error : Not exist controller");
 }
 

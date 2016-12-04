@@ -4,7 +4,7 @@ namespace App\Core\DB;
 use \PDO;
 
 /**
- * Class DBMysql interact with PDO
+ * Class DBMysql
  * @package App\Core\DB
  */
 class DBMysql
@@ -38,7 +38,8 @@ class DBMysql
 	 */
 	public function query($query)
 	{
-		//$this->db = new PDO('aaa');
+//		/$this->db = new PDO('aaa');
+
 		return $this->db->query($query);
 	}
 
