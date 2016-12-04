@@ -55,7 +55,7 @@ abstract class BaseController
 		//$this->_view->render_page();
 	}
 
-	public function show()
+	public function render_page()
 	{
 		$this->_view->render_page();
 	}
