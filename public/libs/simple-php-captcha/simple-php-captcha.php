@@ -30,7 +30,8 @@ function simple_php_captcha($config = array()) {
 //            $bg_path . 'stitched-wool.png',
 //            $bg_path . 'white-carbon.png',
 //            $bg_path . 'white-wave.png'
-            $bg_path . 'captcha_bg.png'
+            $bg_path . 'bg_01.png',
+            $bg_path . 'bg_02.png',
         ),
         'fonts' => array(
             $font_path . 'times_new_yorker.ttf'

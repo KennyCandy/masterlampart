@@ -215,7 +215,7 @@ class UserController extends Controller
 	 *
 	 * @param array $params
 	 */
-	public function profile($params=[])
+	public function profile($params = [])
 	{
 		$userModal    = new User();
 		$user         = $userModal->find_id($params[0]);
@@ -260,12 +260,25 @@ class UserController extends Controller
 		}
 	}
 
+	public function refresh_captcha()
+	{
+		$_SESSION['captcha'] = simple_php_captcha();
+
+		$s = [
+			'code'      => $_SESSION['captcha']['code'],
+			'image_src' => $_SESSION['captcha']['image_src'],
+		];
+		//include('includes/json.php');
+		//$Json = new json('var', 'name');
+		return $s;
+	}
+
 	/**
 	 * action confirm
 	 *
 	 * @param $params
 	 */
-	public function confirm($params=[])
+	public function confirm($params = [])
 	{
 		try {
 //			if (!isset($this->_data['error'])) {

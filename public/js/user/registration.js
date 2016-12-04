@@ -112,4 +112,19 @@ $(document).ready(function () {
         $("#birthday").val(c_year + "-" + ((c_month < 10) ? ("0" + c_month) : c_month) + "-" + ((c_date < 10) ? ("0" + c_date) : c_date));
         $("#edit-form").submit();
     });
+
+    $("#refresh-captcha").click(function () {
+        jQuery.ajax({
+            type: "POST",
+            url: "http://masterlampart.me" + "/user/refreshcaptcha",
+            success: function (res) {
+                if (res) {
+                    console.log(res);
+                    $("#captcha-image").attr("src",res['image_src']);
+                }
+            }
+        });
+    });
+
+
 });

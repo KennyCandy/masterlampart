@@ -18,6 +18,8 @@ class Env
 	const EMAIL_FROM = 'nguyenquoctrinhctt3@gmail.com';
 	const EMAIL_REPLY_TO = 'nguyenquoctrinhctt3@gmail.com';
 	const SECRET_TOKEN = 'TrinhDepTraiTuyetVoi';
+	const SENT_EMAIL_ACC = 'harveynashtms@gmail.com';
+	const SENT_EMAIL_PASS = 'TrinhDepTrai';
 
 	public static function env($key, $default = null)
 	{

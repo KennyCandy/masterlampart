@@ -7,7 +7,9 @@ namespace App\Core;
  * @package App\Core
  */
 abstract class BaseController
+
 {
+
 	/**
 	 * @var BaseController
 	 */
@@ -50,13 +52,19 @@ abstract class BaseController
 	 */
 	public function __destruct()
 	{
+		//$this->_view->render_page();
+	}
+
+	public function show()
+	{
 		$this->_view->render_page();
 	}
 
 	/**
 	 * @return BaseController
 	 */
-	public static function get_instance()
+	public
+	static function get_instance()
 	{
 		return self::$_instance;
 	}

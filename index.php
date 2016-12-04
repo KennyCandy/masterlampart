@@ -39,7 +39,7 @@ if ($app === null) {
 }
 require_once DIR_PATH . "/public/libs/simple-php-captcha/simple-php-captcha.php";
 
-
+$NORENDER = 0;
 
 // connect database and create CONNECTION_VAR to use global in BaseModel Class
 $CONNECTION_VAR = Database::connect_database();
@@ -49,8 +49,10 @@ if (class_exists($controller)) {
 	$controller_in_charged = new $controller();
 	if (count($args) == 0) {
 		$controller_in_charged->{$method}();
+		$controller_in_charged->show();
 	} else {
 		$controller_in_charged->{$method}($args);
+		$controller_in_charged->show();
 	}
 } else {
 	die("Error : Do not exist this controller!");
