@@ -19,7 +19,6 @@ class Env
 	const EMAIL_REPLY_TO = 'nguyenquoctrinhctt3@gmail.com';
 	const SECRET_TOKEN = 'TrinhDepTraiTuyetVoi';
 
-
 	public static function env($key, $default = null)
 	{
 		$value = '';

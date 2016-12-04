@@ -3,20 +3,11 @@ namespace App\Core;
 
 
 /**
- * Class Router
- * @package App\Core
- */
-/**
- * Class Router
- * @package App\Core
- */
-/**
- * Class Router
+ * Class Router for CRUD
  * @package App\Core
  */
 class Router
 {
-
 
 	/**
 	 * @var array
