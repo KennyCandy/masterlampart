@@ -20,7 +20,7 @@ $route  = new Route($router);
 $router = $route->getRoute();
 
 // parse uri to controller, method and argument
-$_SERVER['REQUEST_URI'] = str_replace("/masterlampart", "", $_SERVER['REQUEST_URI']);
+//$_SERVER['REQUEST_URI'] = str_replace("/masterlampart", "", $_SERVER['REQUEST_URI']);
 // accept if in debug mode with Xdebug without redirect to 404 page
 if (strpos($_SERVER['REQUEST_URI'], 'XDEBUG_SESSION_START') !== false) {
 	$_SERVER['REQUEST_URI'] = '/';
@@ -43,13 +43,13 @@ $CONNECTION_VAR = Database::connect_database();
 
 // call controller and run
 if (class_exists($controller)) {
-	$ctrl = new $controller();
+	$controller_in_charged = new $controller();
 	if (count($args) == 0) {
-		$ctrl->{$method}();
+		$controller_in_charged->{$method}();
 	} else {
-		$ctrl->{$method}($args);
+		$controller_in_charged->{$method}($args);
 	}
 } else {
-	die("Error : Not exist controller");
+	die("Error : Do not exist this controller!");
 }
 

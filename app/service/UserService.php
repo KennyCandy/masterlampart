@@ -20,11 +20,11 @@ class UserService extends Service
 	 * @param array $data
 	 *
 	 * @return array
+	 *
+	 * @throws Exception
 	 */
 	public function registration($data = [])
 	{
-
-
 		$result            = [];
 		$result['error']   = false;
 		$result['message'] = [];
@@ -189,7 +189,7 @@ class UserService extends Service
 
 			$confirm_class = "App\\Service\\Confirm\\Confirm" . ucfirst(strtolower($token_info["type"]));
 			if (!class_exists($confirm_class)) {
-				throw new Exception("Token type does not exists");
+				throw new Exception("Token(confirm) type does not exists");
 			}
 
 			$confirm        = new  $confirm_class($token_info);

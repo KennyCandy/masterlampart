@@ -3,8 +3,10 @@ namespace App\Core;
 
 use \PDO;
 
+
 /**
- * This is a class BaseModel
+ * Class BaseModel
+ * @package App\Core
  */
 abstract class BaseModel
 {
@@ -111,7 +113,7 @@ abstract class BaseModel
 	 *
 	 * @param array|null $params data need insert.
 	 *
-	 * @return array if insert success, store insert id to $_result, enable flag $_insert_status
+	 * @return bool if insert success, store insert id to $_result, enable flag $_insert_status
 	 */
 	public function insert($params = [])
 	{
@@ -124,7 +126,6 @@ abstract class BaseModel
 				$this->_insert_status = true;
 				$this->_result        = [];
 				array_push($this->_result, $this->_conn->lastInsertId());
-
 				return true;
 			} else {
 				return false;
@@ -155,8 +156,10 @@ abstract class BaseModel
 	/**
 	 * store fields need select.
 	 *
-	 * @param string|* $params have string, once field is divided by comma
+	 * @param string $params
 	 *
+	 * @return $this
+	 * @internal param $ string|* $params have string, once field is divided by comma
 	 */
 	public function select($params = '*')
 	{
@@ -173,8 +176,9 @@ abstract class BaseModel
 	 *
 	 * @param string|= $condition is =,!=,>=,<=,LIKE default =
 	 *
-	 * @param string|AND  $type is AND or OR, default AND
+	 * @param string  $type is AND or OR, default AND
 	 *
+	 * @return $this
 	 */
 	public function where($key, $value, $condition = '=', $type = 'AND')
 	{
@@ -188,9 +192,15 @@ abstract class BaseModel
 		return $this;
 	}
 
+
 	/**
-	 * like function where
+	 *  similar to where
+	 * @param        $key
+	 * @param        $value
+	 * @param string $condition
+	 * @param string $type
 	 *
+	 * @return $this
 	 */
 	public function or_where($key, $value, $condition = '=', $type = 'AND')
 	{
@@ -335,7 +345,7 @@ abstract class BaseModel
 	/**
 	 * count row
 	 *
-	 * @return return number
+	 * @return number
 	 *
 	 */
 	public function count()
@@ -516,7 +526,6 @@ abstract class BaseModel
 			default:
 				break;
 		}
-
 		return $string;
 	}
 
@@ -552,13 +561,12 @@ abstract class BaseModel
 	public function group_by($query = "")
 	{
 		$this->_group_by = "GROUP BY $query";
-
 		return $this;
 	}
 
 
 	/**
-	 * reset property after run query
+	 * reset property after run a query
 	 *
 	 */
 	private function reset()

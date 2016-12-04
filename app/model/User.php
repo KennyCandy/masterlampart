@@ -28,7 +28,7 @@ class User extends BaseModel
 	 */
 	public function find_id($id)
 	{
-		return $this->select("id,username,email,fullname,birthday,address,sex,group_id")->where("id", $id)->first();
+		return $this->select()->where("id", $id)->first();
 	}
 
 	/**
