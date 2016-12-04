@@ -163,11 +163,16 @@ abstract class BaseModel
 	 */
 	public function select($params = '*')
 	{
-		$params        = explode(',', $params);
-		$this->_select = '`' . implode('`,`', $params) . '`';
-
+		if($params!=='*'){
+			$params        = explode(',', $params);
+			$this->_select = '`' . implode('`,`', $params) . '`';
+		}
+		else{
+			$this->_select='*';
+		}
 		return $this;
 	}
+
 
 	/**
 	 * store key and value in where
