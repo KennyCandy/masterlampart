@@ -62,6 +62,7 @@ class UserController extends Controller
 					redirect("/user/successful");
 				}
 			}
+			$_SESSION['captcha'] = simple_php_captcha();
 			$this->_view->load_view('registration', $data);
 		} catch (Exception $e) {
 			redirect('/user/home');

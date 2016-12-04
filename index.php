@@ -37,6 +37,25 @@ if ($app === null) {
 	$method     = $app['method'];
 	$args       = $app['args'];
 }
+require_once DIR_PATH . "/public/libs/simple-php-captcha/simple-php-captcha.php";
+$_SESSION['captcha'] = simple_php_captcha(
+//	[
+//		'min_length'      => 5,
+//		'max_length'      => 5,
+//		'backgrounds'     => ['captcha_bg.png'],
+//		'characters'      => 'ABCDEFGHJKLMNPRSTUVWXYZabcdefghjkmnprstuvwxyz23456789',
+//		'min_font_size'   => 28,
+//		'max_font_size'   => 28,
+//		'color'           => '#666',
+//		'angle_min'       => 0,
+//		'angle_max'       => 10,
+//		'shadow'          => true,
+//		'shadow_color'    => '#fff',
+//		'shadow_offset_x' => -1,
+//		'shadow_offset_y' => 1,
+//	]
+);
+
 
 // connect database and create CONNECTION_VAR to use global in BaseModel Class
 $CONNECTION_VAR = Database::connect_database();
