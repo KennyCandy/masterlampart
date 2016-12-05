@@ -16,7 +16,7 @@ Class HeaderService extends Service {
 	 */
 	public function load_data($id)
 	{
-		$data = array("error" => false);
+		$data = [   "error" => false];
 		try {
 			$user = new User();
 			$user_find = $user->find_id($id);
@@ -26,7 +26,7 @@ Class HeaderService extends Service {
 			}
 
 			$data["user"] = $user_find;
-			//$data["navbar"] = true;
+			// set $data["navbar"] = true; later
 		} catch (Exception $e) {
 			$data["error"] = true;
 		}

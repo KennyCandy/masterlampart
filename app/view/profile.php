@@ -1,6 +1,6 @@
 <div>
 	<?php if (isset($page)) : ?>
-        <p class="pull-left"><a href="user/home">Home::<?php echo $page; ?></a></p>
+        <p class="pull-left"><a href="/user/home">Home::<?php echo $page; ?></a></p>
 	<?php endif; ?>
     <p class="pull-right"><a href="#">Hello <?php echo isset($user) ? $user['fullname'] : ''; ?></a></p>
     <div class="clearfix"></div>

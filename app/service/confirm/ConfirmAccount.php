@@ -16,20 +16,23 @@ class ConfirmAccount extends Confirm
 	 * @return array
 	 */
 	public function confirm()
-    {   
-        $user = new User();
-        $token = new Token();
-        $user_info = $user->where("user_id", $this->_token['user_id'])->where('status', 1)->first();
+	{
+		$user  = new User();
+		$token = new Token();
+		// find user in database and check if it is activated or not
+		$user_info = $user->where("user_id", $this->_token['user_id'])->where('status', 1)->first();
 
-        if ($user_info) {
-            $token->where('user_id', $this->_token['id'])->where('type', "account")->update(array('status' => 1));
-            $result = array("status" =>false, "message" => "Account has been active");
-        } else {
-            $user->update_id($this->_token['user_id'], array('status' => 1));
-            $token->where('id', $this->_token['id'])->update(array('status' => 1));
-            $result = array("status" =>true, "message" => "Activate account successfully");
-        }
-        
-        return $result;
-    }
+		// if activated -> notify and set status =>false
+		if ($user_info) {
+			$token->where('user_id', $this->_token['id'])->where('type', "account")->update(['status' => 1]);
+			$result = ["status" => false, "message" => "Account has been active"];
+		} else {
+			// if not activated yet -> update and set status =>true
+			$user->update_id($this->_token['user_id'], ['status' => 1]);
+			$token->where('id', $this->_token['id'])->update(['status' => 1]);
+			$result = ["status" => true, "message" => "Activate account successfully"];
+		}
+
+		return $result;
+	}
 }

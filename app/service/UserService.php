@@ -120,7 +120,7 @@ class UserService extends Service
 					];
 					$token      = new Token;
 					if ($token->insert($data_token)) {
-						$to      = 'nguyenquoctrinhctt3@gmail.com';
+						$to      = $data['email'];
 						$subject = 'Active your account in masterlampart';
 						$message = "Click <a href='" . Env::APP_URL . "user/confirm/$token_code'>here</a>
  				                    to active your account in masterlampart \n ";
@@ -132,6 +132,7 @@ class UserService extends Service
 						}
 					}
 					$result['error'] = false;
+					//$result['email']=$data['email'];
 				} else {
 					$result['error']     = true;
 					$result['message'][] = 'Error when create a new user -- Not defined yet';
@@ -178,11 +179,11 @@ class UserService extends Service
 		return $result;
 	}
 
-	public function confirm($key)
+	public function confirm($token_code)
 	{
 		try {
 			$token      = new Token();
-			$token_info = $token->where('token', $key)->where('status', 0)->first();
+			$token_info = $token->where('token', $token_code)->where('status', 0)->first();
 			if (!$token_info) {
 				throw new Exception("Token does not exists");
 			}

@@ -13,7 +13,7 @@ use Config\Database;
 use Config\Route;
 use App\Core\Router;
 
-
+require_once DIR_PATH . "/public/libs/simple-php-captcha/simple-php-captcha.php";
 // init router
 $router = new Router();
 $route  = new Route($router);
@@ -37,22 +37,19 @@ if ($app === null) {
 	$method     = $app['method'];
 	$args       = $app['args'];
 }
-require_once DIR_PATH . "/public/libs/simple-php-captcha/simple-php-captcha.php";
-
-$NORENDER = 0;
 
 // connect database and create CONNECTION_VAR to use global in BaseModel Class
 $CONNECTION_VAR = Database::connect_database();
 
-// call controller and run
+// call controller in charged to run action and then to render the corresponding view
 if (class_exists($controller)) {
 	$controller_in_charged = new $controller();
 	if (count($args) == 0) {
 		$controller_in_charged->{$method}();
-		$controller_in_charged->show();
+		$controller_in_charged->render_page();
 	} else {
 		$controller_in_charged->{$method}($args);
-		$controller_in_charged->show();
+		$controller_in_charged->render_page();
 	}
 } else {
 	die("Error : Do not exist this controller!");

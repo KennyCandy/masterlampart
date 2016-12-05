@@ -17,7 +17,6 @@ abstract class Controller extends BaseController
 	public function __construct()
 	{
 		parent::__construct();
-		//check session
 		try {
 
 			if (!isset($_SESSION['user_id'])) {

@@ -10,6 +10,9 @@ use Exception;
  */
 class UserController extends Controller
 {
+	/**
+	 * UserController constructor.
+	 */
 	public function __construct()
 	{
 		parent::__construct();
@@ -58,6 +61,7 @@ class UserController extends Controller
 				];
 				$user_service = new UserService();
 				$data         = $user_service->registration($data);
+				//$this->_data['email'] = $data['email'];
 				if ($data["error"] == false) {
 					redirect("/user/successful");
 				}
@@ -80,7 +84,7 @@ class UserController extends Controller
 				throw new Exception("Error");
 			}
 			$data = $this->_data;
-			$this->_view->load_view('successful');
+			$this->_view->load_view('successful',$data);
 		} catch (Exception $e) {
 			redirect('/user/home');
 		}
@@ -151,7 +155,6 @@ class UserController extends Controller
 					$data['message'][] = $change_result["message"];
 				}
 			}
-
 			$this->_view->load_view('change-email', $data);
 		} catch (Exception $e) {
 			redirect();
@@ -200,9 +203,9 @@ class UserController extends Controller
 		}
 	}
 
+
 	/**
-	 * action logout
-	 *
+	 * logout
 	 */
 	public function logout()
 	{
@@ -260,17 +263,13 @@ class UserController extends Controller
 		}
 	}
 
+	/**
+	 * @return array
+	 */
 	public function refresh_captcha()
 	{
+		// refresh a new captcha
 		$_SESSION['captcha'] = simple_php_captcha();
-
-		$s = [
-			'code'      => $_SESSION['captcha']['code'],
-			'image_src' => $_SESSION['captcha']['image_src'],
-		];
-		//include('includes/json.php');
-		//$Json = new json('var', 'name');
-		return $s;
 	}
 
 	/**
@@ -286,14 +285,14 @@ class UserController extends Controller
 //			}
 			$data = $this->_data;
 			try {
-				$key = $params[0];
+				$token_code      = $params[0];
 
-				if (!validate($key, 'token')) {
+				if (!validate($token_code, 'token')) {
 					throw new Exception("Token is invalid");
 				}
 
 				$user_service   = new UserService;
-				$confirm_result = $user_service->confirm($key);
+				$confirm_result = $user_service->confirm($token_code);
 
 				if ($confirm_result["error"]) {
 					throw new Exception($confirm_result["message"]);

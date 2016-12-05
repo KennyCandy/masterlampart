@@ -115,12 +115,12 @@ $(document).ready(function () {
 
     $("#refresh-captcha").click(function () {
         jQuery.ajax({
-            type: "POST",
+            type: "GET",
             url: "http://masterlampart.me" + "/user/refreshcaptcha",
             success: function (res) {
                 if (res) {
-                    console.log(res);
-                    $("#captcha-image").attr("src",res['image_src']);
+                    $("#captcha-image").attr("src",$("#sessionOrigin").text());
+                    console.log("Refreshed new captcha");
                 }
             }
         });

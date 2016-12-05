@@ -32,6 +32,7 @@ function simple_php_captcha($config = array()) {
 //            $bg_path . 'white-wave.png'
             $bg_path . 'bg_01.png',
             $bg_path . 'bg_02.png',
+            $bg_path . 'bg_03.png',
         ),
         'fonts' => array(
             $font_path . 'times_new_yorker.ttf'

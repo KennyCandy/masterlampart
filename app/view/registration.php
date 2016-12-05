@@ -254,6 +254,7 @@
 								<div class="col-md-9 col-sm-9">
 									<!--<img id="capcha-image" src="/public/libs/capcha/capcha.php"/>-->
 <!--									<img id="capcha-image" src="/public/images/captcha-ex.png"/>-->
+                                    <p id="sessionOrigin" class=""><?php echo $_SESSION['captcha']['image_src'];?></p>
 									<img id="captcha-image" src="<?php echo $_SESSION['captcha']['image_src'] ?>"/>
 								</div>
 							</div>
@@ -269,6 +270,7 @@
 								<div class="col-md-1">
 									<a id="refresh-captcha" class="btn btn-info"><i
 											class="glyphicon glyphicon-repeat"></i></a>
+<!--                                    <button id="refresh-captcha">sdasdas</button>-->
 								</div>
 							</div>
 							<div class="form-group">

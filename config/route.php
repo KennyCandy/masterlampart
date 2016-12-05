@@ -41,7 +41,7 @@ class Route
 		$this->_route->get("/user/confirm/{:any}", "UserController@confirm");
 		$this->_route->any("/user/profile/{:id}", "UserController@profile");
 		$this->_route->get("/user/manage", "UserController@manage");
-		$this->_route->post("/user/refreshcaptcha", "UserController@refresh_captcha");
+		$this->_route->get("/user/refreshcaptcha", "UserController@refresh_captcha");
 		$this->_route->get("/user/confirm/{:any}", "UserController@confirm");
 	}
 }
