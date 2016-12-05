@@ -351,6 +351,7 @@ return array(
     'PHP_Token_STRING' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_STRING_CAST' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_STRING_VARNAME' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+    'PHP_Token_SUPER' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_SWITCH' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_Stream' => $vendorDir . '/phpunit/php-token-stream/src/Token/Stream.php',
     'PHP_Token_Stream_CachingFactory' => $vendorDir . '/phpunit/php-token-stream/src/Token/Stream/CachingFactory.php',
@@ -365,6 +366,7 @@ return array(
     'PHP_Token_UNSET' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_UNSET_CAST' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_USE' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+    'PHP_Token_USE_FUNCTION' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_VAR' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_VARIABLE' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_WHERE' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
@@ -461,5 +463,5 @@ return array(
     'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => $vendorDir . '/sebastian/recursion-context/src/InvalidArgumentException.php',
     'SebastianBergmann\\ResourceOperations\\ResourceOperations' => $vendorDir . '/sebastian/resource-operations/src/ResourceOperations.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
-    'Text_Template' => $vendorDir . '/phpunit/php-text-layout/src/Template.php',
+    'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
 );

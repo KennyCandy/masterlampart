@@ -94,7 +94,7 @@ gulp.task('clean', function (cb) {
 /**
  * Run specs once and exit
  * To start servers and run midway specs as well:
- *    gulp test --startServers
+ *    gulp tests --startServers
  * @return {Stream}
  */
 gulp.task('test', function (done) {
