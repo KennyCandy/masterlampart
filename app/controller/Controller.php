@@ -12,8 +12,14 @@ use \Exception;
  */
 abstract class Controller extends BaseController
 {
+	/**
+	 * @var array
+	 */
 	protected $_data = [];
 
+	/**
+	 * Controller constructor.
+	 */
 	public function __construct()
 	{
 		parent::__construct();

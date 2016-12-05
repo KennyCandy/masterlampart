@@ -10,6 +10,21 @@ use \PDO;
  */
 abstract class BaseModel
 {
+	/**
+	 * @return null|string
+	 */
+	public function getTable()
+	{
+		return $this->_table;
+	}
+
+	/**
+	 * @param null|string $table
+	 */
+	public function setTable($table)
+	{
+		$this->_table = $table;
+	}
 	/** @var string|null $_table set table in database */
 	protected $_table;
 

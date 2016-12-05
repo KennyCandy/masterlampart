@@ -24,8 +24,6 @@ class WelcomeController extends Controller
 		if (!isset($data['error'])) {
 			redirect('/user/home');
 		}
-
-
 		$this->_view->load_view('welcome');
 	}
 
