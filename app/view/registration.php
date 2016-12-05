@@ -30,7 +30,7 @@
 								<div class="col-md-9 col-sm-9">
 									<input type="text" class="form-control" name="fullname"
 									       placeholder="Enter your Name here (4-30 chars)"
-									       value="<?php echo isset($fullname) ? $fullname : '' ?>">
+									       value="<?php echo isset($_POST['fullname']) ? $_POST['fullname'] : '' ?>">
 								</div>
 							</div>
 							<div class="form-group">
@@ -39,7 +39,7 @@
 								<div class="col-md-9 col-sm-9">
 									<input type="text" class="form-control" name="username"
 									       placeholder="Enter your Username here (4-30 chars)"
-									       value="<?php echo isset($username) ? $username : '' ?>">
+									       value="<?php echo isset($_POST['username']) ? $_POST['username'] : '' ?>">
 								</div>
 							</div>
 							<div class="form-group">
@@ -51,7 +51,7 @@
 												class="glyphicon glyphicon-envelope"></i></span>
 										<input type="email" class="form-control" name="email"
 										       placeholder="Enter your Email ID"
-										       value="<?php echo isset($email) ? $email : '' ?>">
+										       value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>">
 									</div>
 								</div>
 							</div>
@@ -85,7 +85,7 @@
 								<div class="col-md-9 col-sm-9">
 									<input type="text" class="form-control" name="address"
 									       placeholder="Enter your Address here"
-									       value="<?php echo isset($address) ? $address : '' ?>">
+									       value="<?php echo isset($_POST['address']) ? $_POST['address'] : '' ?>">
 								</div>
 							</div>
 							<div class="form-group">
@@ -253,8 +253,8 @@
 										class="text-danger">*</span></label>
 								<div class="col-md-9 col-sm-9">
 									<!--<img id="capcha-image" src="/public/libs/capcha/capcha.php"/>-->
-<!--									<img id="capcha-image" src="/public/images/captcha-ex.png"/>-->
-                                    <p id="sessionOrigin" class=""><?php echo $_SESSION['captcha']['image_src'];?></p>
+									<!--									<img id="capcha-image" src="/public/images/captcha-ex.png"/>-->
+									<p id="sessionOrigin" class=""><?php echo $_SESSION['captcha']['image_src']; ?></p>
 									<img id="captcha-image" src="<?php echo $_SESSION['captcha']['image_src'] ?>"/>
 								</div>
 							</div>
@@ -264,13 +264,13 @@
 								<div class="col-md-8 col-sm-8">
 									<input type="text" class="form-control" name="code"
 									       placeholder="Enter the captcha here"
-									       value="">
+									       value="<?php echo isset($_POST['code']) ? $_POST['code'] : '' ?>">
 								</div>
 
 								<div class="col-md-1">
 									<a id="refresh-captcha" class="btn btn-info"><i
 											class="glyphicon glyphicon-repeat"></i></a>
-<!--                                    <button id="refresh-captcha">sdasdas</button>-->
+									<!--                                    <button id="refresh-captcha">sdasdas</button>-->
 								</div>
 							</div>
 							<div class="form-group">
