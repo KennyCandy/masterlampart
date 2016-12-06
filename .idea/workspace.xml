@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6225378-c09d-4437-8d84-8e17ad8f9994" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/masterlampart.iml" afterPath="$PROJECT_DIR$/.idea/masterlampart.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/UserController.php" afterPath="$PROJECT_DIR$/app/controller/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/service/UserService.php" afterPath="$PROJECT_DIR$/app/service/UserService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/profile.php" afterPath="$PROJECT_DIR$/app/view/profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/registration.php" afterPath="$PROJECT_DIR$/app/view/registration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helper/common_helper.php" afterPath="$PROJECT_DIR$/helper/common_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-    </list>
+    <list default="true" id="b6225378-c09d-4437-8d84-8e17ad8f9994" name="Default" comment="" />
     <ignored path="masterlampart.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -46,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="350">
-              <caret line="26" column="48" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+              <caret line="26" column="71" lean-forward="true" selection-start-line="26" selection-start-column="71" selection-end-line="26" selection-end-column="71" />
               <folding>
                 <element signature="e#199#219#0#PHP" expanded="true" />
               </folding>
@@ -618,7 +610,7 @@
       <workItem from="1480892988355" duration="126000" />
       <workItem from="1480899418990" duration="26835000" />
       <workItem from="1480949227028" duration="310000" />
-      <workItem from="1480988196113" duration="2872000" />
+      <workItem from="1480988196113" duration="3088000" />
     </task>
     <servers />
   </component>
@@ -655,7 +647,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132794000" />
+    <option name="totallyTimeSpent" value="133010000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1154,7 +1146,7 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
-          <caret line="26" column="48" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+          <caret line="26" column="71" lean-forward="true" selection-start-line="26" selection-start-column="71" selection-end-line="26" selection-end-column="71" />
           <folding>
             <element signature="e#199#219#0#PHP" expanded="true" />
           </folding>
