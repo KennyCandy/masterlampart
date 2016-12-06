@@ -36,7 +36,7 @@
 							?>
                             <div class="form-group">
                                 <label class="control-label col-sm-3">Full Name
-                                    <span class="text-danger">*</span></label>
+                                    <span class="text-danger edit-hide hide">*</span></label>
                                 <div class="col-md-9 col-sm-9">
                                     <span class="edit-show"><?php echo $user['fullname']; ?></span>
                                     <input type="text" class="form-control edit-hide hide" name="fullname"
@@ -46,21 +46,21 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-3">Username <span
-                                            class="text-danger">*</span></label>
+                                            class="text-danger edit-hide hide">*</span></label>
                                 <div class="col-md-9 col-sm-9">
 									<?php echo $user['username']; ?>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-3">Email<span
-                                            class="text-danger">*</span></label>
+                                            class="text-danger edit-hide hide">*</span></label>
                                 <div class="col-md-9 col-sm-9">
 									<?php echo $user['email']; ?>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-3">Address <span
-                                            class="text-danger">*</span></label>
+                                            class="text-danger edit-hide hide">*</span></label>
                                 <div class="col-md-9 col-sm-9">
                                     <span class="edit-show"><?php echo $user['address']; ?></span>
                                     <input class="form-control edit-hide hide" name="address"
@@ -69,7 +69,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-3">Sex <span
-                                            class="text-danger">*</span></label>
+                                            class="text-danger edit-hide hide">*</span></label>
                                 <div class="col-md-9 col-sm-9">
                                     <span class="edit-show"><?php echo ($user['sex'] == 1) ? 'Male' : 'Female'; ?></span>
                                     <div class="edit-hide hide">
@@ -82,7 +82,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-3">Birthday <span
-                                            class="text-danger">*</span></label>
+                                            class="text-danger edit-hide hide">*</span></label>
                                 <div class="col-md-9 col-sm-9">
                                     <span class="edit-show"><?php echo $user['birthday']; ?></span>
                                     <div class="edit-hide hide">

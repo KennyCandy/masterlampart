@@ -29,116 +29,8 @@ class UserService extends Service
 		$result['error']   = false;
 		$result['message'] = [];
 
-		if (!validate($data['fullname'], 'fullname')) {
-			$result['error']     = true;
-			$result['message'][] = 'Fullname contains a-Z and letters, length : 4-30';
-		}
-
-		if (!validate($data['username'], 'username')) {
-			$result['error']     = true;
-			$result['message'][] = 'Username contains a-Z0-9 and underscore, length : 4-30';
-		}
-
-		if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-			$result['error']     = true;
-			$result['message'][] = 'Email invalid';
-		}
-
-		if (!validate($data['password'], 'password')) {
-			$result['error']     = true;
-			$result['message'][] = 'Password contains a-Z0-9, special characters follow: @#$%!, length : 3-20';
-		}
-
-		if ($data['password'] != $data['re_password']) {
-			$result['error']     = true;
-			$result['message'][] = 'Re-password invalid';
-		}
-
-		if ($data['password'] == $data['username']) {
-			$result['error']     = true;
-			$result['message'][] = 'Username and password must different';
-		}
-
-		if (strlen($data['address']) == 0) {
-			$result['error']     = true;
-			$result['message'][] = 'Address is required';
-		}
-
-		if ($data['code'] != $_SESSION['captcha']['code']) {
-			$result['error'] = true;
-			$result['message'][] = 'Security code is invalid';
-		}
-
-		if (!(($data['sex'] == 1) || ($data['sex'] == 2))) {
-			$result['error']     = true;
-			$result['message'][] = 'Sex invalid';
-		}
-
-		if (!(checkdate(explode('-', $data['birthday'])[1], explode('-', $data['birthday'])[2],
-				explode('-', $data['birthday'])[0]) && (strtotime($data['birthday']) < time()))
-		) {
-			$result['error']     = true;
-			$result['message'][] = 'Birthday invalid';
-		}
-
-		if ($result['error'] == false) {
-			$user = new User;
-
-			// check duplicate username
-			$username_check = $user->where('username', $data['username'])->first();
-			if ($username_check) {
-				$result['error']     = true;
-				$result['message'][] = 'Username is existed';
-			}
-
-			// check duplicate email
-			$email_check = $user->where('email', $data['email'])->first();
-
-			if ($email_check) {
-				$result['error']     = true;
-				$result['message'][] = 'Email is existed';
-			}
-			// If there is no any errors -> create
-			if ($result['error'] == false) {
-				unset($result['error']);
-				unset($result['message']);
-				unset($data['re_password']);
-				unset($data['code']);
-				$data['password'] = md5($data['password']);
-
-				//insert
-				if ($user->insert($data)) {
-					$current_user = $user->get_insert();
-
-					//create token
-					$token_code = md5(time());
-					$data_token = [
-						'user_id' => $current_user['id'],
-						'token'   => $token_code,
-						'type'    => "account",
-						'status'  => 0,
-					];
-					$token      = new Token;
-					if ($token->insert($data_token)) {
-						$to      = $data['email'];
-						$subject = 'Active your account in masterlampart';
-						$message = "Click <a href='" . Env::APP_URL . "user/confirm/$token_code'>here</a>
- 				                    to active your account in masterlampart \n ";
-						$headers = get_mail_header();
-
-						$res = mail($to, $subject, $message, $headers);
-						if (!$res) {
-							throw new Exception("Mail is not sent yet or not accepted");
-						}
-					}
-					$result['error'] = false;
-					//$result['email']=$data['email'];
-				} else {
-					$result['error']     = true;
-					$result['message'][] = 'Error when create a new user -- Not defined yet';
-				}
-			}
-		}
+		$result = $this->validate_data_before_call_db($data, $result);
+		$result = $this->insert_and_send_mail_activate_acc($data, $result);
 
 		return $result;
 	}
@@ -154,7 +46,7 @@ class UserService extends Service
 		try {
 			//validate
 			if (!(validate($data['username'], 'username') && validate($data['password'], 'password'))) {
-				throw new Exception("Username or password invalid");
+				throw new Exception("Username or password is invalid");
 			}
 
 			//check user exist
@@ -162,13 +54,13 @@ class UserService extends Service
 			$user = $user->login($data['username'], $data['password']);
 
 			if (!$user) {
-				throw new Exception("Username or password invalid");
+				throw new Exception("Username or password is invalid");
 			}
 
 			// check active status
-//			if ($user['status'] == 0) {
-//				 throw new Exception("Please active account before login");
-//			}
+			if ($user['status'] == 0) {
+				throw new Exception("Please active account before login");
+			}
 
 			$result = ["error" => false, "user" => $user];
 		} catch (Exception $e) {
@@ -211,41 +103,8 @@ class UserService extends Service
 
 	public function change_profile($id, $params = [])
 	{
-		$result = $params;
-		$error  = false;
-		// validate
-		if (!validate($params['fullname'], 'fullname')) {
-			$error               = true;
-			$result['message'][] = 'Fullname contains a-Z and letters, length : 4-30';
-		}
-		if (!validate($params['address'], 'address')) {
-			$error               = true;
-			$result['message'][] = 'Address is required';
-		}
-		if (!validate($params['sex'], 'sex')) {
-			$error               = true;
-			$result['message'][] = 'Sex is invalid';
-		}
-
-		// from yy-mm-dd to mm-dd-yy
-		if (!(checkdate(explode('-', $params['birthday'])[1], explode('-', $params['birthday'])[2], explode('-', $params['birthday'])[0]) && (strtotime($params['birthday']) < time()))) {
-			$error               = true;
-			$result['message'][] = 'Birthday is invalid';
-			$result['message'][] = 'Birthday is invalid';
-		}
-		// update user
-		if (!$error) {
-			$user = new User();
-			if ($user->update_id($id, $params)) {
-				$result          = $params;
-				$result['error'] = false;
-			} else {
-				$result['error']     = false;
-				$result['message'][] = '(Error)- Please check you data again.';
-			}
-		} else {
-			$result['error'] = true;
-		}
+		list($result, $error) = $this->validate_change_profile($params);
+		$result = $this->update_user_change_profile($id, $params, $error, $result);
 
 		return $result;
 	}
@@ -265,7 +124,7 @@ class UserService extends Service
 				throw new Exception("Password a-Z0-9, special characters !@#$%, length 3-20");
 			}
 			if ($new_password != $confirm_password) {
-				throw new Exception("Confirm password invalid");
+				throw new Exception("Confirm password is invalid");
 			}
 			if ($password == $new_password) {
 				throw new Exception("New password is current password");
@@ -318,38 +177,259 @@ class UserService extends Service
 			if ($result) {
 				throw  new Exception("The request is existed");
 			}
-
-			// if not, then create a new token
-			$token_code = md5(time() . Env::SECRET_TOKEN);
-			$data_token = [
-				'token'   => $token_code,
-				'user_id' => $id,
-				'content' => $email,
-				'type'    => "email",
-				'status'  => 0,
-			];
-			$result     = $token->insert($data_token);
-			if (!$result) {
-				throw new Exception("Update email failed (Can not insert token)");
-			}
-
-			$to      = $old_email;
-			$subject = 'Change your email in masterlampart';
-			$message = "Click <a href='" . Env::APP_URL . "user/confirm/$token_code'>here</a>
- 				to agree to change email for $email \n ";
-			$headers = get_mail_header();
-
-			$res = mail($to, $subject, $message, $headers);
-			if (!$res) {
-				throw new Exception("Mail is not sent yet or not accepted");
-			}
-
-			$result = ["error" => false];
-
+			$result = $this->send_mail_change_email($id, $email, $token, $old_email);
 		} catch (Exception $e) {
 			$result = ["error" => true, "message" => $e->getMessage()];
 		}
 
 		return $result;
+	}
+
+	/**
+	 * @param $data
+	 * @param $result
+	 *
+	 * @return mixed
+	 */
+	public function validate_data_before_call_db($data, $result)
+	{
+		if (!validate($data['fullname'], 'fullname')) {
+			$result['error']     = true;
+			$result['message'][] = 'Fullname contains a-Z and letters, length : 4-30';
+		}
+
+		if (!validate($data['username'], 'username')) {
+			$result['error']     = true;
+			$result['message'][] = 'Username contains a-Z0-9 and underscore, length : 4-30';
+		}
+
+		if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+			$result['error']     = true;
+			$result['message'][] = 'Email invalid';
+		}
+
+		if (!validate($data['password'], 'password')) {
+			$result['error']     = true;
+			$result['message'][] = 'Password contains a-Z0-9, special characters follow: @#$%!, length : 3-20';
+		}
+
+		if ($data['password'] != $data['re_password']) {
+			$result['error']     = true;
+			$result['message'][] = 'Re-password invalid';
+		}
+
+		if ($data['password'] == $data['username']) {
+			$result['error']     = true;
+			$result['message'][] = 'Username and password must different';
+		}
+
+		if (strlen($data['address']) == 0) {
+			$result['error']     = true;
+			$result['message'][] = 'Address is required';
+		}
+
+		if ($data['code'] != $_SESSION['captcha']['code']) {
+			$result['error']     = true;
+			$result['message'][] = 'Security code is invalid';
+		}
+
+		if (!(($data['sex'] == 1) || ($data['sex'] == 2))) {
+			$result['error']     = true;
+			$result['message'][] = 'Sex invalid';
+		}
+
+		if (!(checkdate(explode('-', $data['birthday'])[1], explode('-', $data['birthday'])[2],
+				explode('-', $data['birthday'])[0]) && (strtotime($data['birthday']) < time()))
+		) {
+			$result['error']     = true;
+			$result['message'][] = 'Birthday invalid';
+
+			return $result;
+		}
+
+		return $result;
+	}
+
+	/**
+	 * @param $data
+	 * @param $result
+	 *
+	 * @return mixed
+	 * @throws Exception
+	 */
+	public function insert_and_send_mail_activate_acc($data, $result)
+	{
+		if ($result['error'] == false) {
+			$user = new User;
+
+			// check duplicate username
+			$username_check = $user->where('username', $data['username'])->first();
+			if ($username_check) {
+				$result['error']     = true;
+				$result['message'][] = 'Username is existed';
+			}
+
+			// check duplicate email
+			$email_check = $user->where('email', $data['email'])->first();
+
+			if ($email_check) {
+				$result['error']     = true;
+				$result['message'][] = 'Email is existed';
+			}
+			// If there is no any errors -> create
+			if ($result['error'] == false) {
+				unset($result['error']);
+				unset($result['message']);
+				unset($data['re_password']);
+				unset($data['code']);
+				$data['password'] = md5($data['password']);
+
+				//insert
+				if ($user->insert($data)) {
+					$current_user = $user->get_insert();
+
+					//create token
+					$token_code = md5(time());
+					$data_token = [
+						'user_id' => $current_user['id'],
+						'token'   => $token_code,
+						'type'    => "account",
+						'status'  => 0,
+					];
+					$token      = new Token;
+					if ($token->insert($data_token)) {
+						$to      = $data['email'];
+						$subject = 'Active your account in masterlampart';
+						$message = "Click <a href='" . Env::APP_URL . "user/confirm/$token_code'>here</a>
+ 				                    to active your account in masterlampart \n ";
+						$headers = get_mail_header();
+
+						$res = mail($to, $subject, $message, $headers);
+						if (!$res) {
+							throw new Exception("Mail is not sent yet or not accepted");
+						}
+					}
+					$result['error'] = false;
+
+					return $result;
+				} else {
+					$result['error']     = true;
+					$result['message'][] = 'Error when create a new user -- Not defined yet';
+
+					return $result;
+				}
+			}
+
+			return $result;
+		}
+
+		return $result;
+	}
+
+	/**
+	 * @param $params
+	 *
+	 * @return array
+	 */
+	public function validate_change_profile($params)
+	{
+		$result = $params;
+		$error  = false;
+		// validate
+		if (!validate($params['fullname'], 'fullname')) {
+			$error               = true;
+			$result['message'][] = 'Fullname contains a-Z and letters, length : 4-30';
+		}
+		if (!validate($params['address'], 'address')) {
+			$error               = true;
+			$result['message'][] = 'Address is required';
+		}
+		if (!validate($params['sex'], 'sex')) {
+			$error               = true;
+			$result['message'][] = 'Sex is invalid';
+		}
+
+		// from yy-mm-dd to mm-dd-yy
+		if (!(checkdate(explode('-', $params['birthday'])[1], explode('-', $params['birthday'])[2], explode('-', $params['birthday'])[0]) && (strtotime($params['birthday']) < time()))) {
+			$error               = true;
+			$result['message'][] = 'Birthday is invalid';
+			$result['message'][] = 'Birthday is invalid';
+
+			return [$result, $error];
+		}
+
+		return [$result, $error];
+	}
+
+	/**
+	 * @param $id
+	 * @param $email
+	 * @param $token
+	 * @param $old_email
+	 *
+	 * @return array
+	 * @throws Exception
+	 */
+	public function send_mail_change_email($id, $email, $token, $old_email)
+	{
+		// if not, then create a new token
+		$token_code = md5(time() . Env::SECRET_TOKEN);
+		$data_token = [
+			'token'   => $token_code,
+			'user_id' => $id,
+			'content' => $email,
+			'type'    => "email",
+			'status'  => 0,
+		];
+		$result     = $token->insert($data_token);
+		if (!$result) {
+			throw new Exception("Update email failed (Can not insert token)");
+		}
+
+		$to      = $old_email;
+		$subject = 'Change your email in masterlampart';
+		$message = "Click <a href='" . Env::APP_URL . "user/confirm/$token_code'>here</a>
+ 				to agree to change email for $email \n ";
+		$headers = get_mail_header();
+
+		$res = mail($to, $subject, $message, $headers);
+		if (!$res) {
+			throw new Exception("Mail is not sent yet or not accepted");
+		}
+
+		$result = ["error" => false];
+
+		return $result;
+	}
+
+	/**
+	 * @param $id
+	 * @param $params
+	 * @param $error
+	 * @param $result
+	 *
+	 * @return mixed
+	 */
+	public function update_user_change_profile($id, $params, $error, $result)
+	{
+		// update user
+		if (!$error) {
+			$user = new User();
+			if ($user->update_id($id, $params)) {
+				$result          = $params;
+				$result['error'] = false;
+
+				return $result;
+			} else {
+				$result['error']     = false;
+				$result['message'][] = '(Error)- Please check you data again.';
+
+				return $result;
+			}
+		} else {
+			$result['error'] = true;
+
+			return $result;
+		}
 	}
 }

@@ -13,7 +13,6 @@ use Config\Database;
 use Config\Route;
 use App\Core\Router;
 
-require_once DIR_PATH . "/public/libs/simple-php-captcha/simple-php-captcha.php";
 // init router
 $router = new Router();
 $route  = new Route($router);
@@ -25,19 +24,7 @@ $router = $route->getRoute();
 if (strpos($_SERVER['REQUEST_URI'], 'XDEBUG_SESSION_START') !== false) {
 	$_SERVER['REQUEST_URI'] = '/';
 }
-
-// create a app by checking the route if it is matched.
-$app = $router->match($_SERVER);
-if ($app === null) {
-	$controller = "App\\Controller\\WelcomeController";
-	$method     = "error_404";
-	$args       = [];
-} else {
-	$controller = "App\\Controller\\" . $app['controller'];
-	$method     = $app['method'];
-	$args       = $app['args'];
-}
-
+list($controller, $action, $args) = get_controller_in_charged($router);
 // connect database and create CONNECTION_VAR to use global in BaseModel Class
 $CONNECTION_VAR = Database::connect_database();
 
@@ -45,10 +32,10 @@ $CONNECTION_VAR = Database::connect_database();
 if (class_exists($controller)) {
 	$controller_in_charged = new $controller();
 	if (count($args) == 0) {
-		$controller_in_charged->{$method}();
+		$controller_in_charged->{$action}();
 		$controller_in_charged->render_page();
 	} else {
-		$controller_in_charged->{$method}($args);
+		$controller_in_charged->{$action}($args);
 		$controller_in_charged->render_page();
 	}
 } else {

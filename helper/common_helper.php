@@ -79,5 +79,27 @@ function get_mail_header()
 
 	return $headers;
 }
+/**
+ * @param $router
+ *
+ * @return array
+ */
+function get_controller_in_charged($router)
+{
+// create a app by checking the route if it is matched.
+	$app = $router->match($_SERVER);
+	if ($app === null) {
+		$controller = "App\\Controller\\WelcomeController";
+		$action     = "error_404";
+		$args       = [];
 
+		return [$controller, $action, $args];
+	} else {
+		$controller = "App\\Controller\\" . $app['controller'];
+		$action     = $app['method'];
+		$args       = $app['args'];
+
+		return [$controller, $action, $args];
+	}
+}
 

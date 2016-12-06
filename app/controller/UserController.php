@@ -1,12 +1,16 @@
 <?php
+
 namespace App\Controller;
+require_once DIR_PATH . "/public/libs/simple-php-captcha/simple-php-captcha.php";
 
 use App\Model\User;
 use App\Service\UserService;
 use Exception;
 
+
 /**
- * This is a class UserController
+ * Class UserController
+ * @package App\Controller
  */
 class UserController extends Controller
 {
