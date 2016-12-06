@@ -20,6 +20,7 @@ class Env
 	const SECRET_TOKEN = 'TrinhDepTraiTuyetVoi';
 	const SENT_EMAIL_ACC = 'harveynashtms@gmail.com';
 	const SENT_EMAIL_PASS = 'TrinhDepTrai';
+	const EXPIRE_TIME = 120;// in seconds
 
 	public static function env($key, $default = null)
 	{

@@ -170,14 +170,8 @@ class UserService extends Service
 			if ($result) {
 				throw new Exception("Email is existed");
 			}
-			// Check whether request is exist or not
-			$token  = new Token();
-			$result = $token->where('content', $email)->where("user_id", $id)
-				->where("status", 0)->first();
-			if ($result) {
-				throw  new Exception("The request is existed");
-			}
-			$result = $this->send_mail_change_email($id, $email, $token, $old_email);
+
+			$result = $this->send_mail_change_email($id, $email, $old_email);
 		} catch (Exception $e) {
 			$result = ["error" => true, "message" => $e->getMessage()];
 		}
@@ -370,16 +364,33 @@ class UserService extends Service
 	 * @return array
 	 * @throws Exception
 	 */
-	public function send_mail_change_email($id, $email, $token, $old_email)
+	public function send_mail_change_email($id, $email, $old_email)
 	{
+		// Check whether request is exist or not
+		$token = new Token();
+
+//		$token_info = $token->where('content', $email)->where("user_id", $id)
+//			->where("status", 0)->first();
+
+		$result = $token->where('type', 'email')->where("user_id", $id)
+			->where("status", 0)->first();
+
+		if ($result) {
+			if ($result['expire_date'] > time()) {
+				throw  new Exception("The request is existed");
+			}
+		}
 		// if not, then create a new token
 		$token_code = md5(time() . Env::SECRET_TOKEN);
+
 		$data_token = [
-			'token'   => $token_code,
-			'user_id' => $id,
-			'content' => $email,
-			'type'    => "email",
-			'status'  => 0,
+			'token'        => $token_code,
+			'user_id'      => $id,
+			'content'      => $email,
+			'type'         => "email",
+			'status'       => 0,
+			'created_date' => time(),
+			'expire_date'  => time() + Env::EXPIRE_TIME,
 		];
 		$result     = $token->insert($data_token);
 		if (!$result) {
@@ -388,8 +399,12 @@ class UserService extends Service
 
 		$to      = $old_email;
 		$subject = 'Change your email in masterlampart';
-		$message = "Click <a href='" . Env::APP_URL . "user/confirm/$token_code'>here</a>
- 				to agree to change email for $email \n ";
+		$message = "Click <a href='" . Env::APP_URL .
+			"user/confirm/$token_code'>here</a>
+ 				to agree to change email for $email \n " .
+			" If you want to change to another email, please send it after: " .
+			Env::EXPIRE_TIME .
+			" seconds";
 		$headers = get_mail_header();
 
 		$res = mail($to, $subject, $message, $headers);

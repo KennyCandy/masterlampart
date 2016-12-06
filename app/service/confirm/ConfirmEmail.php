@@ -27,11 +27,17 @@ class ConfirmEmail extends Confirm
 		if ($user_info) {
 			$result = ["status" => false, "message" => "Email is existed"];
 		} else {
-			$user->update_id($this->_token['user_id'], ['email' => $this->_token['content']]);
-			$token = new Token();
-			// update status(0->1) in token is used.
-			$token->where('user_id', $this->_token['user_id'])->where('status', 0)->update(['status' => 1]);
-			$result = ["status" => true, "message" => "Changed email successfully!"];
+			$token      = new Token();
+			$token_info = $token->where('user_id', $this->_token['user_id'])->where('status', 0)->first();
+			if ($token_info['expire_date'] < time()) {
+				$result = ["status" => false, "message" => "Token is expired"];
+			} else {
+				$user->update_id($this->_token['user_id'], ['email' => $this->_token['content']]);
+
+				// update status(0->1) in token is used.
+				$token->where('user_id', $this->_token['user_id'])->where('status', 0)->update(['status' => 1]);
+				$result = ["status" => true, "message" => "Changed email successfully!"];
+			}
 		}
 
 		return $result;
