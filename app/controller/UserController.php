@@ -52,7 +52,7 @@ class UserController extends Controller
 			$data = [];
 
 			if (isset($_POST['fullname'])) {
-				$data         = [
+				$data = [
 					'code'        => htmlspecialchars($_POST['code']),
 					'fullname'    => trim(htmlspecialchars($_POST['fullname'])),
 					'username'    => htmlspecialchars($_POST['username']),
@@ -63,6 +63,7 @@ class UserController extends Controller
 					'sex'         => $_POST['sex'],
 					'birthday'    => $_POST['birthday'],
 				];
+				//init services UserService
 				$user_service = new UserService();
 				$data         = $user_service->registration($data);
 				//$this->_data['email'] = $data['email'];
@@ -88,7 +89,7 @@ class UserController extends Controller
 				throw new Exception("Error");
 			}
 			$data = $this->_data;
-			$this->_view->load_view('successful',$data);
+			$this->_view->load_view('successful', $data);
 		} catch (Exception $e) {
 			redirect('/user/home');
 		}
@@ -107,7 +108,6 @@ class UserController extends Controller
 			$data = [];
 
 			if (isset($_POST['username'])) {
-
 				$user_service = new UserService();
 				$user_info    = [
 					"username" => htmlspecialchars($_POST['username']),
@@ -115,7 +115,6 @@ class UserController extends Controller
 				];
 				$data         = $user_service->login($user_info);
 				if ($data["error"] == false) {
-
 					$_SESSION['user_id'] = $data["user"]["id"];
 					$GLOBALS['user_id']  = $data["user"]["id"];
 					echo("<script>console.log('PHP: " . 'user_id is set' . "');</script>");
@@ -123,7 +122,6 @@ class UserController extends Controller
 				}
 			}
 			$this->_view->load_view('login', $data);
-
 		} catch (Exception $e) {
 			echo("<script>console.log('PHP: " . 'fail' . "');</script>");
 			redirect('/user/home');
@@ -221,20 +219,24 @@ class UserController extends Controller
 	 * action profile
 	 *
 	 * @param array $params
+	 *
+	 * @throws Exception
 	 */
 	public function profile($params = [])
 	{
+		if (!isset($_SESSION['user_id'])) {
+			throw new Exception("Error");
+		}
+//		if ($_SESSION['user_id']!==$this->_data['id']) {
+//			throw new Exception("Error- out of session");
+//		}
 		$userModal    = new User();
 		$user         = $userModal->find_id($params[0]);
 		$data['user'] = $user;
 		// if edit_status = true is edit mode, if false is view mode
 		$data['edit_status'] = false;
 		if (!isset($_SESSION['user_id'])) {
-			//redirect();
-			echo '<pre>';
-			print_r('user_id is not found');
-			echo '</pre>';
-			die();
+			redirect();
 		} else {
 
 			if (isset($_POST['fullname'])) {
@@ -289,7 +291,7 @@ class UserController extends Controller
 //			}
 			$data = $this->_data;
 			try {
-				$token_code      = $params[0];
+				$token_code = $params[0];
 
 				if (!validate($token_code, 'token')) {
 					throw new Exception("Token is invalid");

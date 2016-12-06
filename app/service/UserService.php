@@ -103,6 +103,7 @@ class UserService extends Service
 
 	public function change_profile($id, $params = [])
 	{
+
 		list($result, $error) = $this->validate_change_profile($params);
 		$result = $this->update_user_change_profile($id, $params, $error, $result);
 
