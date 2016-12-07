@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+    <database name="testlampart">
+        <table_data name="user">
+            <!-- Table user -->
+            <row name="user">
+                <field name="id">1</field>
+                <field name="username">trinhnguyen</field>
+                <field name="password">123123</field>
+                <field name="fullname">trinh nguyen quoc</field>
+                <field name="sex">1</field>
+                <field name="birthday">1992-02-12</field>
+                <field name="address">160 Nguyen Van Quy Quan 7</field>
+                <field name="email">1</field>
+                <field name="status">1</field>
+                <field name="group_id">1</field>
+            </row>
+            <row name="user">
+                <field name="id">2</field>
+                <field name="username">sonvi</field>
+                <field name="password">123123</field>
+                <field name="fullname">son vi hoang</field>
+                <field name="sex">1</field>
+                <field name="birthday">1991-01-12</field>
+                <field name="address">120 Phu Nhuan</field>
+                <field name="email">visan@gmail.com</field>
+                <field name="status">1</field>
+                <field name="group_id">1</field>
+            </row>
+            <row name="user">
+                <field name="id">3</field>
+                <field name="username">brice2</field>
+                <field name="password">R3QSJyO</field>
+                <field name="fullname">Bobby Rice</field>
+                <field name="sex">1</field>
+                <field name="birthday">1981-07-17</field>
+                <field name="address">5 Buhler Way</field>
+                <field name="email">brice2@sun.com</field>
+                <field name="status">0</field>
+                <field name="group_id">1</field>
+            </row>
+            <row name="user">
+                <field name="id">101</field>
+                <field name="username">trinhtrinh</field>
+                <field name="password">19d40526d4f412f467b7e06be025b921</field>
+                <field name="fullname">trinhtrinh nguyen sasdasd</field>
+                <field name="sex">1</field>
+                <field name="birthday">2013-02-05</field>
+                <field name="address">&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot; style=&amp;quot;display: none;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot; style=&amp;quot;display: none;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot; style=&amp;quot;dis</field>
+                <field name="email">nguyenquoctrinhctt3@gmail.com</field>
+                <field name="status">1</field>
+                <field name="group_id">1</field>
+            </row>
+            <row name="user">
+                <field name="id">102</field>
+                <field name="username">lala</field>
+                <field name="password">53e6086284353cb73d4979f08537d950</field>
+                <field name="fullname">trinhtrinh nguyen sasdasd</field>
+                <field name="sex">1</field>
+                <field name="birthday">2013-02-05</field>
+                <field name="address">Nguyen van quy q7 11</field>
+                <field name="email">lala@gmail.com</field>
+                <field name="status">1</field>
+                <field name="group_id">1</field>
+            </row>
+            <row name="user">
+                <field name="id">103</field>
+                <field name="username">lalala</field>
+                <field name="password">6a969262f945d2420387f561cc48d992</field>
+                <field name="fullname">lalala nguyen</field>
+                <field name="sex">1</field>
+                <field name="birthday">2011-07-04</field>
+                <field name="address">asdasd</field>
+                <field name="email">lalala@gmail.com</field>
+                <field name="status">1</field>
+                <field name="group_id">1</field>
+            </row>
+            <row name="user">
+                <field name="id">104</field>
+                <field name="username">lalala1</field>
+                <field name="password">6a969262f945d2420387f561cc48d992</field>
+                <field name="fullname">lalala Nguyen</field>
+                <field name="sex">1</field>
+                <field name="birthday">1995-02-12</field>
+                <field name="address">lalala at Sanfran</field>
+                <field name="email">lalala1@gmail.com</field>
+                <field name="status">0</field>
+                <field name="group_id">1</field>
+            </row>
+            <row name="user">
+                <field name="id">105</field>
+                <field name="username">lalala12</field>
+                <field name="password">6a969262f945d2420387f561cc48d992</field>
+                <field name="fullname">lalala Nguyen</field>
+                <field name="sex">1</field>
+                <field name="birthday">1995-02-12</field>
+                <field name="address">lalala at Sanfran</field>
+                <field name="email">lalala11@gmail.com</field>
+                <field name="status">0</field>
+                <field name="group_id">1</field>
+            </row>
+            <row name="user">
+                <field name="id">106</field>
+                <field name="username">xzczxczxc</field>
+                <field name="password">63c4602ce36424359581869f28368fc5</field>
+                <field name="fullname">sdasdasd</field>
+                <field name="sex">1</field>
+                <field name="birthday">1995-02-12</field>
+                <field name="address">lalala at Sanfran</field>
+                <field name="email">lalala11sd@gmail.com</field>
+                <field name="status">0</field>
+                <field name="group_id">1</field>
+            </row>
+            <row name="user">
+                <field name="id">111</field>
+                <field name="username">zxczxc</field>
+                <field name="password">170e71d5d2b37fb161a65ef5b16fc579</field>
+                <field name="fullname">zxczxczxczx</field>
+                <field name="sex">2</field>
+                <field name="birthday">2012-02-24</field>
+                <field name="address">zxczxc zxczxc</field>
+                <field name="email">bolanisdfdfvn@gmail.com</field>
+                <field name="status">1</field>
+                <field name="group_id">1</field>
+            </row>
+            <row name="user">
+                <field name="id">112</field>
+                <field name="username">quocquoc</field>
+                <field name="password">ffdb0599b121dbb5919439a9dc9aa92f</field>
+                <field name="fullname">quocquoc tran</field>
+                <field name="sex">1</field>
+                <field name="birthday">2011-02-26</field>
+                <field name="address">&amp;lt;h1&amp;gt;HEADER&amp;lt;/h1&amp;gt;</field>
+                <field name="email">bolanisvn@gmail.comsadasd</field>
+                <field name="status">1</field>
+                <field name="group_id">1</field>
+            </row>
+            <row name="user">
+                <field name="id">113</field>
+                <field name="username">nhungle</field>
+                <field name="password">a4cb225eafeb87bc9ca1f4069e290976</field>
+                <field name="fullname">Nhung Le</field>
+                <field name="sex">1</field>
+                <field name="birthday">2008-06-09</field>
+                <field name="address">qqqqqq</field>
+                <field name="email">quoc_trinh@lampart-vn.com</field>
+                <field name="status">0</field>
+                <field name="group_id">1</field>
+            </row>
+            <row name="user">
+                <field name="id">114</field>
+                <field name="username">qwerqwer</field>
+                <field name="password">d0bf90c37d80bd15e73cf8ec0d35da97</field>
+                <field name="fullname">trinhtrinh Nguyen Tran</field>
+                <field name="sex">1</field>
+                <field name="birthday">2006-02-04</field>
+                <field name="address">cklasjd;asd nguyen van cu</field>
+                <field name="email">sds</field>
+                <field name="status">1</field>
+                <field name="group_id">1</field>
+            </row>
+            <row name="user">
+                <field name="id">115</field>
+                <field name="username">dinhsinh</field>
+                <field name="password">73910f4739f384642522e78af15294a6</field>
+                <field name="fullname">sinh bui dinh</field>
+                <field name="sex">1</field>
+                <field name="birthday">2016-01-01</field>
+                <field name="address">sdsd</field>
+                <field name="email">asdas@gmail.com</field>
+                <field name="status">1</field>
+                <field name="group_id">1</field>
+            </row>
+        </table_data>
+    </database>
+</mysqldump>

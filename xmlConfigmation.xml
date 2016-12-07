@@ -1,0 +1,1098 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.5.1
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Dec 07, 2016 at 07:59 AM
+- Server version: 10.1.19-MariaDB
+- PHP Version: 5.6.28
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="testlampart" collation="utf8_general_ci" charset="utf8">
+            <pma:table name="favorite">
+                CREATE TABLE `favorite` (
+                `id` int(10) NOT NULL AUTO_INCREMENT,
+                `user_id` int(10) DEFAULT NULL,
+                `user_id_to` int(10) DEFAULT NULL,
+                `register_datetime` datetime DEFAULT NULL,
+                PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="follow">
+                CREATE TABLE `follow` (
+                `id` int(10) NOT NULL AUTO_INCREMENT,
+                `user_id` int(10) DEFAULT NULL,
+                `user_id_to` int(10) DEFAULT NULL,
+                `register_datetime` datetime DEFAULT NULL,
+                PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="friend_relation">
+                CREATE TABLE `friend_relation` (
+                `id` int(10) NOT NULL AUTO_INCREMENT,
+                `user_id` int(10) DEFAULT NULL,
+                `user_id_to` int(10) DEFAULT NULL,
+                `register_datetime` datetime DEFAULT NULL,
+                PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="friend_request">
+                CREATE TABLE `friend_request` (
+                `id` int(10) NOT NULL AUTO_INCREMENT,
+                `user_id` int(10) DEFAULT NULL,
+                `user_id_to` int(10) DEFAULT NULL,
+                `register_datetime` datetime DEFAULT NULL,
+                PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="group">
+                CREATE TABLE `group` (
+                `id` int(10) NOT NULL AUTO_INCREMENT,
+                `level` tinyint(1) DEFAULT NULL,
+                `name` varchar(255) DEFAULT NULL,
+                `register_datetime` datetime DEFAULT NULL,
+                PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="message_log">
+                CREATE TABLE `message_log` (
+                `id` int(10) NOT NULL AUTO_INCREMENT,
+                `user_id` int(10) DEFAULT NULL,
+                `user_id_to` int(10) DEFAULT NULL,
+                `message` varchar(255) DEFAULT NULL,
+                `register_datetime` datetime DEFAULT NULL,
+                PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="token">
+                CREATE TABLE `token` (
+                `id` int(11) NOT NULL AUTO_INCREMENT,
+                `user_id` int(11) NOT NULL,
+                `token` text NOT NULL,
+                `content` text NOT NULL,
+                `type` varchar(50) NOT NULL,
+                `status` tinyint(4) NOT NULL,
+                `expire_date` int(10) NOT NULL,
+                `created_date` int(10) NOT NULL,
+                PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="user">
+                CREATE TABLE `user` (
+                `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+                `username` varchar(40) DEFAULT NULL,
+                `password` varchar(32) DEFAULT NULL,
+                `fullname` varchar(32) DEFAULT NULL,
+                `sex` tinyint(1) DEFAULT NULL,
+                `birthday` date DEFAULT '0000-00-00',
+                `address` varchar(255) DEFAULT NULL,
+                `email` varchar(40) DEFAULT NULL,
+                `status` tinyint(1) DEFAULT '0',
+                `group_id` int(10) unsigned NOT NULL DEFAULT '1',
+                PRIMARY KEY (`id`),
+                UNIQUE KEY `username` (`username`),
+                UNIQUE KEY `email` (`email`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8 COMMENT='This is user table';
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'testlampart'
+    -->
+    <database name="testlampart">
+        <!-- Table favorite -->
+        <table name="favorite">
+            <column name="id">1</column>
+            <column name="user_id">10</column>
+            <column name="user_id_to">11</column>
+            <column name="register_datetime">2016-05-20 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">2</column>
+            <column name="user_id">7</column>
+            <column name="user_id_to">20</column>
+            <column name="register_datetime">2016-04-27 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">3</column>
+            <column name="user_id">6</column>
+            <column name="user_id_to">16</column>
+            <column name="register_datetime">2016-10-04 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">4</column>
+            <column name="user_id">1</column>
+            <column name="user_id_to">13</column>
+            <column name="register_datetime">2016-08-08 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">5</column>
+            <column name="user_id">7</column>
+            <column name="user_id_to">11</column>
+            <column name="register_datetime">2015-12-26 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">6</column>
+            <column name="user_id">2</column>
+            <column name="user_id_to">17</column>
+            <column name="register_datetime">2016-11-02 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">7</column>
+            <column name="user_id">5</column>
+            <column name="user_id_to">18</column>
+            <column name="register_datetime">2016-06-07 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">8</column>
+            <column name="user_id">4</column>
+            <column name="user_id_to">11</column>
+            <column name="register_datetime">2016-11-04 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">9</column>
+            <column name="user_id">10</column>
+            <column name="user_id_to">17</column>
+            <column name="register_datetime">2015-12-08 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">10</column>
+            <column name="user_id">10</column>
+            <column name="user_id_to">12</column>
+            <column name="register_datetime">2016-11-22 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">11</column>
+            <column name="user_id">6</column>
+            <column name="user_id_to">18</column>
+            <column name="register_datetime">2016-09-27 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">12</column>
+            <column name="user_id">9</column>
+            <column name="user_id_to">15</column>
+            <column name="register_datetime">2016-09-03 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">13</column>
+            <column name="user_id">9</column>
+            <column name="user_id_to">17</column>
+            <column name="register_datetime">2015-11-30 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">14</column>
+            <column name="user_id">8</column>
+            <column name="user_id_to">20</column>
+            <column name="register_datetime">2016-05-31 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">15</column>
+            <column name="user_id">2</column>
+            <column name="user_id_to">20</column>
+            <column name="register_datetime">2016-04-13 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">16</column>
+            <column name="user_id">2</column>
+            <column name="user_id_to">15</column>
+            <column name="register_datetime">2016-10-24 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">17</column>
+            <column name="user_id">3</column>
+            <column name="user_id_to">12</column>
+            <column name="register_datetime">2016-08-01 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">18</column>
+            <column name="user_id">2</column>
+            <column name="user_id_to">20</column>
+            <column name="register_datetime">2016-08-16 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">19</column>
+            <column name="user_id">2</column>
+            <column name="user_id_to">16</column>
+            <column name="register_datetime">2016-08-19 00:00:00</column>
+        </table>
+        <table name="favorite">
+            <column name="id">20</column>
+            <column name="user_id">6</column>
+            <column name="user_id_to">20</column>
+            <column name="register_datetime">2016-09-23 00:00:00</column>
+        </table>
+        <!-- Table follow -->
+        <table name="follow">
+            <column name="id">1</column>
+            <column name="user_id">10</column>
+            <column name="user_id_to">18</column>
+            <column name="register_datetime">2016-07-29 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">2</column>
+            <column name="user_id">5</column>
+            <column name="user_id_to">20</column>
+            <column name="register_datetime">2016-10-10 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">3</column>
+            <column name="user_id">7</column>
+            <column name="user_id_to">11</column>
+            <column name="register_datetime">2015-12-17 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">4</column>
+            <column name="user_id">9</column>
+            <column name="user_id_to">13</column>
+            <column name="register_datetime">2016-09-16 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">5</column>
+            <column name="user_id">8</column>
+            <column name="user_id_to">18</column>
+            <column name="register_datetime">2016-02-19 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">6</column>
+            <column name="user_id">5</column>
+            <column name="user_id_to">16</column>
+            <column name="register_datetime">2016-08-04 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">7</column>
+            <column name="user_id">4</column>
+            <column name="user_id_to">19</column>
+            <column name="register_datetime">2016-08-24 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">8</column>
+            <column name="user_id">6</column>
+            <column name="user_id_to">13</column>
+            <column name="register_datetime">2016-07-12 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">9</column>
+            <column name="user_id">7</column>
+            <column name="user_id_to">12</column>
+            <column name="register_datetime">2016-07-27 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">10</column>
+            <column name="user_id">1</column>
+            <column name="user_id_to">16</column>
+            <column name="register_datetime">2016-04-30 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">11</column>
+            <column name="user_id">6</column>
+            <column name="user_id_to">18</column>
+            <column name="register_datetime">2015-12-03 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">12</column>
+            <column name="user_id">9</column>
+            <column name="user_id_to">15</column>
+            <column name="register_datetime">2016-04-30 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">13</column>
+            <column name="user_id">2</column>
+            <column name="user_id_to">12</column>
+            <column name="register_datetime">2016-10-03 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">14</column>
+            <column name="user_id">3</column>
+            <column name="user_id_to">18</column>
+            <column name="register_datetime">2016-03-11 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">15</column>
+            <column name="user_id">4</column>
+            <column name="user_id_to">16</column>
+            <column name="register_datetime">2016-09-05 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">16</column>
+            <column name="user_id">9</column>
+            <column name="user_id_to">20</column>
+            <column name="register_datetime">2016-01-10 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">17</column>
+            <column name="user_id">3</column>
+            <column name="user_id_to">16</column>
+            <column name="register_datetime">2016-01-07 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">18</column>
+            <column name="user_id">3</column>
+            <column name="user_id_to">19</column>
+            <column name="register_datetime">2016-05-08 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">19</column>
+            <column name="user_id">8</column>
+            <column name="user_id_to">11</column>
+            <column name="register_datetime">2016-03-29 00:00:00</column>
+        </table>
+        <table name="follow">
+            <column name="id">20</column>
+            <column name="user_id">8</column>
+            <column name="user_id_to">15</column>
+            <column name="register_datetime">2016-11-13 00:00:00</column>
+        </table>
+        <!-- Table friend_relation -->
+        <table name="friend_relation">
+            <column name="id">1</column>
+            <column name="user_id">10</column>
+            <column name="user_id_to">14</column>
+            <column name="register_datetime">2016-05-24 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">2</column>
+            <column name="user_id">4</column>
+            <column name="user_id_to">19</column>
+            <column name="register_datetime">2016-01-17 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">3</column>
+            <column name="user_id">3</column>
+            <column name="user_id_to">12</column>
+            <column name="register_datetime">2016-01-12 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">4</column>
+            <column name="user_id">6</column>
+            <column name="user_id_to">16</column>
+            <column name="register_datetime">2016-01-24 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">5</column>
+            <column name="user_id">8</column>
+            <column name="user_id_to">18</column>
+            <column name="register_datetime">2016-04-22 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">6</column>
+            <column name="user_id">4</column>
+            <column name="user_id_to">13</column>
+            <column name="register_datetime">2016-01-31 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">7</column>
+            <column name="user_id">10</column>
+            <column name="user_id_to">17</column>
+            <column name="register_datetime">2016-07-14 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">8</column>
+            <column name="user_id">8</column>
+            <column name="user_id_to">18</column>
+            <column name="register_datetime">2016-07-17 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">9</column>
+            <column name="user_id">5</column>
+            <column name="user_id_to">17</column>
+            <column name="register_datetime">2016-04-25 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">10</column>
+            <column name="user_id">2</column>
+            <column name="user_id_to">15</column>
+            <column name="register_datetime">2016-09-30 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">11</column>
+            <column name="user_id">7</column>
+            <column name="user_id_to">15</column>
+            <column name="register_datetime">2015-12-16 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">12</column>
+            <column name="user_id">6</column>
+            <column name="user_id_to">18</column>
+            <column name="register_datetime">2015-12-06 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">13</column>
+            <column name="user_id">9</column>
+            <column name="user_id_to">19</column>
+            <column name="register_datetime">2016-07-22 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">14</column>
+            <column name="user_id">10</column>
+            <column name="user_id_to">14</column>
+            <column name="register_datetime">2016-05-01 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">15</column>
+            <column name="user_id">2</column>
+            <column name="user_id_to">15</column>
+            <column name="register_datetime">2016-02-12 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">16</column>
+            <column name="user_id">7</column>
+            <column name="user_id_to">15</column>
+            <column name="register_datetime">2016-02-20 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">17</column>
+            <column name="user_id">9</column>
+            <column name="user_id_to">13</column>
+            <column name="register_datetime">2016-05-16 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">18</column>
+            <column name="user_id">9</column>
+            <column name="user_id_to">13</column>
+            <column name="register_datetime">2016-06-04 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">19</column>
+            <column name="user_id">4</column>
+            <column name="user_id_to">13</column>
+            <column name="register_datetime">2016-04-12 00:00:00</column>
+        </table>
+        <table name="friend_relation">
+            <column name="id">20</column>
+            <column name="user_id">10</column>
+            <column name="user_id_to">14</column>
+            <column name="register_datetime">2016-07-26 00:00:00</column>
+        </table>
+        <!-- Table friend_request -->
+        <table name="friend_request">
+            <column name="id">1</column>
+            <column name="user_id">5</column>
+            <column name="user_id_to">12</column>
+            <column name="register_datetime">2016-01-19 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">2</column>
+            <column name="user_id">5</column>
+            <column name="user_id_to">16</column>
+            <column name="register_datetime">2016-10-31 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">3</column>
+            <column name="user_id">7</column>
+            <column name="user_id_to">16</column>
+            <column name="register_datetime">2016-06-13 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">4</column>
+            <column name="user_id">2</column>
+            <column name="user_id_to">16</column>
+            <column name="register_datetime">2016-09-11 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">5</column>
+            <column name="user_id">1</column>
+            <column name="user_id_to">17</column>
+            <column name="register_datetime">2016-10-18 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">6</column>
+            <column name="user_id">4</column>
+            <column name="user_id_to">18</column>
+            <column name="register_datetime">2015-12-19 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">7</column>
+            <column name="user_id">9</column>
+            <column name="user_id_to">16</column>
+            <column name="register_datetime">2016-04-01 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">8</column>
+            <column name="user_id">8</column>
+            <column name="user_id_to">20</column>
+            <column name="register_datetime">2016-07-11 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">9</column>
+            <column name="user_id">9</column>
+            <column name="user_id_to">16</column>
+            <column name="register_datetime">2016-02-06 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">10</column>
+            <column name="user_id">3</column>
+            <column name="user_id_to">20</column>
+            <column name="register_datetime">2016-03-17 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">11</column>
+            <column name="user_id">4</column>
+            <column name="user_id_to">17</column>
+            <column name="register_datetime">2015-12-27 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">12</column>
+            <column name="user_id">2</column>
+            <column name="user_id_to">12</column>
+            <column name="register_datetime">2016-11-11 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">13</column>
+            <column name="user_id">8</column>
+            <column name="user_id_to">20</column>
+            <column name="register_datetime">2016-03-12 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">14</column>
+            <column name="user_id">3</column>
+            <column name="user_id_to">20</column>
+            <column name="register_datetime">2016-07-31 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">15</column>
+            <column name="user_id">7</column>
+            <column name="user_id_to">16</column>
+            <column name="register_datetime">2016-05-28 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">16</column>
+            <column name="user_id">5</column>
+            <column name="user_id_to">13</column>
+            <column name="register_datetime">2016-03-06 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">17</column>
+            <column name="user_id">6</column>
+            <column name="user_id_to">17</column>
+            <column name="register_datetime">2016-02-17 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">18</column>
+            <column name="user_id">7</column>
+            <column name="user_id_to">15</column>
+            <column name="register_datetime">2016-11-25 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">19</column>
+            <column name="user_id">1</column>
+            <column name="user_id_to">15</column>
+            <column name="register_datetime">2016-07-08 00:00:00</column>
+        </table>
+        <table name="friend_request">
+            <column name="id">20</column>
+            <column name="user_id">5</column>
+            <column name="user_id_to">15</column>
+            <column name="register_datetime">2016-08-13 00:00:00</column>
+        </table>
+        <!-- Table group -->
+        <table name="group">
+            <column name="id">1</column>
+            <column name="level">1</column>
+            <column name="name">John Hamster</column>
+            <column name="register_datetime">2016-11-01 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">2</column>
+            <column name="level">3</column>
+            <column name="name">Wayne Roberts</column>
+            <column name="register_datetime">2016-09-23 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">3</column>
+            <column name="level">3</column>
+            <column name="name">Wanda Wallace</column>
+            <column name="register_datetime">2016-06-12 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">4</column>
+            <column name="level">3</column>
+            <column name="name">Cynthia Rodriguez</column>
+            <column name="register_datetime">2016-11-13 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">5</column>
+            <column name="level">3</column>
+            <column name="name">Deborah Ward</column>
+            <column name="register_datetime">2016-02-24 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">6</column>
+            <column name="level">3</column>
+            <column name="name">Bonnie Olson</column>
+            <column name="register_datetime">2016-02-21 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">7</column>
+            <column name="level">3</column>
+            <column name="name">Roy Willis</column>
+            <column name="register_datetime">2016-09-20 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">8</column>
+            <column name="level">1</column>
+            <column name="name">Bobby Harris</column>
+            <column name="register_datetime">2016-04-05 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">9</column>
+            <column name="level">2</column>
+            <column name="name">Kelly Rice</column>
+            <column name="register_datetime">2016-02-16 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">10</column>
+            <column name="level">1</column>
+            <column name="name">Laura Chavez</column>
+            <column name="register_datetime">2016-04-05 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">11</column>
+            <column name="level">2</column>
+            <column name="name">Timothy Matthews</column>
+            <column name="register_datetime">2016-03-23 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">12</column>
+            <column name="level">1</column>
+            <column name="name">Johnny Andrews</column>
+            <column name="register_datetime">2016-03-20 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">13</column>
+            <column name="level">2</column>
+            <column name="name">Emily Austin</column>
+            <column name="register_datetime">2016-10-09 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">14</column>
+            <column name="level">3</column>
+            <column name="name">Phyllis Daniels</column>
+            <column name="register_datetime">2015-12-02 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">15</column>
+            <column name="level">2</column>
+            <column name="name">Samuel Wheeler</column>
+            <column name="register_datetime">2016-02-04 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">16</column>
+            <column name="level">2</column>
+            <column name="name">Richard Hanson</column>
+            <column name="register_datetime">2016-03-10 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">17</column>
+            <column name="level">2</column>
+            <column name="name">Anna Diaz</column>
+            <column name="register_datetime">2016-01-23 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">18</column>
+            <column name="level">2</column>
+            <column name="name">Dorothy Hernandez</column>
+            <column name="register_datetime">2016-03-17 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">19</column>
+            <column name="level">1</column>
+            <column name="name">Henry Nelson</column>
+            <column name="register_datetime">2016-05-19 00:00:00</column>
+        </table>
+        <table name="group">
+            <column name="id">20</column>
+            <column name="level">1</column>
+            <column name="name">Johnny Crawford</column>
+            <column name="register_datetime">2016-11-03 00:00:00</column>
+        </table>
+        <!-- Table message_log -->
+        <table name="message_log">
+            <column name="id">1</column>
+            <column name="user_id">5</column>
+            <column name="user_id_to">20</column>
+            <column name="message">optimize efficient e-commerce</column>
+            <column name="register_datetime">2016-07-27 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">2</column>
+            <column name="user_id">2</column>
+            <column name="user_id_to">18</column>
+            <column name="message">cultivate compelling communities</column>
+            <column name="register_datetime">2016-11-02 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">3</column>
+            <column name="user_id">8</column>
+            <column name="user_id_to">19</column>
+            <column name="message">architect cross-platform convergence</column>
+            <column name="register_datetime">2015-12-24 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">4</column>
+            <column name="user_id">3</column>
+            <column name="user_id_to">20</column>
+            <column name="message">embrace end-to-end channels</column>
+            <column name="register_datetime">2016-08-05 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">5</column>
+            <column name="user_id">4</column>
+            <column name="user_id_to">16</column>
+            <column name="message">syndicate robust e-business</column>
+            <column name="register_datetime">2016-05-20 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">6</column>
+            <column name="user_id">7</column>
+            <column name="user_id_to">14</column>
+            <column name="message">generate leading-edge communities</column>
+            <column name="register_datetime">2016-03-14 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">7</column>
+            <column name="user_id">5</column>
+            <column name="user_id_to">20</column>
+            <column name="message">brand cutting-edge supply-chains</column>
+            <column name="register_datetime">2016-03-21 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">8</column>
+            <column name="user_id">9</column>
+            <column name="user_id_to">19</column>
+            <column name="message">scale bricks-and-clicks solutions</column>
+            <column name="register_datetime">2016-11-22 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">9</column>
+            <column name="user_id">4</column>
+            <column name="user_id_to">13</column>
+            <column name="message">repurpose collaborative experiences</column>
+            <column name="register_datetime">2016-01-04 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">10</column>
+            <column name="user_id">4</column>
+            <column name="user_id_to">19</column>
+            <column name="message">synergize robust synergies</column>
+            <column name="register_datetime">2016-05-27 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">11</column>
+            <column name="user_id">6</column>
+            <column name="user_id_to">14</column>
+            <column name="message">visualize back-end content</column>
+            <column name="register_datetime">2015-11-30 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">12</column>
+            <column name="user_id">2</column>
+            <column name="user_id_to">16</column>
+            <column name="message">exploit visionary e-commerce</column>
+            <column name="register_datetime">2016-07-30 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">13</column>
+            <column name="user_id">10</column>
+            <column name="user_id_to">16</column>
+            <column name="message">enable dynamic initiatives</column>
+            <column name="register_datetime">2015-12-22 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">14</column>
+            <column name="user_id">1</column>
+            <column name="user_id_to">19</column>
+            <column name="message">disintermediate seamless models</column>
+            <column name="register_datetime">2015-11-30 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">15</column>
+            <column name="user_id">1</column>
+            <column name="user_id_to">11</column>
+            <column name="message">evolve cutting-edge content</column>
+            <column name="register_datetime">2015-11-29 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">16</column>
+            <column name="user_id">3</column>
+            <column name="user_id_to">13</column>
+            <column name="message">incubate dot-com infrastructures</column>
+            <column name="register_datetime">2016-11-12 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">17</column>
+            <column name="user_id">6</column>
+            <column name="user_id_to">18</column>
+            <column name="message">target killer e-markets</column>
+            <column name="register_datetime">2016-03-12 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">18</column>
+            <column name="user_id">6</column>
+            <column name="user_id_to">18</column>
+            <column name="message">e-enable rich markets</column>
+            <column name="register_datetime">2016-01-28 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">19</column>
+            <column name="user_id">3</column>
+            <column name="user_id_to">20</column>
+            <column name="message">expedite web-enabled schemas</column>
+            <column name="register_datetime">2016-05-08 00:00:00</column>
+        </table>
+        <table name="message_log">
+            <column name="id">20</column>
+            <column name="user_id">3</column>
+            <column name="user_id_to">12</column>
+            <column name="message">enhance scalable infrastructures</column>
+            <column name="register_datetime">2016-09-01 00:00:00</column>
+        </table>
+        <!-- Table token -->
+        <table name="token">
+            <column name="id">26</column>
+            <column name="user_id">101</column>
+            <column name="token">ed62ada7fae84efdd40eceeb7ad2960a</column>
+            <column name="content">bolanisvn@gmail.com</column>
+            <column name="type">email</column>
+            <column name="status">0</column>
+            <column name="expire_date">1481010852</column>
+            <column name="created_date">1481010732</column>
+        </table>
+        <table name="token">
+            <column name="id">27</column>
+            <column name="user_id">101</column>
+            <column name="token">fdbff8bdc1eff9b879e4ef4882f326c8</column>
+            <column name="content">hello@pro.com</column>
+            <column name="type">email</column>
+            <column name="status">0</column>
+            <column name="expire_date">1481011056</column>
+            <column name="created_date">1481010936</column>
+        </table>
+        <table name="token">
+            <column name="id">28</column>
+            <column name="user_id">114</column>
+            <column name="token">4f8bf14339dc4c1e7da75c2365c7ded5</column>
+            <column name="content"></column>
+            <column name="type">account</column>
+            <column name="status">1</column>
+            <column name="expire_date">0</column>
+            <column name="created_date">0</column>
+        </table>
+        <table name="token">
+            <column name="id">29</column>
+            <column name="user_id">114</column>
+            <column name="token">b2ea58e84d8baf663028c3596ed48985</column>
+            <column name="content">bolanisvn@gmail.com</column>
+            <column name="type">email</column>
+            <column name="status">1</column>
+            <column name="expire_date">1481015594</column>
+            <column name="created_date">1481015474</column>
+        </table>
+        <table name="token">
+            <column name="id">30</column>
+            <column name="user_id">115</column>
+            <column name="token">88937831633be6e37577938c2398caa3</column>
+            <column name="content"></column>
+            <column name="type">account</column>
+            <column name="status">1</column>
+            <column name="expire_date">0</column>
+            <column name="created_date">0</column>
+        </table>
+        <table name="token">
+            <column name="id">31</column>
+            <column name="user_id">101</column>
+            <column name="token">11868e25991028a33bc5b651b31c58fd</column>
+            <column name="content">bolanisvn111@gmail.com</column>
+            <column name="type">email</column>
+            <column name="status">1</column>
+            <column name="expire_date">1481017001</column>
+            <column name="created_date">1481016881</column>
+        </table>
+        <table name="token">
+            <column name="id">32</column>
+            <column name="user_id">101</column>
+            <column name="token">d5f4243b4cfa29ac320319e015df5f9f</column>
+            <column name="content">asds@gamil.com</column>
+            <column name="type">email</column>
+            <column name="status">0</column>
+            <column name="expire_date">1481017038</column>
+            <column name="created_date">1481016918</column>
+        </table>
+        <!-- Table user -->
+        <table name="user">
+            <column name="id">1</column>
+            <column name="username">trinhnguyen</column>
+            <column name="password">123123</column>
+            <column name="fullname">trinh nguyen quoc</column>
+            <column name="sex">1</column>
+            <column name="birthday">1992-02-12</column>
+            <column name="address">160 Nguyen Van Quy Quan 7</column>
+            <column name="email">1</column>
+            <column name="status">1</column>
+            <column name="group_id">1</column>
+        </table>
+        <table name="user">
+            <column name="id">2</column>
+            <column name="username">sonvi</column>
+            <column name="password">123123</column>
+            <column name="fullname">son vi hoang</column>
+            <column name="sex">1</column>
+            <column name="birthday">1991-01-12</column>
+            <column name="address">120 Phu Nhuan</column>
+            <column name="email">visan@gmail.com</column>
+            <column name="status">1</column>
+            <column name="group_id">1</column>
+        </table>
+        <table name="user">
+            <column name="id">3</column>
+            <column name="username">brice2</column>
+            <column name="password">R3QSJyO</column>
+            <column name="fullname">Bobby Rice</column>
+            <column name="sex">1</column>
+            <column name="birthday">1981-07-17</column>
+            <column name="address">5 Buhler Way</column>
+            <column name="email">brice2@sun.com</column>
+            <column name="status">0</column>
+            <column name="group_id">1</column>
+        </table>
+        <table name="user">
+            <column name="id">101</column>
+            <column name="username">trinhtrinh</column>
+            <column name="password">19d40526d4f412f467b7e06be025b921</column>
+            <column name="fullname">trinhtrinh nguyen sasdasd</column>
+            <column name="sex">1</column>
+            <column name="birthday">2013-02-05</column>
+            <column name="address">&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot; style=&amp;quot;display: none;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot; style=&amp;quot;display: none;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot; style=&amp;quot;dis</column>
+            <column name="email">nguyenquoctrinhctt3@gmail.com</column>
+            <column name="status">1</column>
+            <column name="group_id">1</column>
+        </table>
+        <table name="user">
+            <column name="id">102</column>
+            <column name="username">lala</column>
+            <column name="password">53e6086284353cb73d4979f08537d950</column>
+            <column name="fullname">trinhtrinh nguyen sasdasd</column>
+            <column name="sex">1</column>
+            <column name="birthday">2013-02-05</column>
+            <column name="address">Nguyen van quy q7 11</column>
+            <column name="email">lala@gmail.com</column>
+            <column name="status">1</column>
+            <column name="group_id">1</column>
+        </table>
+        <table name="user">
+            <column name="id">103</column>
+            <column name="username">lalala</column>
+            <column name="password">6a969262f945d2420387f561cc48d992</column>
+            <column name="fullname">lalala nguyen</column>
+            <column name="sex">1</column>
+            <column name="birthday">2011-07-04</column>
+            <column name="address">asdasd</column>
+            <column name="email">lalala@gmail.com</column>
+            <column name="status">1</column>
+            <column name="group_id">1</column>
+        </table>
+        <table name="user">
+            <column name="id">104</column>
+            <column name="username">lalala1</column>
+            <column name="password">6a969262f945d2420387f561cc48d992</column>
+            <column name="fullname">lalala Nguyen</column>
+            <column name="sex">1</column>
+            <column name="birthday">1995-02-12</column>
+            <column name="address">lalala at Sanfran</column>
+            <column name="email">lalala1@gmail.com</column>
+            <column name="status">0</column>
+            <column name="group_id">1</column>
+        </table>
+        <table name="user">
+            <column name="id">105</column>
+            <column name="username">lalala12</column>
+            <column name="password">6a969262f945d2420387f561cc48d992</column>
+            <column name="fullname">lalala Nguyen</column>
+            <column name="sex">1</column>
+            <column name="birthday">1995-02-12</column>
+            <column name="address">lalala at Sanfran</column>
+            <column name="email">lalala11@gmail.com</column>
+            <column name="status">0</column>
+            <column name="group_id">1</column>
+        </table>
+        <table name="user">
+            <column name="id">106</column>
+            <column name="username">xzczxczxc</column>
+            <column name="password">63c4602ce36424359581869f28368fc5</column>
+            <column name="fullname">sdasdasd</column>
+            <column name="sex">1</column>
+            <column name="birthday">1995-02-12</column>
+            <column name="address">lalala at Sanfran</column>
+            <column name="email">lalala11sd@gmail.com</column>
+            <column name="status">0</column>
+            <column name="group_id">1</column>
+        </table>
+        <table name="user">
+            <column name="id">111</column>
+            <column name="username">zxczxc</column>
+            <column name="password">170e71d5d2b37fb161a65ef5b16fc579</column>
+            <column name="fullname">zxczxczxczx</column>
+            <column name="sex">2</column>
+            <column name="birthday">2012-02-24</column>
+            <column name="address">zxczxc zxczxc</column>
+            <column name="email">bolanisdfdfvn@gmail.com</column>
+            <column name="status">1</column>
+            <column name="group_id">1</column>
+        </table>
+        <table name="user">
+            <column name="id">112</column>
+            <column name="username">quocquoc</column>
+            <column name="password">ffdb0599b121dbb5919439a9dc9aa92f</column>
+            <column name="fullname">quocquoc tran</column>
+            <column name="sex">1</column>
+            <column name="birthday">2011-02-26</column>
+            <column name="address">&amp;lt;h1&amp;gt;HEADER&amp;lt;/h1&amp;gt;</column>
+            <column name="email">bolanisvn@gmail.comsadasd</column>
+            <column name="status">1</column>
+            <column name="group_id">1</column>
+        </table>
+        <table name="user">
+            <column name="id">113</column>
+            <column name="username">nhungle</column>
+            <column name="password">a4cb225eafeb87bc9ca1f4069e290976</column>
+            <column name="fullname">Nhung Le</column>
+            <column name="sex">1</column>
+            <column name="birthday">2008-06-09</column>
+            <column name="address">qqqqqq</column>
+            <column name="email">quoc_trinh@lampart-vn.com</column>
+            <column name="status">0</column>
+            <column name="group_id">1</column>
+        </table>
+        <table name="user">
+            <column name="id">114</column>
+            <column name="username">qwerqwer</column>
+            <column name="password">d0bf90c37d80bd15e73cf8ec0d35da97</column>
+            <column name="fullname">trinhtrinh Nguyen Tran</column>
+            <column name="sex">1</column>
+            <column name="birthday">2006-02-04</column>
+            <column name="address">cklasjd;asd nguyen van cu</column>
+            <column name="email">sds</column>
+            <column name="status">1</column>
+            <column name="group_id">1</column>
+        </table>
+        <table name="user">
+            <column name="id">115</column>
+            <column name="username">dinhsinh</column>
+            <column name="password">73910f4739f384642522e78af15294a6</column>
+            <column name="fullname">sinh bui dinh</column>
+            <column name="sex">1</column>
+            <column name="birthday">2016-01-01</column>
+            <column name="address">sdsd</column>
+            <column name="email">asdas@gmail.com</column>
+            <column name="status">1</column>
+            <column name="group_id">1</column>
+        </table>
+    </database>
+</pma_xml_export>

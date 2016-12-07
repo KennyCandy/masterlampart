@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2016 at 04:02 AM
+-- Generation Time: Dec 07, 2016 at 04:50 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -267,16 +267,23 @@ CREATE TABLE `token` (
   `token` text NOT NULL,
   `content` text NOT NULL,
   `type` varchar(50) NOT NULL,
-  `status` tinyint(4) NOT NULL
+  `status` tinyint(4) NOT NULL,
+  `expire_date` int(10) NOT NULL,
+  `created_date` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `token`
 --
 
-INSERT INTO `token` (`id`, `user_id`, `token`, `content`, `type`, `status`) VALUES
-(2, 111, '3c3bfbd59c85fe0cb445f393ec277f00', '', 'account', 1),
-(3, 111, 'a7e15e42ab30e9f357a7d3a873e679a8', 'bolanisvn@gmail.com', 'email', 1);
+INSERT INTO `token` (`id`, `user_id`, `token`, `content`, `type`, `status`, `expire_date`, `created_date`) VALUES
+(26, 101, 'ed62ada7fae84efdd40eceeb7ad2960a', 'bolanisvn@gmail.com', 'email', 0, 1481010852, 1481010732),
+(27, 101, 'fdbff8bdc1eff9b879e4ef4882f326c8', 'hello@pro.com', 'email', 0, 1481011056, 1481010936),
+(28, 114, '4f8bf14339dc4c1e7da75c2365c7ded5', '', 'account', 1, 0, 0),
+(29, 114, 'b2ea58e84d8baf663028c3596ed48985', 'bolanisvn@gmail.com', 'email', 1, 1481015594, 1481015474),
+(30, 115, '88937831633be6e37577938c2398caa3', '', 'account', 1, 0, 0),
+(31, 101, '11868e25991028a33bc5b651b31c58fd', 'bolanisvn111@gmail.com', 'email', 1, 1481017001, 1481016881),
+(32, 101, 'd5f4243b4cfa29ac320319e015df5f9f', 'asds@gamil.com', 'email', 0, 1481017038, 1481016918);
 
 -- --------------------------------------------------------
 
@@ -305,13 +312,17 @@ INSERT INTO `user` (`id`, `username`, `password`, `fullname`, `sex`, `birthday`,
 (1, 'trinhnguyen', '123123', 'trinh nguyen quoc', 1, '1992-02-12', '160 Nguyen Van Quy Quan 7', '1', 1, 1),
 (2, 'sonvi', '123123', 'son vi hoang', 1, '1991-01-12', '120 Phu Nhuan', 'visan@gmail.com', 1, 1),
 (3, 'brice2', 'R3QSJyO', 'Bobby Rice', 1, '1981-07-17', '5 Buhler Way', 'brice2@sun.com', 0, 1),
-(101, 'trinhtrinh', '19d40526d4f412f467b7e06be025b921', 'trinhtrinh nguyen sasdasd', 1, '2013-02-08', 'Nguyen van quy q7 11', 'nguyenquoctrinhcttasda3@gmail.com', 1, 1),
-(102, 'lala', '6a969262f945d2420387f561cc48d992', 'lalala nguyen', 1, '2012-03-02', 'lalala HCM', 'lala@gmail.com', 0, 1),
+(101, 'trinhtrinh', '19d40526d4f412f467b7e06be025b921', 'trinhtrinh nguyen sasdasd', 1, '2013-02-05', '&lt;div class=&quot;selection_bubble_root&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;selection_bubble_root&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;selection_bubble_root&quot; style=&quot;dis', 'nguyenquoctrinhctt3@gmail.com', 1, 1),
+(102, 'lala', '53e6086284353cb73d4979f08537d950', 'trinhtrinh nguyen sasdasd', 1, '2013-02-05', 'Nguyen van quy q7 11', 'lala@gmail.com', 1, 1),
 (103, 'lalala', '6a969262f945d2420387f561cc48d992', 'lalala nguyen', 1, '2011-07-04', 'asdasd', 'lalala@gmail.com', 1, 1),
 (104, 'lalala1', '6a969262f945d2420387f561cc48d992', 'lalala Nguyen', 1, '1995-02-12', 'lalala at Sanfran', 'lalala1@gmail.com', 0, 1),
 (105, 'lalala12', '6a969262f945d2420387f561cc48d992', 'lalala Nguyen', 1, '1995-02-12', 'lalala at Sanfran', 'lalala11@gmail.com', 0, 1),
 (106, 'xzczxczxc', '63c4602ce36424359581869f28368fc5', 'sdasdasd', 1, '1995-02-12', 'lalala at Sanfran', 'lalala11sd@gmail.com', 0, 1),
-(111, 'zxczxc', '170e71d5d2b37fb161a65ef5b16fc579', 'zxczxczxczx', 1, '2012-07-03', 'zxczxc zxczxc', 'bolanisvn@gmail.com', 1, 1);
+(111, 'zxczxc', '170e71d5d2b37fb161a65ef5b16fc579', 'zxczxczxczx', 2, '2012-02-24', 'zxczxc zxczxc', 'bolanisdfdfvn@gmail.com', 1, 1),
+(112, 'quocquoc', 'ffdb0599b121dbb5919439a9dc9aa92f', 'quocquoc tran', 1, '2011-02-26', '&lt;h1&gt;HEADER&lt;/h1&gt;', 'bolanisvn@gmail.comsadasd', 1, 1),
+(113, 'nhungle', 'a4cb225eafeb87bc9ca1f4069e290976', 'Nhung Le', 1, '2008-06-09', 'qqqqqq', 'quoc_trinh@lampart-vn.com', 0, 1),
+(114, 'qwerqwer', 'd0bf90c37d80bd15e73cf8ec0d35da97', 'trinhtrinh Nguyen Tran', 1, '2006-02-04', 'cklasjd;asd nguyen van cu', 'sds', 1, 1),
+(115, 'dinhsinh', '73910f4739f384642522e78af15294a6', 'sinh bui dinh', 1, '2016-01-01', 'sdsd', 'asdas@gmail.com', 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -405,12 +416,12 @@ ALTER TABLE `message_log`
 -- AUTO_INCREMENT for table `token`
 --
 ALTER TABLE `token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

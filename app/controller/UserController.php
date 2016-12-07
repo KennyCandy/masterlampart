@@ -187,7 +187,7 @@ class UserController extends Controller
 						"new_password"     => htmlspecialchars($_POST['new-password']),
 						"confirm_password" => htmlspecialchars($_POST['confirm-password']),
 					];
-
+					// init User Service
 					$user_service  = new UserService();
 					$change_result = $user_service->change_password($data_change);
 					if ($change_result["error"]) {

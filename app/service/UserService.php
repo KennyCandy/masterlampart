@@ -223,9 +223,11 @@ class UserService extends Service
 			$result['message'][] = 'Address is required';
 		}
 
-		if ($data['code'] != $_SESSION['captcha']['code']) {
-			$result['error']     = true;
-			$result['message'][] = 'Security code is invalid';
+		if (isset($_SESSION['captcha']['code'])) {
+			if ($data['code'] != $_SESSION['captcha']['code']) {
+				$result['error']     = true;
+				$result['message'][] = 'Security code is invalid';
+			}
 		}
 
 		if (!(($data['sex'] == 1) || ($data['sex'] == 2))) {
