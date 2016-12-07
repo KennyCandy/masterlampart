@@ -51,7 +51,7 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 
 	}
 
-	public function testValidate_data_before_call_db()
+	public function testValidate_data_before_call_db_Succeed()
 	{
 		$this->_userService = new UserService();
 
@@ -73,7 +73,29 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 		$result['error'] = false;
 		$result          = $this->_userService->validate_data_before_call_db($data, $result);
 		$this->assertArraySubset(["error" => false], $result);
+	}
+	public function testValidate_data_before_call_db_Fail()
+	{
+		$this->_userService = new UserService();
 
+		$data            = [
+			'fullname'    => 'lal',
+			'code'        => '123132',
+			'username'    => 'lalala',
+			'email'       => 'lalala@gmail.com',
+			'password'    => 'lalala@',
+			're_password' => 'lalala@',
+			'address'     => 'lalala at Sanfran',
+			'sex'         => '1',
+			'date'        => '12',
+			'month'       => '02',
+			'year'        => '1995',
+			'birthday'    => '1995-02-12',
+		];
+		$result          = [];
+		$result['error'] = false;
+		$result          = $this->_userService->validate_data_before_call_db($data, $result);
+		$this->assertArraySubset(["error" => true], $result);
 	}
 
 	public function testInsert_and_send_mail_activate_acc()
