@@ -117,13 +117,13 @@ class UserController extends Controller
 				if ($data["error"] == false) {
 					$_SESSION['user_id'] = $data["user"]["id"];
 					$GLOBALS['user_id']  = $data["user"]["id"];
-					echo("<script>console.log('PHP: " . 'user_id is set' . "');</script>");
+//					echo("<script>console.log('PHP: " . 'user_id is set' . "');</script>");
 					redirect('/user/home');
 				}
 			}
 			$this->_view->load_view('login', $data);
 		} catch (Exception $e) {
-			echo("<script>console.log('PHP: " . 'fail' . "');</script>");
+//			echo("<script>console.log('PHP: " . 'fail' . "');</script>");
 			redirect('/user/home');
 		}
 	}
@@ -218,11 +218,11 @@ class UserController extends Controller
 	/**
 	 * action profile
 	 *
-	 * @param array $params
-	 *
 	 * @throws Exception
+	 * @internal param array $params
+	 *
 	 */
-	public function profile($params = [])
+	public function profile()
 	{
 		if (!isset($_SESSION['user_id'])) {
 			throw new Exception("Error");
@@ -231,7 +231,7 @@ class UserController extends Controller
 //			throw new Exception("Error- out of session");
 //		}
 		$userModal    = new User();
-		$user         = $userModal->find_id($params[0]);
+		$user         = $userModal->find_id($_SESSION['user_id']);
 		$data['user'] = $user;
 		// if edit_status = true is edit mode, if false is view mode
 		$data['edit_status'] = false;

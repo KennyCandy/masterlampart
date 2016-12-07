@@ -1,8 +1,6 @@
 <div>
-	<?php if (isset($page)) : ?>
-        <p class="pull-left"><a href="/user/home">Home::<?php echo $page; ?></a></p>
-	<?php endif; ?>
-    <p class="pull-right"><a href="#">Hello <?php echo isset($user) ? $user['fullname'] : ''; ?></a></p>
+    <p class="pull-left"><a href="/user/home">Home:: Profile</a></p>
+    <p class="pull-right"><a href="#">Hello <?php echo isset($user) ? htmlspecialchars($user['fullname']) : ''; ?></a></p>
     <div class="clearfix"></div>
 </div>
 <div class="panel panel-primary">
@@ -16,7 +14,7 @@
                         <h1 class="entry-title"><span class="edit-hide hide">Profile Edit Mode</span></h1>
                         <hr>
                         <form id="edit-form" class="form-horizontal" method="POST"
-                              action="/user/profile/<?php echo $user["id"] ?>">
+                              action="/user/profile">
                             <input type="hidden" name="edit-status" id="edit-status"
                                    value="<?php echo ($edit_status == false) ? 0 : 1; ?>">
 							<?php
@@ -38,40 +36,40 @@
                                 <label class="control-label col-sm-3">Full Name
                                     <span class="text-danger edit-hide hide">*</span></label>
                                 <div class="col-md-9 col-sm-9">
-                                    <span class="edit-show"><?php echo $user['fullname']; ?></span>
+                                    <span class="edit-show in-block"><?php echo htmlspecialchars($user['fullname']); ?></span>
                                     <input type="text" class="form-control edit-hide hide" name="fullname"
                                            placeholder="Enter your Name here (4-30 chars)"
-                                           value="<?php echo $user['fullname']; ?>"/>
+                                           value="<?php echo htmlspecialchars($user['fullname']); ?>"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-3">Username <span
-                                            class="text-danger edit-hide hide">*</span></label>
+                                            class="text-danger hide">*</span></label>
                                 <div class="col-md-9 col-sm-9">
-									<?php echo $user['username']; ?>
+                                    <span class="in-block"><?php echo htmlspecialchars($user['username']); ?></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-3">Email<span
-                                            class="text-danger edit-hide hide">*</span></label>
+                                            class="text-danger hide">*</span></label>
                                 <div class="col-md-9 col-sm-9">
-									<?php echo $user['email']; ?>
+                                    <span class="in-block"><?php echo htmlspecialchars($user['email']); ?></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-3">Address <span
                                             class="text-danger edit-hide hide">*</span></label>
                                 <div class="col-md-9 col-sm-9">
-                                    <span class="edit-show"><?php echo $user['address']; ?></span>
+                                    <span class="edit-show in-block"><?php echo ($user['address']); ?></span>
                                     <input class="form-control edit-hide hide" name="address"
-                                           value="<?php echo $user['address']; ?>"/>
+                                           value="<?php echo ($user['address']); ?>"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-3">Sex <span
                                             class="text-danger edit-hide hide">*</span></label>
-                                <div class="col-md-9 col-sm-9">
-                                    <span class="edit-show"><?php echo ($user['sex'] == 1) ? 'Male' : 'Female'; ?></span>
+                                <div class="col-md-9 col-sm-9 sex-profile">
+                                    <span class="edit-show in-block"><?php echo ($user['sex'] == 1) ? 'Male' : 'Female'; ?></span>
                                     <div class="edit-hide hide">
                                         <input type="radio" value="1"
                                                name="sex" <?php echo ($user['sex'] == 1) ? 'checked' : ''; ?>/> Male
@@ -84,7 +82,7 @@
                                 <label class="control-label col-sm-3">Birthday <span
                                             class="text-danger edit-hide hide">*</span></label>
                                 <div class="col-md-9 col-sm-9">
-                                    <span class="edit-show"><?php echo $user['birthday']; ?></span>
+                                    <span class="edit-show in-block"><?php echo $user['birthday']; ?></span>
                                     <div class="edit-hide hide">
                                         <input type="hidden" name="birthday" id="birthday"
                                                value="<?php echo $user['birthday']; ?>">

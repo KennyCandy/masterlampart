@@ -33,7 +33,7 @@
 							?>
                             <div class="form-group">
                                 <label class="control-label col-sm-3">Current Email<span
-                                            class="text-danger">*</span></label>
+                                            class="text-danger hide">*</span></label>
                                 <div class="col-md-9 col-sm-9">
                                     <span><?php echo $user['email']; ?></span>
                                 </div>

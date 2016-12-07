@@ -3,6 +3,6 @@
 </div>
 </div>
 <div id="ohsnap"></div>
-<h1>FOOTER</h1>
+<!--<h1>FOOTER</h1>-->
 </body>
 </html>

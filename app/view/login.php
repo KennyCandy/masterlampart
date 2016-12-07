@@ -30,7 +30,8 @@
 										class="text-danger">*</span></label>
 								<div class="col-md-9 col-sm-9">
 									<input type="text" class="form-control" name="username"
-									       placeholder="Enter your Username here" value="">
+									       placeholder="Enter your Username here"
+                                           value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : '' ?>">
 								</div>
 							</div>
 							<div class="form-group">

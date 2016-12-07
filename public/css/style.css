@@ -37,3 +37,10 @@ input.upload {
 .control-label {
 	color:#333333;
 }
+#edit-form span.in-block {
+	padding-top: 7px;
+	display: block;
+}
+.sex-profile{
+	padding-top: 5px;
+}
