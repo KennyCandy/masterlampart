@@ -20,16 +20,30 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 
 	}
 
-	public function testLogin()
+	public function testLogin_User_Invalid()
 	{
-		$data = [
-			'username' => 'trinhtrinh',
+		$this->_userService = new UserService();
+		$data   = [
+			'username' => 'trinhtrinh12@#12',
 			'password' => '123123@',
 		];
-		$this->assertEquals('19d40526d4f412f467b7e06be025b921',md5($data['password']));
+		$result = $this->_userService->login($data);
 
+//		$this->assertEquals('19d40526d4f412f467b7e06be025b921',md5($data['password']);
+
+		$this->assertArraySubset(['error' => true],$result);
 	}
 
+	public function testLogin_Password_Invalid()
+	{
+		$this->_userService = new UserService();
+		$data   = [
+			'username' => 'trinhtrinh',
+			'password' => '123121sadasd()',
+		];
+		$result = $this->_userService->login($data);
+		$this->assertArraySubset(['error' => true],$result);
+	}
 
 	public function testConfirm()
 	{
@@ -74,6 +88,7 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 		$result          = $this->_userService->validate_data_before_call_db($data, $result);
 		$this->assertArraySubset(["error" => false], $result);
 	}
+
 	public function testValidate_data_before_call_db_Fail()
 	{
 		$this->_userService = new UserService();

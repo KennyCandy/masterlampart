@@ -13,6 +13,10 @@ use \Exception;
  */
 class UserService extends Service
 {
+	public function __construct()
+	{
+		parent::__construct();
+	}
 
 	/**
 	 * validate data to register a new user
@@ -257,7 +261,7 @@ class UserService extends Service
 	public function insert_and_send_mail_activate_acc($data, $result)
 	{
 		if ($result['error'] == false) {
-			$user = new User;
+			$user = new User();
 
 			// check duplicate username
 			$username_check = $user->where('username', $data['username'])->first();
@@ -370,11 +374,7 @@ class UserService extends Service
 	public function send_mail_change_email($id, $email, $old_email)
 	{
 		// Check whether request is exist or not
-		$token = new Token();
-
-//		$token_info = $token->where('content', $email)->where("user_id", $id)
-//			->where("status", 0)->first();
-
+		$token  = new Token();
 		$result = $token->where('type', 'email')->where("user_id", $id)
 			->where("status", 0)->first();
 

@@ -1,0 +1,238 @@
+{
+    "event": "suiteStart",
+    "suite": "C:\\xampp\\htdocs\\masterlampart\\tests",
+    "tests": 17
+}{
+    "event": "suiteStart",
+    "suite": "DataPumpTest",
+    "tests": 2
+}{
+    "event": "testStart",
+    "suite": "DataPumpTest",
+    "test": "DataPumpTest::testDataBaseConnection"
+}{
+    "event": "test",
+    "suite": "DataPumpTest",
+    "test": "DataPumpTest::testDataBaseConnection",
+    "status": "pass",
+    "time": 0.095515966415405,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "DataPumpTest",
+    "test": "DataPumpTest::testLogin"
+}{
+    "event": "test",
+    "suite": "DataPumpTest",
+    "test": "DataPumpTest::testLogin",
+    "status": "pass",
+    "time": 0.064229965209961,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "UserServiceTest",
+    "tests": 13
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testRegistration"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testRegistration",
+    "status": "pass",
+    "time": 0.0036001205444336,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testLogin_User_Invalid"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testLogin_User_Invalid",
+    "status": "pass",
+    "time": 0.0045030117034912,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testLogin_Password_Invalid"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testLogin_Password_Invalid",
+    "status": "pass",
+    "time": 0.0034480094909668,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testConfirm"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testConfirm",
+    "status": "pass",
+    "time": 0.0024869441986084,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testChange_profile"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testChange_profile",
+    "status": "pass",
+    "time": 0.002357006072998,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testChange_password"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testChange_password",
+    "status": "pass",
+    "time": 0.0024240016937256,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testChange_email"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testChange_email",
+    "status": "pass",
+    "time": 0.0023608207702637,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_data_before_call_db_Succeed"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_data_before_call_db_Succeed",
+    "status": "pass",
+    "time": 0.0040857791900635,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_data_before_call_db_Fail"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_data_before_call_db_Fail",
+    "status": "pass",
+    "time": 0.0031681060791016,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testInsert_and_send_mail_activate_acc"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testInsert_and_send_mail_activate_acc",
+    "status": "pass",
+    "time": 0.0022649765014648,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_change_profile"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_change_profile",
+    "status": "pass",
+    "time": 0.0024678707122803,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testSend_mail_change_email"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testSend_mail_change_email",
+    "status": "pass",
+    "time": 0.0027949810028076,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testUpdate_user_change_profile"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testUpdate_user_change_profile",
+    "status": "pass",
+    "time": 0.0030169486999512,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "UserTest",
+    "tests": 2
+}{
+    "event": "testStart",
+    "suite": "UserTest",
+    "test": "UserTest::testTableName"
+}{
+    "event": "test",
+    "suite": "UserTest",
+    "test": "UserTest::testTableName",
+    "status": "pass",
+    "time": 0.0054001808166504,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserTest",
+    "test": "UserTest::testName"
+}{
+    "event": "test",
+    "suite": "UserTest",
+    "test": "UserTest::testName",
+    "status": "pass",
+    "time": 0.0025250911712646,
+    "trace": [],
+    "message": "",
+    "output": ""
+}

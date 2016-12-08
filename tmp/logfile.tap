@@ -1,0 +1,19 @@
+TAP version 13
+ok 1 - DataPumpTest::testDataBaseConnection
+ok 2 - DataPumpTest::testLogin
+ok 3 - UserServiceTest::testRegistration
+ok 4 - UserServiceTest::testLogin_User_Invalid
+ok 5 - UserServiceTest::testLogin_Password_Invalid
+ok 6 - UserServiceTest::testConfirm
+ok 7 - UserServiceTest::testChange_profile
+ok 8 - UserServiceTest::testChange_password
+ok 9 - UserServiceTest::testChange_email
+ok 10 - UserServiceTest::testValidate_data_before_call_db_Succeed
+ok 11 - UserServiceTest::testValidate_data_before_call_db_Fail
+ok 12 - UserServiceTest::testInsert_and_send_mail_activate_acc
+ok 13 - UserServiceTest::testValidate_change_profile
+ok 14 - UserServiceTest::testSend_mail_change_email
+ok 15 - UserServiceTest::testUpdate_user_change_profile
+ok 16 - UserTest::testTableName
+ok 17 - UserTest::testName
+1..17

@@ -1,0 +1,23 @@
+DataPump
+ [x] Data base connection
+ [x] Login
+
+UserService
+ [x] Registration
+ [x] Login User Invalid
+ [x] Login Password Invalid
+ [x] Confirm
+ [x] Change profile
+ [x] Change password
+ [x] Change email
+ [x] Validate data before call db Succeed
+ [x] Validate data before call db Fail
+ [x] Insert and send mail activate acc
+ [x] Validate change profile
+ [x] Send mail change email
+ [x] Update user change profile
+
+User
+ [x] Table name
+ [x] Name
+
