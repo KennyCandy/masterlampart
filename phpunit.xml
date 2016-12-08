@@ -29,7 +29,7 @@
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./app/service/</directory>
-            <file>./app/service/UserService.php</file>
+            <!--<file>./app/service/UserService.php</file>-->
         </whitelist>
     </filter>
     <logging>

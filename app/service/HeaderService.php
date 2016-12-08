@@ -22,7 +22,7 @@ Class HeaderService extends Service {
 			$user_find = $user->find_id($id);
 
 			if(!$user_find) {
-				throw new Exception("");
+				throw new Exception("Can not find user id");
 			}
 
 			$data["user"] = $user_find;

@@ -11,9 +11,11 @@ ok 9 - UserServiceTest::testChange_email
 ok 10 - UserServiceTest::testValidate_data_before_call_db_Succeed
 ok 11 - UserServiceTest::testValidate_data_before_call_db_Fail
 ok 12 - UserServiceTest::testInsert_and_send_mail_activate_acc
-ok 13 - UserServiceTest::testValidate_change_profile
-ok 14 - UserServiceTest::testSend_mail_change_email
-ok 15 - UserServiceTest::testUpdate_user_change_profile
-ok 16 - UserTest::testTableName
-ok 17 - UserTest::testName
-1..17
+ok 13 - UserServiceTest::testValidate_change_profile_fail
+ok 14 - UserServiceTest::testValidate_change_profile_succeed
+ok 15 - UserServiceTest::testSend_mail_change_email
+ok 16 - UserServiceTest::testUpdate_user_change_profile
+ok 17 - UserServiceTest::testValidate_before_change_password_succeed
+ok 18 - UserTest::testTableName
+ok 19 - UserTest::testName
+1..19

@@ -1,7 +1,7 @@
 {
     "event": "suiteStart",
     "suite": "C:\\xampp\\htdocs\\masterlampart\\tests",
-    "tests": 17
+    "tests": 19
 }{
     "event": "suiteStart",
     "suite": "DataPumpTest",
@@ -15,7 +15,7 @@
     "suite": "DataPumpTest",
     "test": "DataPumpTest::testDataBaseConnection",
     "status": "pass",
-    "time": 0.095515966415405,
+    "time": 0.091284990310669,
     "trace": [],
     "message": "",
     "output": ""
@@ -28,14 +28,14 @@
     "suite": "DataPumpTest",
     "test": "DataPumpTest::testLogin",
     "status": "pass",
-    "time": 0.064229965209961,
+    "time": 0.032799959182739,
     "trace": [],
     "message": "",
     "output": ""
 }{
     "event": "suiteStart",
     "suite": "UserServiceTest",
-    "tests": 13
+    "tests": 15
 }{
     "event": "testStart",
     "suite": "UserServiceTest",
@@ -45,7 +45,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testRegistration",
     "status": "pass",
-    "time": 0.0036001205444336,
+    "time": 0.0021641254425049,
     "trace": [],
     "message": "",
     "output": ""
@@ -58,7 +58,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testLogin_User_Invalid",
     "status": "pass",
-    "time": 0.0045030117034912,
+    "time": 0.0032379627227783,
     "trace": [],
     "message": "",
     "output": ""
@@ -71,7 +71,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testLogin_Password_Invalid",
     "status": "pass",
-    "time": 0.0034480094909668,
+    "time": 0.0029621124267578,
     "trace": [],
     "message": "",
     "output": ""
@@ -84,7 +84,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testConfirm",
     "status": "pass",
-    "time": 0.0024869441986084,
+    "time": 0.0024971961975098,
     "trace": [],
     "message": "",
     "output": ""
@@ -97,7 +97,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testChange_profile",
     "status": "pass",
-    "time": 0.002357006072998,
+    "time": 0.0030350685119629,
     "trace": [],
     "message": "",
     "output": ""
@@ -110,7 +110,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testChange_password",
     "status": "pass",
-    "time": 0.0024240016937256,
+    "time": 0.0024049282073975,
     "trace": [],
     "message": "",
     "output": ""
@@ -123,7 +123,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testChange_email",
     "status": "pass",
-    "time": 0.0023608207702637,
+    "time": 0.0025300979614258,
     "trace": [],
     "message": "",
     "output": ""
@@ -136,7 +136,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testValidate_data_before_call_db_Succeed",
     "status": "pass",
-    "time": 0.0040857791900635,
+    "time": 0.0036511421203613,
     "trace": [],
     "message": "",
     "output": ""
@@ -149,7 +149,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testValidate_data_before_call_db_Fail",
     "status": "pass",
-    "time": 0.0031681060791016,
+    "time": 0.0045349597930908,
     "trace": [],
     "message": "",
     "output": ""
@@ -162,20 +162,33 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testInsert_and_send_mail_activate_acc",
     "status": "pass",
-    "time": 0.0022649765014648,
+    "time": 0.0025429725646973,
     "trace": [],
     "message": "",
     "output": ""
 }{
     "event": "testStart",
     "suite": "UserServiceTest",
-    "test": "UserServiceTest::testValidate_change_profile"
+    "test": "UserServiceTest::testValidate_change_profile_fail"
 }{
     "event": "test",
     "suite": "UserServiceTest",
-    "test": "UserServiceTest::testValidate_change_profile",
+    "test": "UserServiceTest::testValidate_change_profile_fail",
     "status": "pass",
-    "time": 0.0024678707122803,
+    "time": 0.0043590068817139,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_change_profile_succeed"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_change_profile_succeed",
+    "status": "pass",
+    "time": 0.0049369335174561,
     "trace": [],
     "message": "",
     "output": ""
@@ -188,7 +201,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testSend_mail_change_email",
     "status": "pass",
-    "time": 0.0027949810028076,
+    "time": 0.0024428367614746,
     "trace": [],
     "message": "",
     "output": ""
@@ -201,7 +214,20 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testUpdate_user_change_profile",
     "status": "pass",
-    "time": 0.0030169486999512,
+    "time": 0.0025200843811035,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_before_change_password_succeed"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_before_change_password_succeed",
+    "status": "pass",
+    "time": 0.0037801265716553,
     "trace": [],
     "message": "",
     "output": ""
@@ -218,7 +244,7 @@
     "suite": "UserTest",
     "test": "UserTest::testTableName",
     "status": "pass",
-    "time": 0.0054001808166504,
+    "time": 0.0047950744628906,
     "trace": [],
     "message": "",
     "output": ""
@@ -231,7 +257,7 @@
     "suite": "UserTest",
     "test": "UserTest::testName",
     "status": "pass",
-    "time": 0.0025250911712646,
+    "time": 0.0026288032531738,
     "trace": [],
     "message": "",
     "output": ""

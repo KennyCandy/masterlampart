@@ -46,7 +46,11 @@
                 <field name="fullname">trinhtrinh nguyen sasdasd</field>
                 <field name="sex">1</field>
                 <field name="birthday">2013-02-05</field>
-                <field name="address">&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot; style=&amp;quot;display: none;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot; style=&amp;quot;display: none;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot; style=&amp;quot;dis</field>
+                <field name="address">&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot; style=&amp;quot;display:
+                    none;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot;
+                    style=&amp;quot;display: none;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot;
+                    style=&amp;quot;dis
+                </field>
                 <field name="email">nguyenquoctrinhctt3@gmail.com</field>
                 <field name="status">1</field>
                 <field name="group_id">1</field>
@@ -170,6 +174,79 @@
                 <field name="email">asdas@gmail.com</field>
                 <field name="status">1</field>
                 <field name="group_id">1</field>
+            </row>
+        </table_data>
+        <!-- Table token -->
+        <table_data>
+            <row name="token">
+                <field name="id">26</field>
+                <field name="user_id">101</field>
+                <field name="token">ed62ada7fae84efdd40eceeb7ad2960a</field>
+                <field name="content">bolanisvn@gmail.com</field>
+                <field name="type">email</field>
+                <field name="status">0</field>
+                <field name="expire_date">1481010852</field>
+                <field name="created_date">1481010732</field>
+            </row>
+            <row name="token">
+                <field name="id">27</field>
+                <field name="user_id">101</field>
+                <field name="token">fdbff8bdc1eff9b879e4ef4882f326c8</field>
+                <field name="content">hello@pro.com</field>
+                <field name="type">email</field>
+                <field name="status">0</field>
+                <field name="expire_date">1481011056</field>
+                <field name="created_date">1481010936</field>
+            </row>
+            <row name="token">
+                <field name="id">28</field>
+                <field name="user_id">114</field>
+                <field name="token">4f8bf14339dc4c1e7da75c2365c7ded5</field>
+                <field name="content"></field>
+                <field name="type">account</field>
+                <field name="status">1</field>
+                <field name="expire_date">0</field>
+                <field name="created_date">0</field>
+            </row>
+            <row name="token">
+                <field name="id">29</field>
+                <field name="user_id">114</field>
+                <field name="token">b2ea58e84d8baf663028c3596ed48985</field>
+                <field name="content">bolanisvn@gmail.com</field>
+                <field name="type">email</field>
+                <field name="status">1</field>
+                <field name="expire_date">1481015594</field>
+                <field name="created_date">1481015474</field>
+            </row>
+            <row name="token">
+                <field name="id">30</field>
+                <field name="user_id">115</field>
+                <field name="token">88937831633be6e37577938c2398caa3</field>
+                <field name="content"></field>
+                <field name="type">account</field>
+                <field name="status">1</field>
+                <field name="expire_date">0</field>
+                <field name="created_date">0</field>
+            </row>
+            <row name="token">
+                <field name="id">31</field>
+                <field name="user_id">101</field>
+                <field name="token">11868e25991028a33bc5b651b31c58fd</field>
+                <field name="content">bolanisvn111@gmail.com</field>
+                <field name="type">email</field>
+                <field name="status">1</field>
+                <field name="expire_date">1481017001</field>
+                <field name="created_date">1481016881</field>
+            </row>
+            <row name="token">
+                <field name="id">32</field>
+                <field name="user_id">101</field>
+                <field name="token">d5f4243b4cfa29ac320319e015df5f9f</field>
+                <field name="content">asds@gamil.com</field>
+                <field name="type">email</field>
+                <field name="status">0</field>
+                <field name="expire_date">1481017038</field>
+                <field name="created_date">1481016918</field>
             </row>
         </table_data>
     </database>

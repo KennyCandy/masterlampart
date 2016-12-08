@@ -13,9 +13,11 @@ UserService
  [x] Validate data before call db Succeed
  [x] Validate data before call db Fail
  [x] Insert and send mail activate acc
- [x] Validate change profile
+ [x] Validate change profile fail
+ [x] Validate change profile succeed
  [x] Send mail change email
  [x] Update user change profile
+ [x] Validate before change password succeed
 
 User
  [x] Table name

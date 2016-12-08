@@ -84,12 +84,6 @@ class DataPumpTest extends PHPUnit_Extensions_Database_TestCase
 
 		$this->getConnection()->createDataSet(['user']);
 		$prod = $this->getDataSet();
-//		echo '<pre>';
-//		print_r($prod);
-//		echo '</pre>';
-//		die;
-
-
 		$queryTable    = $this->getConnection()->createQueryTable(
 			'user', 'SELECT * FROM user'
 		);
@@ -104,15 +98,8 @@ class DataPumpTest extends PHPUnit_Extensions_Database_TestCase
 	public function testLogin()
 	{
 		$this->getConnection()->createDataSet(['user']);
-		$prod          = $this->getDataSet();
-		$expectedTable = $this->getDataSet()->getTable('user');
-
-
-//		echo '<pre>';
-//		print_r($expectedTable);
-//		echo '</pre>';
-//		die;
-
+		$data_set          = $this->getDataSet();
+		$expectedTable = $data_set->getTable('user');
 		$data = [
 			'id'=>'101',
 			'username' => 'trinhtrinh',
@@ -125,13 +112,8 @@ class DataPumpTest extends PHPUnit_Extensions_Database_TestCase
 			'status'   => '1',
 			'group_id' => '1',
 		];
-
-
 		$is_st = $expectedTable->assertContainsRow($data);
-		$this->assertTrue($is_st, 'Not good');
-//		$result = $this->object->login($data);
-
-//		$this->assertArraySubset(["error" => false], $result);
+		$this->assertTrue($is_st, 'Test login has been failed');
 
 	}
 

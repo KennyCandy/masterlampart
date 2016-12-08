@@ -39,7 +39,6 @@ class UserService extends Service
 		return $result;
 	}
 
-
 	/**
 	 * @param array $data
 	 *
@@ -56,11 +55,9 @@ class UserService extends Service
 			//check user exist
 			$user = new User();
 			$user = $user->login($data['username'], $data['password']);
-
 			if (!$user) {
 				throw new Exception("Username or password is invalid");
 			}
-
 			// check active status
 			if ($user['status'] == 0) {
 				throw new Exception("Please active account before login");
@@ -74,7 +71,6 @@ class UserService extends Service
 
 		return $result;
 	}
-
 	public function confirm($token_code)
 	{
 		try {
@@ -104,7 +100,6 @@ class UserService extends Service
 
 		return $result;
 	}
-
 	public function change_profile($id, $params = [])
 	{
 
@@ -117,23 +112,7 @@ class UserService extends Service
 	public function change_password($params = [])
 	{
 		try {
-			$id               = $params["id"];
-			$password         = $params["password"];
-			$new_password     = $params["new_password"];
-			$confirm_password = $params["confirm_password"];
-			// validate
-			if (($password == '') || ($new_password == '') || ($confirm_password == '')) {
-				throw new Exception("Please enter all fields");
-			}
-			if (!(validate($password, 'password') && validate($new_password, 'password'))) {
-				throw new Exception("Password a-Z0-9, special characters !@#$%, length 3-20");
-			}
-			if ($new_password != $confirm_password) {
-				throw new Exception("Confirm password is invalid");
-			}
-			if ($password == $new_password) {
-				throw new Exception("New password is current password");
-			}
+			list($id, $password, $new_password) = $this->validate_before_change_password($params);
 			$user   = new User();
 			$result = $user->where('id', $id)->where('password', md5($password))->first();
 
@@ -354,8 +333,6 @@ class UserService extends Service
 		if (!(checkdate(explode('-', $params['birthday'])[1], explode('-', $params['birthday'])[2], explode('-', $params['birthday'])[0]) && (strtotime($params['birthday']) < time()))) {
 			$error               = true;
 			$result['message'][] = 'Birthday is invalid';
-			$result['message'][] = 'Birthday is invalid';
-
 			return [$result, $error];
 		}
 
@@ -449,5 +426,34 @@ class UserService extends Service
 
 			return $result;
 		}
+	}
+
+	/**
+	 * @param $params
+	 *
+	 * @return array
+	 * @throws Exception
+	 */
+	public function validate_before_change_password($params)
+	{
+		$id               = $params["id"];
+		$password         = $params["password"];
+		$new_password     = $params["new_password"];
+		$confirm_password = $params["confirm_password"];
+		// validate
+		if (($password == '') || ($new_password == '') || ($confirm_password == '')) {
+			throw new Exception("Please enter all fields");
+		}
+		if (!(validate($password, 'password') && validate($new_password, 'password'))) {
+			throw new Exception("Password a-Z0-9, special characters !@#$%, length 3-20");
+		}
+		if ($new_password != $confirm_password) {
+			throw new Exception("Confirm password is invalid");
+		}
+		if ($password == $new_password) {
+			throw new Exception("New password is current password");
+		}
+
+		return [$id, $password, $new_password];
 	}
 }

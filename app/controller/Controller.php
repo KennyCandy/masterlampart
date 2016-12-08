@@ -5,7 +5,6 @@ use App\Core\BaseController as BaseController;
 use App\Service\HeaderService;
 use \Exception;
 
-
 /**
  * Class Controller
  * @package App\Controller
