@@ -46,7 +46,8 @@
     <testsuites>
         <testsuite name="all">
             <directory suffix="Test.php">./tests/</directory>
-            <file>./tests/DataPumpTest.php</file>
+            <file>./tests/DataPumpUserServiceTest.php</file>
+            <file>./tests/DataPumpHeaderServiceTest.php</file>
             <exclude>./tests/</exclude>
         </testsuite>
     </testsuites>

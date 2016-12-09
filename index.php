@@ -3,6 +3,7 @@
 // this is the ‘entry-point’ file
 // start session and define DIR_PATH
 session_start();
+date_default_timezone_set('Asia/Bangkok');
 /**
  * Directory path
  */

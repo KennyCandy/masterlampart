@@ -48,6 +48,7 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 	public function testConfirm()
 	{
 
+
 	}
 
 	public function testChange_profile()
@@ -60,9 +61,37 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 
 	}
 
-	public function testChange_email()
+	public function testChange_email_empty_fail()
 	{
+		$this->_userService = new UserService();
 
+		$data   = [
+			'email' => '',
+		];
+		$result = $this->_userService->change_email($data);
+		$this->assertArraySubset(["error" => true], $result);
+	}
+	public function testChange_email_invalid_fail()
+	{
+		$this->_userService = new UserService();
+
+		$data   = [
+			'id'=>'102',
+			'email' => 'nguyenquoctrinhctt3gmailcom',
+		];
+		$result = $this->_userService->change_email($data);
+		$this->assertArraySubset(["error" => true], $result);
+	}
+	public function testChange_email_duplicate_fail()
+	{
+		$this->_userService = new UserService();
+
+		$data   = [
+			'id'=>'102',
+			'email' => 'nguyenquoctrinhctt3@gmail.com',
+		];
+		$result = $this->_userService->change_email($data);
+		$this->assertArraySubset(["error" => true], $result);
 	}
 
 	public function testValidate_data_before_call_db_Succeed()
@@ -121,31 +150,32 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 	{
 		$this->_userService = new UserService();
 		$data               = [
-			'fullname'               => '',
-			'address'         => '',
-			'sex'     => '',
+			'fullname' => '',
+			'address'  => '',
+			'sex'      => '',
 			'birthday' => '2001-20-20',
 		];
 		list($result, $error) = $this->_userService->validate_change_profile($data);
 		$this->assertEquals(true, $error, 'error is true');
 
-		$this->assertArrayHasKey('message',$result);
+		$this->assertArrayHasKey('message', $result);
 	}
 
 	public function testValidate_change_profile_succeed()
 	{
 		$this->_userService = new UserService();
 		$data               = [
-			'fullname'               => 'trinh Nguyen quoc',
-			'address'         => 'district 7',
-			'sex'     => '1',
+			'fullname' => 'trinh Nguyen quoc',
+			'address'  => 'district 7',
+			'sex'      => '1',
 			'birthday' => '2001-10-10',
 		];
 		list($result, $error) = $this->_userService->validate_change_profile($data);
 		$this->assertEquals(false, $error, 'error is false');
-		$this->assertArrayNotHasKey('message',$result);
+		$this->assertArrayNotHasKey('message', $result);
 	}
-	public function testSend_mail_change_email()
+
+	public function testSend_mail_change_email_fail()
 	{
 
 	}
@@ -154,6 +184,7 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 	{
 
 	}
+
 
 	public function testValidate_before_change_password_succeed()
 	{
@@ -164,14 +195,9 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 			'new_password'     => 'trinhtrinh@',
 			'confirm_password' => 'trinhtrinh@',
 		];
-//		$result             = [];
-//		$result['error']    = false;
 		list($id, $password, $new_password) = $this->_userService->validate_before_change_password($data);
-
 		$this->assertEquals('101', $id, 'Id is not Equal');
 		$this->assertEquals('trinhtrinh!', $password, 'password is not Equal');
 		$this->assertEquals('trinhtrinh@', $new_password, 'new_password is not Equal');
-
-
 	}
 }

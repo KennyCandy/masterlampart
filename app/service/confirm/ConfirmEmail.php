@@ -29,9 +29,10 @@ class ConfirmEmail extends Confirm
 		} else {
 			$token      = new Token();
 			$token_info = $token->where('user_id', $this->_token['user_id'])->where('status', 0)->first();
-			if ($token_info['expire_date'] < time()) {
+			if ($token_info['expire_date'] <time()) {
 				$result = ["status" => false, "message" => "Token is expired"];
 			} else {
+				// update email in user
 				$user->update_id($this->_token['user_id'], ['email' => $this->_token['content']]);
 
 				// update status(0->1) in token is used.

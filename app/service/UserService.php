@@ -71,6 +71,7 @@ class UserService extends Service
 
 		return $result;
 	}
+
 	public function confirm($token_code)
 	{
 		try {
@@ -100,6 +101,7 @@ class UserService extends Service
 
 		return $result;
 	}
+
 	public function change_profile($id, $params = [])
 	{
 
@@ -333,6 +335,7 @@ class UserService extends Service
 		if (!(checkdate(explode('-', $params['birthday'])[1], explode('-', $params['birthday'])[2], explode('-', $params['birthday'])[0]) && (strtotime($params['birthday']) < time()))) {
 			$error               = true;
 			$result['message'][] = 'Birthday is invalid';
+
 			return [$result, $error];
 		}
 
@@ -436,6 +439,7 @@ class UserService extends Service
 	 */
 	public function validate_before_change_password($params)
 	{
+
 		$id               = $params["id"];
 		$password         = $params["password"];
 		$new_password     = $params["new_password"];
@@ -453,7 +457,6 @@ class UserService extends Service
 		if ($password == $new_password) {
 			throw new Exception("New password is current password");
 		}
-
 		return [$id, $password, $new_password];
 	}
 }

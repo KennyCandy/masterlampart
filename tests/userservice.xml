@@ -46,11 +46,7 @@
                 <field name="fullname">trinhtrinh nguyen sasdasd</field>
                 <field name="sex">1</field>
                 <field name="birthday">2013-02-05</field>
-                <field name="address">&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot; style=&amp;quot;display:
-                    none;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot;
-                    style=&amp;quot;display: none;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot;
-                    style=&amp;quot;dis
-                </field>
+                <field name="address">Nguyen van quy</field>
                 <field name="email">nguyenquoctrinhctt3@gmail.com</field>
                 <field name="status">1</field>
                 <field name="group_id">1</field>
@@ -177,7 +173,7 @@
             </row>
         </table_data>
         <!-- Table token -->
-        <table_data>
+        <table_data name="token">
             <row name="token">
                 <field name="id">26</field>
                 <field name="user_id">101</field>

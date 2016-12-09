@@ -1,6 +1,7 @@
 <?php
 namespace App\Core;
 
+use Config\Database;
 use \PDO;
 
 
@@ -25,6 +26,7 @@ abstract class BaseModel
 	{
 		$this->_table = $table;
 	}
+
 	/** @var string|null $_table set table in database */
 	protected $_table;
 
@@ -118,8 +120,14 @@ abstract class BaseModel
 	 */
 	public function __construct()
 	{
-		global $CONNECTION_VAR;
-		$this->_conn = $CONNECTION_VAR;
+		if (defined("PHPUNIT_TESTSUITE")) {
+			echo 123;
+			$CONNECTION_VAR_TEST = Database::connect_database_test();
+			$this->_conn = $CONNECTION_VAR_TEST;
+		} else {
+			global $CONNECTION_VAR;
+			$this->_conn = $CONNECTION_VAR;
+		}
 	}
 
 
@@ -130,7 +138,8 @@ abstract class BaseModel
 	 *
 	 * @return bool if insert success, store insert id to $_result, enable flag $_insert_status
 	 */
-	public function insert($params = [])
+	public
+	function insert($params = [])
 	{
 		if ($this->_table != '') {
 
@@ -141,6 +150,7 @@ abstract class BaseModel
 				$this->_insert_status = true;
 				$this->_result        = [];
 				array_push($this->_result, $this->_conn->lastInsertId());
+
 				return true;
 			} else {
 				return false;
@@ -154,7 +164,8 @@ abstract class BaseModel
 	 * @return bool result and disable flag $_insert_status
 	 *
 	 */
-	public function get_insert()
+	public
+	function get_insert()
 	{
 
 		if ($this->_insert_status) {
@@ -176,15 +187,16 @@ abstract class BaseModel
 	 * @return $this
 	 * @internal param $ string|* $params have string, once field is divided by comma
 	 */
-	public function select($params = '*')
+	public
+	function select($params = '*')
 	{
-		if($params!=='*'){
+		if ($params !== '*') {
 			$params        = explode(',', $params);
 			$this->_select = '`' . implode('`,`', $params) . '`';
+		} else {
+			$this->_select = '*';
 		}
-		else{
-			$this->_select='*';
-		}
+
 		return $this;
 	}
 
@@ -194,11 +206,12 @@ abstract class BaseModel
 	 *
 	 * @param string|null $key  and $value need import
 	 * @param string|= $condition is =,!=,>=,<=,LIKE default =
-	 * @param string  $type is AND or OR, default AND
+	 * @param string      $type is AND or OR, default AND
 	 *
 	 * @return $this
 	 */
-	public function where($key, $value, $condition = '=', $type = 'AND')
+	public
+	function where($key, $value, $condition = '=', $type = 'AND')
 	{
 		$this->_where[] = [
 			'key'       => $key,
@@ -213,6 +226,7 @@ abstract class BaseModel
 
 	/**
 	 *  similar to where
+	 *
 	 * @param        $key
 	 * @param        $value
 	 * @param string $condition
@@ -220,7 +234,8 @@ abstract class BaseModel
 	 *
 	 * @return $this
 	 */
-	public function or_where($key, $value, $condition = '=', $type = 'AND')
+	public
+	function or_where($key, $value, $condition = '=', $type = 'AND')
 	{
 		$this->_or_where[] = [
 			'key'       => $key,
@@ -238,7 +253,8 @@ abstract class BaseModel
 	 *
 	 * @return $this
 	 */
-	public function join($table, $condition)
+	public
+	function join($table, $condition)
 	{
 		$this->_join[] = [
 			'table'     => $table,
@@ -254,7 +270,8 @@ abstract class BaseModel
 	 *
 	 * @return $this
 	 */
-	public function sort_by($key, $value = 'DESC')
+	public
+	function sort_by($key, $value = 'DESC')
 	{
 		$this->_sort_by = "ORDER BY $key $value";
 
@@ -266,7 +283,8 @@ abstract class BaseModel
 	 *
 	 * @return $this
 	 */
-	public function take($params = 0)
+	public
+	function take($params = 0)
 	{
 		$this->_take = $params;
 
@@ -278,7 +296,8 @@ abstract class BaseModel
 	 *
 	 * @return $this
 	 */
-	public function skip($params = 0)
+	public
+	function skip($params = 0)
 	{
 		$this->_skip = $params;
 
@@ -289,7 +308,8 @@ abstract class BaseModel
 	 * get first row
 	 *
 	 */
-	public function first()
+	public
+	function first()
 	{
 		$where    = (count($this->_where) != 0) ? $this->parse_where($this->_where) : '1';
 		$or_where = (($where != '1') && (count($this->_or_where) != 0)) ? 'OR ' . $this->parse_where($this->_or_where) : '';
@@ -309,7 +329,8 @@ abstract class BaseModel
 	 * get limit row
 	 *
 	 */
-	public function get()
+	public
+	function get()
 	{
 		$where    = (count($this->_where) != 0) ? $this->parse_where($this->_where) : '1';
 		$or_where = (($where != '1') && (count($this->_or_where) != 0)) ? 'OR ' . $this->parse_where($this->_or_where) : '';
@@ -337,7 +358,8 @@ abstract class BaseModel
 	 * get all row
 	 *
 	 */
-	public function getAll()
+	public
+	function getAll()
 	{
 		$where    = (count($this->_where) != 0) ? $this->parse_where($this->_where) : '1';
 		$or_where = (($where != '1') && (count($this->_or_where) != 0)) ? 'OR ' . $this->parse_where($this->_or_where) : '';
@@ -366,7 +388,8 @@ abstract class BaseModel
 	 * @return number
 	 *
 	 */
-	public function count()
+	public
+	function count()
 	{
 		$where    = (count($this->_where) != 0) ? $this->parse_where($this->_where) : "1";
 		$or_where = (($where != "1") && (count($this->_or_where) != 0)) ? "OR " . $this->parse_where($this->_or_where) : "";
@@ -391,7 +414,8 @@ abstract class BaseModel
 	 *
 	 * @return array|bool
 	 */
-	public function query($query = "", $type = "select")
+	public
+	function query($query = "", $type = "select")
 	{
 		$result = $this->_conn->query($query);
 		$this->reset();
@@ -422,7 +446,8 @@ abstract class BaseModel
 	 *
 	 * @return int
 	 */
-	public function count_raw($query = "")
+	public
+	function count_raw($query = "")
 	{
 		$result = $this->_conn->query($query);
 		$this->reset();
@@ -439,7 +464,8 @@ abstract class BaseModel
 	 *
 	 * @return bool
 	 */
-	public function update($params = [])
+	public
+	function update($params = [])
 	{
 		if (count($params) > 0) {
 			$update = "";
@@ -468,7 +494,8 @@ abstract class BaseModel
 	/**
 	 * @return bool
 	 */
-	public function delete()
+	public
+	function delete()
 	{
 		if ($this->_table != "") {
 			$where    = (count($this->_where) != 0) ? $this->parse_where($this->_where) : "1";
@@ -491,7 +518,8 @@ abstract class BaseModel
 	 *
 	 * @return string
 	 */
-	public function parse_where($params = [])
+	public
+	function parse_where($params = [])
 	{
 		$string = "";
 
@@ -512,7 +540,8 @@ abstract class BaseModel
 	 *
 	 * @return string
 	 */
-	public function parse_join($params = [], $type = "join")
+	public
+	function parse_join($params = [], $type = "join")
 	{
 		$string = "";
 
@@ -544,6 +573,7 @@ abstract class BaseModel
 			default:
 				break;
 		}
+
 		return $string;
 	}
 
@@ -552,7 +582,8 @@ abstract class BaseModel
 	 *
 	 * @return $this
 	 */
-	public function where_exist($query = "")
+	public
+	function where_exist($query = "")
 	{
 		$this->_where_exist = ($query == "") ? "" : "AND EXISTS ($query)";
 
@@ -564,7 +595,8 @@ abstract class BaseModel
 	 *
 	 * @return $this
 	 */
-	public function where_not_exist($query = "")
+	public
+	function where_not_exist($query = "")
 	{
 		$this->_where_not_exist = ($query == "") ? "" : "AND NOT EXISTS ($query)";
 
@@ -576,9 +608,11 @@ abstract class BaseModel
 	 *
 	 * @return $this
 	 */
-	public function group_by($query = "")
+	public
+	function group_by($query = "")
 	{
 		$this->_group_by = "GROUP BY $query";
+
 		return $this;
 	}
 
@@ -587,7 +621,8 @@ abstract class BaseModel
 	 * reset property after run a query
 	 *
 	 */
-	private function reset()
+	private
+	function reset()
 	{
 		$this->_result          = [];
 		$this->_query           = "";

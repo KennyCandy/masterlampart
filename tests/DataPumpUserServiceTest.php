@@ -10,7 +10,7 @@ use App\Service\UserService;
  * @backupGlobals          disabled
  * @backupStaticAttributes disabled
  */
-class DataPumpTest extends PHPUnit_Extensions_Database_TestCase
+class DataPumpUserServiceTest extends PHPUnit_Extensions_Database_TestCase
 {
 
 	/**
@@ -56,6 +56,7 @@ class DataPumpTest extends PHPUnit_Extensions_Database_TestCase
 	 */
 	protected function getConnection()
 	{
+		// connect to database which is created for testing
 		if ($this->conn === null) {
 			if (self::$pdo == null) {
 				self::$pdo = new PDO('mysql:dbname=testlampart;host=localhost', 'root', '');;
@@ -81,9 +82,8 @@ class DataPumpTest extends PHPUnit_Extensions_Database_TestCase
 	 */
 	public function testDataBaseConnection()
 	{
-
 		$this->getConnection()->createDataSet(['user']);
-		$prod = $this->getDataSet();
+		$prod          = $this->getDataSet();
 		$queryTable    = $this->getConnection()->createQueryTable(
 			'user', 'SELECT * FROM user'
 		);
@@ -98,23 +98,78 @@ class DataPumpTest extends PHPUnit_Extensions_Database_TestCase
 	public function testLogin()
 	{
 		$this->getConnection()->createDataSet(['user']);
-		$data_set          = $this->getDataSet();
+		$data_set      = $this->getDataSet();
 		$expectedTable = $data_set->getTable('user');
-		$data = [
-			'id'=>'101',
+		$data          = [
+			'id'       => '101',
 			'username' => 'trinhtrinh',
 			'password' => md5('123123@'),
 			'fullname' => 'trinhtrinh nguyen sasdasd',
 			'sex'      => '1',
 			'birthday' => '2013-02-05',
-			'address'  => '&lt;div class=&quot;selection_bubble_root&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;selection_bubble_root&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;selection_bubble_root&quot; style=&quot;dis',
+			'address'  => 'Nguyen van quy',
 			'email'    => 'nguyenquoctrinhctt3@gmail.com',
 			'status'   => '1',
 			'group_id' => '1',
 		];
-		$is_st = $expectedTable->assertContainsRow($data);
-		$this->assertTrue($is_st, 'Test login has been failed');
-
+		$is_st         = $expectedTable->assertContainsRow($data);
+		$this->assertTrue($is_st, 'compare 2 tables ');
 	}
 
+	public function testLogin_succeed()
+	{
+		$data   = [
+			'username' => 'trinhtrinh',
+			'password' => '123123@',
+
+		];
+		$result = $this->object->login($data);
+
+		$this->assertArraySubset(['error' => false], $result);
+		$this->assertCount(10, $result['user'], 'Count user data');
+	}
+
+	public function test_confirm_token_not_exist()
+	{
+		$token_code_data = '123456789';
+		$result          = $this->object->confirm($token_code_data);
+		$this->assertArraySubset(['error' => true], $result);
+	}
+
+	public function test_confirm_class_not_exist()
+	{
+		$token_code_data = '123456789';
+		$result          = $this->object->confirm($token_code_data);
+		$this->assertArraySubset(['error' => true], $result);
+	}
+
+	public function testRegistration_fail()
+	{
+		$data   = [
+			'fullname'    => 'lalala~',
+			'code'        => '123132~',
+			'username'    => 'lalala~',
+			'email'       => 'lalalagmail.com',
+			'password'    => 'lalala~',
+			're_password' => 'lalala@',
+			'address'     => '',
+			'sex'         => '',
+			'date'        => '12',
+			'month'       => '02',
+			'year'        => '1995',
+			'birthday'    => '1995-16-12',
+		];
+		$result = $this->object->registration($data);
+		$this->assertArraySubset(['error' => true], $result);
+	}
+
+	public function testSend_mail_change_email_fail()
+	{
+//		$id        = '101';
+//		$email     = 'nguyenquoctrinhctt333@gmail.com';
+//		$old_email = 'nguyenquoctrinhctt3@gmail.com';
+//
+//		$result = $this->object->send_mail_change_email($id,$email,$old_email);
+
+	}
 }
