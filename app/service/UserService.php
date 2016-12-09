@@ -360,7 +360,9 @@ class UserService extends Service
 
 		if ($result) {
 			if ($result['expire_date'] > time()) {
+
 				throw  new Exception("The request is existed");
+
 			}
 		}
 		// if not, then create a new token
@@ -394,9 +396,7 @@ class UserService extends Service
 		if (!$res) {
 			throw new Exception("Mail is not sent yet or not accepted");
 		}
-
 		$result = ["error" => false];
-
 		return $result;
 	}
 
@@ -426,7 +426,6 @@ class UserService extends Service
 			}
 		} else {
 			$result['error'] = true;
-
 			return $result;
 		}
 	}

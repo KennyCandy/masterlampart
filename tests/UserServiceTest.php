@@ -15,11 +15,6 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 
 	}
 
-	public function testRegistration()
-	{
-
-	}
-
 	public function testLogin_User_Invalid()
 	{
 		$this->_userService = new UserService();
@@ -28,9 +23,7 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 			'password' => '123123@',
 		];
 		$result             = $this->_userService->login($data);
-
-//		$this->assertEquals('19d40526d4f412f467b7e06be025b921',md5($data['password']);
-
+		// $this->assertEquals('19d40526d4f412f467b7e06be025b921',md5($data['password']);
 		$this->assertArraySubset(['error' => true], $result);
 	}
 
@@ -45,22 +38,6 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 		$this->assertArraySubset(['error' => true], $result);
 	}
 
-	public function testConfirm()
-	{
-
-
-	}
-
-	public function testChange_profile()
-	{
-
-	}
-
-	public function testChange_password()
-	{
-
-	}
-
 	public function testChange_email_empty_fail()
 	{
 		$this->_userService = new UserService();
@@ -71,23 +48,24 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 		$result = $this->_userService->change_email($data);
 		$this->assertArraySubset(["error" => true], $result);
 	}
+
 	public function testChange_email_invalid_fail()
 	{
 		$this->_userService = new UserService();
-
-		$data   = [
-			'id'=>'102',
+		$data               = [
+			'id'    => '102',
 			'email' => 'nguyenquoctrinhctt3gmailcom',
 		];
-		$result = $this->_userService->change_email($data);
+		$result             = $this->_userService->change_email($data);
 		$this->assertArraySubset(["error" => true], $result);
 	}
+
 	public function testChange_email_duplicate_fail()
 	{
 		$this->_userService = new UserService();
 
 		$data   = [
-			'id'=>'102',
+			'id'    => '102',
 			'email' => 'nguyenquoctrinhctt3@gmail.com',
 		];
 		$result = $this->_userService->change_email($data);
@@ -97,8 +75,7 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 	public function testValidate_data_before_call_db_Succeed()
 	{
 		$this->_userService = new UserService();
-
-		$data            = [
+		$data               = [
 			'fullname'    => 'lalala Nguyen',
 			'code'        => '123132',
 			'username'    => 'lalala',
@@ -112,9 +89,9 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 			'year'        => '1995',
 			'birthday'    => '1995-02-12',
 		];
-		$result          = [];
-		$result['error'] = false;
-		$result          = $this->_userService->validate_data_before_call_db($data, $result);
+		$result             = [];
+		$result['error']    = false;
+		$result             = $this->_userService->validate_data_before_call_db($data, $result);
 		$this->assertArraySubset(["error" => false], $result);
 	}
 
@@ -139,11 +116,6 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 		$result['error']    = false;
 		$result             = $this->_userService->validate_data_before_call_db($data, $result);
 		$this->assertArraySubset(["error" => true], $result);
-	}
-
-	public function testInsert_and_send_mail_activate_acc()
-	{
-
 	}
 
 	public function testValidate_change_profile_fail()
@@ -174,17 +146,6 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(false, $error, 'error is false');
 		$this->assertArrayNotHasKey('message', $result);
 	}
-
-	public function testSend_mail_change_email_fail()
-	{
-
-	}
-
-	public function testUpdate_user_change_profile()
-	{
-
-	}
-
 
 	public function testValidate_before_change_password_succeed()
 	{

@@ -37,6 +37,7 @@ class DataPumpUserServiceTest extends PHPUnit_Extensions_Database_TestCase
 	 */
 	protected function setUp()
 	{
+		date_default_timezone_set('Asia/Bangkok');
 		$this->object = new UserService();
 	}
 
@@ -169,7 +170,49 @@ class DataPumpUserServiceTest extends PHPUnit_Extensions_Database_TestCase
 //		$email     = 'nguyenquoctrinhctt333@gmail.com';
 //		$old_email = 'nguyenquoctrinhctt3@gmail.com';
 //
-//		$result = $this->object->send_mail_change_email($id,$email,$old_email);
+//		$result = $this->object->send_mail_change_email($id, $email, $old_email);
+//		echo '<pre>';
+//		print_r($result);
+//		echo '</pre>';
+//		die;
 
+	}
+
+	public function testChange_password_fail()
+	{
+		$data               = [
+			'id'               => '101',
+			'password'         => 'trinhtrinh!',
+			'new_password'     => 'trinhtrinh@',
+			'confirm_password' => 'trinhtrinh@',
+		];
+		$result= $this->object->change_password($data);
+		echo '<pre>';
+		print_r($result);
+		echo '</pre>';
+//		die;
+	}
+	public function testChange_profile_fail()
+	{
+		$id   = '101';
+		$data = [
+			'fullname'    => 'lalala~',
+			'code'        => '123132~',
+			'username'    => 'lalala~',
+			'email'       => 'lalalagmail.com',
+			'password'    => 'lalala~',
+			're_password' => 'lalala@',
+			'address'     => '',
+			'sex'         => '',
+			'date'        => '12',
+			'month'       => '02',
+			'year'        => '1995',
+			'birthday'    => '1995-16-12',
+		];
+
+		$result = $this->object->change_profile($id, $data);
+		$this->assertArraySubset(['error'=>true],$result);
+		$this->assertArraySubset($data,$result);
+		$this->assertNotNull($result["message"]);
 	}
 }

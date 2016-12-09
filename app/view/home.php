@@ -2,10 +2,18 @@
 
 <h3>Main Menu</h3>
 <ul class="list-group">
-	<li class="list-group-item list-group-item-warning">Welcome to MasterLampart</li>
-	<li class="list-group-item list-group-item-success"><a href="/user/profile">Profile</a></li>
-	<li class="list-group-item list-group-item-success"><a href="/user/changeemail">Change email</a></li>
-	<li class="list-group-item list-group-item-success"><a href="/user/changepassword">Change password</a></li>
-	<li class="list-group-item list-group-item-success"><a href="/user/logout">Logout</a></li>
-	<li class="list-group-item list-group-item-danger"><a href="/friend/index">Friend/index</a></li>
+    <li class="list-group-item list-group-item-warning">Welcome to MasterLampart</li>
+    <a href="/user/profile">
+        <li class="list-group-item list-group-item-success">Profile</li>
+    </a>
+    <a href="/user/changeemail">
+        <li class="list-group-item list-group-item-success">Change email</li>
+    </a>
+    <a href="/user/changepassword">
+        <li class="list-group-item list-group-item-success">Change password</li>
+    </a>
+    <a href="/user/logout">
+        <li class="list-group-item list-group-item-success">Logout</li>
+    </a>
+    <!--	<li class="list-group-item list-group-item-danger"><a href="/friend/index">Friend/index</a></li>-->
 </ul>

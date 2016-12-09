@@ -31,8 +31,6 @@ class ConfirmEmailTest extends PHPUnit_Framework_TestCase
 		$this->_token          = $token;
 		$this->_confirmAccount = new ConfirmEmail($this->_token);
 		$result = $this->_confirmAccount->confirm();
-//		$result = ["status" => false, "message" => "Account has been active"];
-
 		$this->assertArraySubset(['status'=>false],$result);
 	}
 

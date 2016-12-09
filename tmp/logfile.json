@@ -1,7 +1,7 @@
 {
     "event": "suiteStart",
     "suite": "C:\\xampp\\htdocs\\masterlampart\\tests",
-    "tests": 30
+    "tests": 25
 }{
     "event": "suiteStart",
     "suite": "ConfirmAccountTest",
@@ -10,4 +10,345 @@
     "event": "testStart",
     "suite": "ConfirmAccountTest",
     "test": "ConfirmAccountTest::testConfirmAccount_fail"
+}{
+    "event": "test",
+    "suite": "ConfirmAccountTest",
+    "test": "ConfirmAccountTest::testConfirmAccount_fail",
+    "status": "pass",
+    "time": 0.12718987464905,
+    "trace": [],
+    "message": "",
+    "output": "123<script>console.log('PHP: PDO is created');<\/script>123<script>console.log('PHP: PDO is created');<\/script>"
+}{
+    "event": "suiteStart",
+    "suite": "ConfirmEmailTest",
+    "tests": 1
+}{
+    "event": "testStart",
+    "suite": "ConfirmEmailTest",
+    "test": "ConfirmEmailTest::testConfirmEmail_fail"
+}{
+    "event": "test",
+    "suite": "ConfirmEmailTest",
+    "test": "ConfirmEmailTest::testConfirmEmail_fail",
+    "status": "pass",
+    "time": 0.0074138641357422,
+    "trace": [],
+    "message": "",
+    "output": "123<script>console.log('PHP: PDO is created');<\/script>123<script>console.log('PHP: PDO is created');<\/script>"
+}{
+    "event": "suiteStart",
+    "suite": "DataPumpHeaderServiceTest",
+    "tests": 2
+}{
+    "event": "testStart",
+    "suite": "DataPumpHeaderServiceTest",
+    "test": "DataPumpHeaderServiceTest::testDataBaseConnection"
+}{
+    "event": "test",
+    "suite": "DataPumpHeaderServiceTest",
+    "test": "DataPumpHeaderServiceTest::testDataBaseConnection",
+    "status": "pass",
+    "time": 0.12183809280396,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "DataPumpHeaderServiceTest",
+    "test": "DataPumpHeaderServiceTest::testLoad_data_fail"
+}{
+    "event": "test",
+    "suite": "DataPumpHeaderServiceTest",
+    "test": "DataPumpHeaderServiceTest::testLoad_data_fail",
+    "status": "pass",
+    "time": 0.005911111831665,
+    "trace": [],
+    "message": "",
+    "output": "123<script>console.log('PHP: PDO is created');<\/script>"
+}{
+    "event": "suiteStart",
+    "suite": "DataPumpUserServiceTest",
+    "tests": 9
+}{
+    "event": "testStart",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::testDataBaseConnection"
+}{
+    "event": "test",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::testDataBaseConnection",
+    "status": "pass",
+    "time": 0.28829503059387,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::testLogin"
+}{
+    "event": "test",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::testLogin",
+    "status": "pass",
+    "time": 0.123859167099,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::testLogin_succeed"
+}{
+    "event": "test",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::testLogin_succeed",
+    "status": "pass",
+    "time": 0.042664051055908,
+    "trace": [],
+    "message": "",
+    "output": "123<script>console.log('PHP: PDO is created');<\/script>"
+}{
+    "event": "testStart",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::test_confirm_token_not_exist"
+}{
+    "event": "test",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::test_confirm_token_not_exist",
+    "status": "pass",
+    "time": 0.010824203491211,
+    "trace": [],
+    "message": "",
+    "output": "123<script>console.log('PHP: PDO is created');<\/script>"
+}{
+    "event": "testStart",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::test_confirm_class_not_exist"
+}{
+    "event": "test",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::test_confirm_class_not_exist",
+    "status": "pass",
+    "time": 0.0088481903076172,
+    "trace": [],
+    "message": "",
+    "output": "123<script>console.log('PHP: PDO is created');<\/script>"
+}{
+    "event": "testStart",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::testRegistration_fail"
+}{
+    "event": "test",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::testRegistration_fail",
+    "status": "pass",
+    "time": 0.0065770149230957,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::testSend_mail_change_email_fail"
+}{
+    "event": "test",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::testSend_mail_change_email_fail",
+    "status": "pass",
+    "time": 0.0048890113830566,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::testChange_password_fail"
+}{
+    "event": "test",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::testChange_password_fail",
+    "status": "pass",
+    "time": 0.0085630416870117,
+    "trace": [],
+    "message": "",
+    "output": "123<script>console.log('PHP: PDO is created');<\/script><pre>Array\n(\n    [error] => 1\n    [message] => Current password is invalid\n)\n<\/pre>"
+}{
+    "event": "testStart",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::testChange_profile_fail"
+}{
+    "event": "test",
+    "suite": "DataPumpUserServiceTest",
+    "test": "DataPumpUserServiceTest::testChange_profile_fail",
+    "status": "pass",
+    "time": 0.023837089538574,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "UserServiceTest",
+    "tests": 10
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testLogin_User_Invalid"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testLogin_User_Invalid",
+    "status": "pass",
+    "time": 0.0077979564666748,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testLogin_Password_Invalid"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testLogin_Password_Invalid",
+    "status": "pass",
+    "time": 0.0090498924255371,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testChange_email_empty_fail"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testChange_email_empty_fail",
+    "status": "pass",
+    "time": 0.0062041282653809,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testChange_email_invalid_fail"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testChange_email_invalid_fail",
+    "status": "pass",
+    "time": 0.0066452026367188,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testChange_email_duplicate_fail"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testChange_email_duplicate_fail",
+    "status": "pass",
+    "time": 0.010935068130493,
+    "trace": [],
+    "message": "",
+    "output": "123<script>console.log('PHP: PDO is created');<\/script>"
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_data_before_call_db_Succeed"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_data_before_call_db_Succeed",
+    "status": "pass",
+    "time": 0.0063138008117676,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_data_before_call_db_Fail"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_data_before_call_db_Fail",
+    "status": "pass",
+    "time": 0.0069429874420166,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_change_profile_fail"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_change_profile_fail",
+    "status": "pass",
+    "time": 0.008774995803833,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_change_profile_succeed"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_change_profile_succeed",
+    "status": "pass",
+    "time": 0.0078060626983643,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_before_change_password_succeed"
+}{
+    "event": "test",
+    "suite": "UserServiceTest",
+    "test": "UserServiceTest::testValidate_before_change_password_succeed",
+    "status": "pass",
+    "time": 0.011206150054932,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "UserTest",
+    "tests": 2
+}{
+    "event": "testStart",
+    "suite": "UserTest",
+    "test": "UserTest::testTableName"
+}{
+    "event": "test",
+    "suite": "UserTest",
+    "test": "UserTest::testTableName",
+    "status": "pass",
+    "time": 0.0068168640136719,
+    "trace": [],
+    "message": "",
+    "output": "123<script>console.log('PHP: PDO is created');<\/script>"
+}{
+    "event": "testStart",
+    "suite": "UserTest",
+    "test": "UserTest::testName"
+}{
+    "event": "test",
+    "suite": "UserTest",
+    "test": "UserTest::testName",
+    "status": "pass",
+    "time": 0.0064601898193359,
+    "trace": [],
+    "message": "",
+    "output": "123<script>console.log('PHP: PDO is created');<\/script>"
 }
