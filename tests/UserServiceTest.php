@@ -147,6 +147,76 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 		$this->assertArrayNotHasKey('message', $result);
 	}
 
+
+	public function testValidate_before_change_password_fail_id()
+	{
+		$this->_userService = new UserService();
+		$data               = [
+			'id'               => '',
+			'password'         => '',
+			'new_password'     => 'trinhtrinh@',
+			'confirm_password' => 'trinhtrinh@',
+		];
+		$result = [];
+		try {
+			$this->_userService->validate_before_change_password($data);
+		} catch (Exception $e) {
+			$result['message'] = $e->getMessage();
+		}
+		$this->assertNotNull($result);
+	}
+	public function testValidate_before_change_password_fail_password()
+	{
+		$this->_userService = new UserService();
+		$data               = [
+			'id'               => '101',
+			'password'         => '12',
+			'new_password'     => 'trinhtrinh@',
+			'confirm_password' => 'trinhtrinh@',
+		];
+		$result = [];
+		try {
+			$this->_userService->validate_before_change_password($data);
+		} catch (Exception $e) {
+			$result['message'] = $e->getMessage();
+		}
+		$this->assertNotNull($result);
+	}
+	public function testValidate_before_change_password_fail_confirm_password()
+	{
+		$this->_userService = new UserService();
+		$data               = [
+			'id'               => '101',
+			'password'         => 'trinhtrinh!',
+			'new_password'     => 'trinhtrinh',
+			'confirm_password' => 'trinhtrinh@',
+		];
+		$result = [];
+		try {
+			$this->_userService->validate_before_change_password($data);
+		} catch (Exception $e) {
+			$result['message'] = $e->getMessage();
+		}
+		$this->assertNotNull($result);
+	}
+	public function testValidate_before_change_password_fail_current_password()
+	{
+		$this->_userService = new UserService();
+		$data               = [
+			'id'               => '101',
+			'password'         => 'trinhtrinh!',
+			'new_password'     => 'trinhtrinh!',
+			'confirm_password' => 'trinhtrinh!',
+		];
+		$result = [];
+		try {
+			$this->_userService->validate_before_change_password($data);
+		} catch (Exception $e) {
+			$result['message'] = $e->getMessage();
+		}
+		$this->assertNotNull($result);
+	}
+
 	public function testValidate_before_change_password_succeed()
 	{
 		$this->_userService = new UserService();
@@ -161,4 +231,7 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals('trinhtrinh!', $password, 'password is not Equal');
 		$this->assertEquals('trinhtrinh@', $new_password, 'new_password is not Equal');
 	}
+
+
+	
 }

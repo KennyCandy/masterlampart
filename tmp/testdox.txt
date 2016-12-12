@@ -29,6 +29,10 @@ UserService
  [x] Validate data before call db Fail
  [x] Validate change profile fail
  [x] Validate change profile succeed
+ [x] Validate before change password fail id
+ [x] Validate before change password fail password
+ [x] Validate before change password fail confirm password
+ [x] Validate before change password fail current password
  [x] Validate before change password succeed
 
 User

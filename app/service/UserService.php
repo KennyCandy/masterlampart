@@ -351,6 +351,7 @@ class UserService extends Service
 	 * @return array
 	 * @throws Exception
 	 */
+	// @codeCoverageIgnoreStart
 	public function send_mail_change_email($id, $email, $old_email)
 	{
 		// Check whether request is exist or not
@@ -397,8 +398,10 @@ class UserService extends Service
 			throw new Exception("Mail is not sent yet or not accepted");
 		}
 		$result = ["error" => false];
+
 		return $result;
 	}
+	// @codeCoverageIgnoreEnd
 
 	/**
 	 * @param $id
@@ -426,6 +429,7 @@ class UserService extends Service
 			}
 		} else {
 			$result['error'] = true;
+
 			return $result;
 		}
 	}
@@ -456,6 +460,7 @@ class UserService extends Service
 		if ($password == $new_password) {
 			throw new Exception("New password is current password");
 		}
+
 		return [$id, $password, $new_password];
 	}
 }

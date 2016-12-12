@@ -34,9 +34,13 @@ ok 19 - UserServiceTest::testValidate_data_before_call_db_Succeed
 ok 20 - UserServiceTest::testValidate_data_before_call_db_Fail
 ok 21 - UserServiceTest::testValidate_change_profile_fail
 ok 22 - UserServiceTest::testValidate_change_profile_succeed
-ok 23 - UserServiceTest::testValidate_before_change_password_succeed
-ok 24 - UserTest::testTableName
+ok 23 - UserServiceTest::testValidate_before_change_password_fail_id
+ok 24 - UserServiceTest::testValidate_before_change_password_fail_password
+ok 25 - UserServiceTest::testValidate_before_change_password_fail_confirm_password
+ok 26 - UserServiceTest::testValidate_before_change_password_fail_current_password
+ok 27 - UserServiceTest::testValidate_before_change_password_succeed
+ok 28 - UserTest::testTableName
 # 123<script>console.log('PHP: PDO is created');</script>
-ok 25 - UserTest::testName
+ok 29 - UserTest::testName
 # 123<script>console.log('PHP: PDO is created');</script>
-1..25
+1..29
