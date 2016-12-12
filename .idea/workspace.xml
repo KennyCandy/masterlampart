@@ -3,29 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b6225378-c09d-4437-8d84-8e17ad8f9994" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/service/UserService.php" afterPath="$PROJECT_DIR$/app/service/UserService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/home.php" afterPath="$PROJECT_DIR$/app/view/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ConfirmAccountTest.php" afterPath="$PROJECT_DIR$/tests/ConfirmAccountTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ConfirmEmailTest.php" afterPath="$PROJECT_DIR$/tests/ConfirmEmailTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/DataPumpHeaderServiceTest.php" afterPath="$PROJECT_DIR$/tests/DataPumpHeaderServiceTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/DataPumpUserServiceTest.php" afterPath="$PROJECT_DIR$/tests/DataPumpUserServiceTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/UserServiceTest.php" afterPath="$PROJECT_DIR$/tests/UserServiceTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/coverage.xml" afterPath="$PROJECT_DIR$/tmp/coverage.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/logfile.json" afterPath="$PROJECT_DIR$/tmp/logfile.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/logfile.tap" afterPath="$PROJECT_DIR$/tmp/logfile.tap" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/logfile.xml" afterPath="$PROJECT_DIR$/tmp/logfile.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/report/HeaderService.php.html" afterPath="$PROJECT_DIR$/tmp/report/HeaderService.php.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/report/Service.php.html" afterPath="$PROJECT_DIR$/tmp/report/Service.php.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/report/UserService.php.html" afterPath="$PROJECT_DIR$/tmp/report/UserService.php.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/report/confirm/Confirm.php.html" afterPath="$PROJECT_DIR$/tmp/report/confirm/Confirm.php.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/report/confirm/ConfirmAccount.php.html" afterPath="$PROJECT_DIR$/tmp/report/confirm/ConfirmAccount.php.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/report/confirm/ConfirmEmail.php.html" afterPath="$PROJECT_DIR$/tmp/report/confirm/ConfirmEmail.php.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/report/confirm/dashboard.html" afterPath="$PROJECT_DIR$/tmp/report/confirm/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/report/confirm/index.html" afterPath="$PROJECT_DIR$/tmp/report/confirm/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/report/dashboard.html" afterPath="$PROJECT_DIR$/tmp/report/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/report/index.html" afterPath="$PROJECT_DIR$/tmp/report/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/testdox.html" afterPath="$PROJECT_DIR$/tmp/testdox.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/testdox.txt" afterPath="$PROJECT_DIR$/tmp/testdox.txt" />
     </list>
     <ignored path="masterlampart.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -856,7 +833,7 @@
       <workItem from="1481103858757" duration="1631000" />
       <workItem from="1481105881970" duration="366000" />
       <workItem from="1481160021807" duration="21036000" />
-      <workItem from="1481246380734" duration="18050000" />
+      <workItem from="1481246380734" duration="18649000" />
     </task>
     <servers />
   </component>
@@ -893,7 +870,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207545000" />
+    <option name="totallyTimeSpent" value="208144000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -911,7 +888,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32870865" sideWeight="0.49558985" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32870865" sideWeight="0.50441015" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.49558985" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48338693" sideWeight="0.8180816" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48338693" sideWeight="0.8180816" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.123484015" sideWeight="0.18191841" order="5" side_tool="true" content_ui="tabs" x="934" y="263" width="583" height="693" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44908896" sideWeight="0.49779493" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910696" sideWeight="0.4945355" order="4" side_tool="false" content_ui="tabs" />
