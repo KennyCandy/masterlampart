@@ -62,7 +62,7 @@ class DataPumpUserServiceTest extends PHPUnit_Extensions_Database_TestCase
 			if (self::$pdo == null) {
 				self::$pdo = new PDO('mysql:dbname=testlampart;host=localhost', 'root', '');;
 			}
-			$this->conn = $this->createDefaultDBConnection(self::$pdo, 'testlampart');
+			$this->conn = $this->createDefaultDBConnection(self::$pdo, \Config\Env::DB_NAME_TEST);
 		}
 
 		return $this->conn;
@@ -96,7 +96,7 @@ class DataPumpUserServiceTest extends PHPUnit_Extensions_Database_TestCase
 	/**
 	 * This is where you can put your actual tests
 	 */
-	public function testLogin()
+	public function testUser_in_table()
 	{
 		$this->getConnection()->createDataSet(['user']);
 		$data_set      = $this->getDataSet();

@@ -171,7 +171,7 @@ class UserService extends Service
 	 *
 	 * @return mixed
 	 */
-	public function validate_data_before_call_db($data, $result)
+	public function validate_data_before_call_db($data, &$result)
 	{
 		if (!validate($data['fullname'], 'fullname')) {
 			$result['error']     = true;
@@ -226,7 +226,7 @@ class UserService extends Service
 			$result['error']     = true;
 			$result['message'][] = 'Birthday invalid';
 
-			return $result;
+//			return $result;
 		}
 
 		return $result;

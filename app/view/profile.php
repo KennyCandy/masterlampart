@@ -69,7 +69,7 @@
                                 <label class="control-label col-sm-3">Sex <span
                                             class="text-danger edit-hide hide">*</span></label>
                                 <div class="col-md-9 col-sm-9 sex-profile">
-                                    <span class="edit-show in-block"><?php echo ($user['sex'] == 1) ? 'Male' : 'Female'; ?></span>
+                                    <span class="edit-show in-block-cus"><?php echo ($user['sex'] == 1) ? 'Male' : 'Female'; ?></span>
                                     <div class="edit-hide hide">
                                         <input type="radio" value="1"
                                                name="sex" <?php echo ($user['sex'] == 1) ? 'checked' : ''; ?>/> Male

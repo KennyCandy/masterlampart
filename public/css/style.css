@@ -41,6 +41,10 @@ input.upload {
 	padding-top: 7px;
 	display: block;
 }
+#edit-form span.in-block-cus {
+	padding-top: 2px;
+	display: block;
+}
 .sex-profile{
 	padding-top: 5px;
 }

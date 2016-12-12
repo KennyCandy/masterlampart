@@ -15,7 +15,7 @@
     "suite": "ConfirmAccountTest",
     "test": "ConfirmAccountTest::testConfirmAccount_fail",
     "status": "pass",
-    "time": 0.20175290107727,
+    "time": 0.20512795448303,
     "trace": [],
     "message": "",
     "output": "123<script>console.log('PHP: PDO is created');<\/script>123<script>console.log('PHP: PDO is created');<\/script>"
@@ -32,7 +32,7 @@
     "suite": "ConfirmEmailTest",
     "test": "ConfirmEmailTest::testConfirmEmail_fail",
     "status": "pass",
-    "time": 0.0074870586395264,
+    "time": 0.0084760189056396,
     "trace": [],
     "message": "",
     "output": "123<script>console.log('PHP: PDO is created');<\/script>123<script>console.log('PHP: PDO is created');<\/script>"
@@ -49,7 +49,7 @@
     "suite": "DataPumpHeaderServiceTest",
     "test": "DataPumpHeaderServiceTest::testDataBaseConnection",
     "status": "pass",
-    "time": 0.15087389945984,
+    "time": 0.13159203529358,
     "trace": [],
     "message": "",
     "output": ""
@@ -62,7 +62,7 @@
     "suite": "DataPumpHeaderServiceTest",
     "test": "DataPumpHeaderServiceTest::testLoad_data_fail",
     "status": "pass",
-    "time": 0.0075159072875977,
+    "time": 0.0067520141601562,
     "trace": [],
     "message": "",
     "output": "123<script>console.log('PHP: PDO is created');<\/script>"
@@ -79,7 +79,7 @@
     "suite": "DataPumpUserServiceTest",
     "test": "DataPumpUserServiceTest::testDataBaseConnection",
     "status": "pass",
-    "time": 0.23887491226196,
+    "time": 0.14618492126465,
     "trace": [],
     "message": "",
     "output": ""
@@ -92,7 +92,7 @@
     "suite": "DataPumpUserServiceTest",
     "test": "DataPumpUserServiceTest::testLogin",
     "status": "pass",
-    "time": 0.11829304695129,
+    "time": 0.13281393051147,
     "trace": [],
     "message": "",
     "output": ""
@@ -105,7 +105,7 @@
     "suite": "DataPumpUserServiceTest",
     "test": "DataPumpUserServiceTest::testLogin_succeed",
     "status": "pass",
-    "time": 0.01106595993042,
+    "time": 0.014443874359131,
     "trace": [],
     "message": "",
     "output": "123<script>console.log('PHP: PDO is created');<\/script>"
@@ -118,7 +118,7 @@
     "suite": "DataPumpUserServiceTest",
     "test": "DataPumpUserServiceTest::test_confirm_token_not_exist",
     "status": "pass",
-    "time": 0.012923002243042,
+    "time": 0.0098321437835693,
     "trace": [],
     "message": "",
     "output": "123<script>console.log('PHP: PDO is created');<\/script>"
@@ -131,7 +131,7 @@
     "suite": "DataPumpUserServiceTest",
     "test": "DataPumpUserServiceTest::test_confirm_class_not_exist",
     "status": "pass",
-    "time": 0.0095040798187256,
+    "time": 0.0095810890197754,
     "trace": [],
     "message": "",
     "output": "123<script>console.log('PHP: PDO is created');<\/script>"
@@ -144,7 +144,7 @@
     "suite": "DataPumpUserServiceTest",
     "test": "DataPumpUserServiceTest::testRegistration_fail",
     "status": "pass",
-    "time": 0.0074701309204102,
+    "time": 0.007627010345459,
     "trace": [],
     "message": "",
     "output": ""
@@ -157,7 +157,7 @@
     "suite": "DataPumpUserServiceTest",
     "test": "DataPumpUserServiceTest::testSend_mail_change_email_fail",
     "status": "pass",
-    "time": 0.0046329498291016,
+    "time": 0.004368782043457,
     "trace": [],
     "message": "",
     "output": ""
@@ -170,7 +170,7 @@
     "suite": "DataPumpUserServiceTest",
     "test": "DataPumpUserServiceTest::testChange_password_fail",
     "status": "pass",
-    "time": 0.0099570751190186,
+    "time": 0.0099341869354248,
     "trace": [],
     "message": "",
     "output": "123<script>console.log('PHP: PDO is created');<\/script><pre>Array\n(\n    [error] => 1\n    [message] => Current password is invalid\n)\n<\/pre>"
@@ -183,7 +183,7 @@
     "suite": "DataPumpUserServiceTest",
     "test": "DataPumpUserServiceTest::testChange_profile_fail",
     "status": "pass",
-    "time": 0.0098550319671631,
+    "time": 0.0081830024719238,
     "trace": [],
     "message": "",
     "output": ""
@@ -200,7 +200,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testLogin_User_Invalid",
     "status": "pass",
-    "time": 0.0052909851074219,
+    "time": 0.0060989856719971,
     "trace": [],
     "message": "",
     "output": ""
@@ -213,7 +213,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testLogin_Password_Invalid",
     "status": "pass",
-    "time": 0.0066680908203125,
+    "time": 0.0072119235992432,
     "trace": [],
     "message": "",
     "output": ""
@@ -226,7 +226,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testChange_email_empty_fail",
     "status": "pass",
-    "time": 0.011128902435303,
+    "time": 0.0081288814544678,
     "trace": [],
     "message": "",
     "output": ""
@@ -239,7 +239,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testChange_email_invalid_fail",
     "status": "pass",
-    "time": 0.0072159767150879,
+    "time": 0.010166168212891,
     "trace": [],
     "message": "",
     "output": ""
@@ -252,7 +252,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testChange_email_duplicate_fail",
     "status": "pass",
-    "time": 0.01054310798645,
+    "time": 0.011853933334351,
     "trace": [],
     "message": "",
     "output": "123<script>console.log('PHP: PDO is created');<\/script>"
@@ -265,7 +265,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testValidate_data_before_call_db_Succeed",
     "status": "pass",
-    "time": 0.0051960945129395,
+    "time": 0.0058588981628418,
     "trace": [],
     "message": "",
     "output": ""
@@ -278,7 +278,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testValidate_data_before_call_db_Fail",
     "status": "pass",
-    "time": 0.0049691200256348,
+    "time": 0.007282018661499,
     "trace": [],
     "message": "",
     "output": ""
@@ -291,7 +291,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testValidate_change_profile_fail",
     "status": "pass",
-    "time": 0.0038549900054932,
+    "time": 0.006782054901123,
     "trace": [],
     "message": "",
     "output": ""
@@ -304,7 +304,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testValidate_change_profile_succeed",
     "status": "pass",
-    "time": 0.0056710243225098,
+    "time": 0.0080220699310303,
     "trace": [],
     "message": "",
     "output": ""
@@ -317,7 +317,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testValidate_before_change_password_fail_id",
     "status": "pass",
-    "time": 0.0037589073181152,
+    "time": 0.0060338973999023,
     "trace": [],
     "message": "",
     "output": ""
@@ -330,7 +330,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testValidate_before_change_password_fail_password",
     "status": "pass",
-    "time": 0.0044960975646973,
+    "time": 0.0031130313873291,
     "trace": [],
     "message": "",
     "output": ""
@@ -343,7 +343,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testValidate_before_change_password_fail_confirm_password",
     "status": "pass",
-    "time": 0.0064949989318848,
+    "time": 0.0056259632110596,
     "trace": [],
     "message": "",
     "output": ""
@@ -356,7 +356,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testValidate_before_change_password_fail_current_password",
     "status": "pass",
-    "time": 0.0040180683135986,
+    "time": 0.018027067184448,
     "trace": [],
     "message": "",
     "output": ""
@@ -369,7 +369,7 @@
     "suite": "UserServiceTest",
     "test": "UserServiceTest::testValidate_before_change_password_succeed",
     "status": "pass",
-    "time": 0.0051109790802002,
+    "time": 0.0066590309143066,
     "trace": [],
     "message": "",
     "output": ""
@@ -386,7 +386,7 @@
     "suite": "UserTest",
     "test": "UserTest::testTableName",
     "status": "pass",
-    "time": 0.0045139789581299,
+    "time": 0.0046219825744629,
     "trace": [],
     "message": "",
     "output": "123<script>console.log('PHP: PDO is created');<\/script>"
@@ -399,7 +399,7 @@
     "suite": "UserTest",
     "test": "UserTest::testName",
     "status": "pass",
-    "time": 0.0051710605621338,
+    "time": 0.0044701099395752,
     "trace": [],
     "message": "",
     "output": "123<script>console.log('PHP: PDO is created');<\/script>"

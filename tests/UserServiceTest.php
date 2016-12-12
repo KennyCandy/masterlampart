@@ -89,9 +89,9 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 			'year'        => '1995',
 			'birthday'    => '1995-02-12',
 		];
-		$result             = [];
+		$result             = array();
 		$result['error']    = false;
-		$result             = $this->_userService->validate_data_before_call_db($data, $result);
+		$this->_userService->validate_data_before_call_db($data, $result);
 		$this->assertArraySubset(["error" => false], $result);
 	}
 
@@ -128,7 +128,7 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 			'birthday' => '2001-20-20',
 		];
 		list($result, $error) = $this->_userService->validate_change_profile($data);
-		$this->assertEquals(true, $error, 'error is true');
+		$this->assertEquals(true,$error,  'error is true');
 
 		$this->assertArrayHasKey('message', $result);
 	}
@@ -233,5 +233,5 @@ class UserServiceTest extends PHPUnit_Framework_TestCase
 	}
 
 
-	
+
 }
