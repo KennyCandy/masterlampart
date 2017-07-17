@@ -95,6 +95,8 @@ class DataPumpUserServiceTest extends PHPUnit_Extensions_Database_TestCase
 
 	/**
 	 * This is where you can put your actual tests
+     * @author quoc_trinh
+     * @since  2017-06-30
 	 */
 	public function testUser_in_table()
 	{

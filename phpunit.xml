@@ -28,8 +28,8 @@
 
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./app/service/</directory>
-            <!--<file>./app/service/UserService.php</file>-->
+            <!--<directory suffix=".php">./app/service/</directory>-->
+            <file>./app/service/UserService.php</file>
         </whitelist>
     </filter>
     <logging>
@@ -43,14 +43,14 @@
         <log type="testdox-html" target="./tmp/testdox.html"/>
         <log type="testdox-text" target="./tmp/testdox.txt"/>
     </logging>
-    <testsuites>
-        <testsuite name="all">
-            <directory suffix="Test.php">./tests/</directory>
-            <file>./tests/DataPumpUserServiceTest.php</file>
-            <file>./tests/DataPumpHeaderServiceTest.php</file>
-            <exclude>./tests/</exclude>
-        </testsuite>
-    </testsuites>
+    <!--<testsuites>-->
+        <!--<testsuite name="all">-->
+            <!--<directory suffix="Test.php">./tests/</directory>-->
+            <!--<file>./tests/DataPumpUserServiceTest.php</file>-->
+            <!--<file>./tests/DataPumpHeaderServiceTest.php</file>-->
+            <!--<exclude>./tests/</exclude>-->
+        <!--</testsuite>-->
+    <!--</testsuites>-->
     <php>
         <const name="PHPUNIT_TESTSUITE" value="true"/>
         <const name="TEST_API" value="true"/>

@@ -1,46 +1,4 @@
 TAP version 13
-ok 1 - ConfirmAccountTest::testConfirmAccount_fail
-# 123<script>console.log('PHP: PDO is created');</script>123<script>console.log('PHP: PDO is created');</script>
-ok 2 - ConfirmEmailTest::testConfirmEmail_fail
-# 123<script>console.log('PHP: PDO is created');</script>123<script>console.log('PHP: PDO is created');</script>
-ok 3 - DataPumpHeaderServiceTest::testDataBaseConnection
-ok 4 - DataPumpHeaderServiceTest::testLoad_data_fail
+ok 1 - DataPumpUserServiceTest::testLogin_succeed
 # 123<script>console.log('PHP: PDO is created');</script>
-ok 5 - DataPumpUserServiceTest::testDataBaseConnection
-ok 6 - DataPumpUserServiceTest::testLogin
-ok 7 - DataPumpUserServiceTest::testLogin_succeed
-# 123<script>console.log('PHP: PDO is created');</script>
-ok 8 - DataPumpUserServiceTest::test_confirm_token_not_exist
-# 123<script>console.log('PHP: PDO is created');</script>
-ok 9 - DataPumpUserServiceTest::test_confirm_class_not_exist
-# 123<script>console.log('PHP: PDO is created');</script>
-ok 10 - DataPumpUserServiceTest::testRegistration_fail
-ok 11 - DataPumpUserServiceTest::testSend_mail_change_email_fail
-ok 12 - DataPumpUserServiceTest::testChange_password_fail
-# 123<script>console.log('PHP: PDO is created');</script><pre>Array
-# (
-#     [error] => 1
-#     [message] => Current password is invalid
-# )
-# </pre>
-ok 13 - DataPumpUserServiceTest::testChange_profile_fail
-ok 14 - UserServiceTest::testLogin_User_Invalid
-ok 15 - UserServiceTest::testLogin_Password_Invalid
-ok 16 - UserServiceTest::testChange_email_empty_fail
-ok 17 - UserServiceTest::testChange_email_invalid_fail
-ok 18 - UserServiceTest::testChange_email_duplicate_fail
-# 123<script>console.log('PHP: PDO is created');</script>
-ok 19 - UserServiceTest::testValidate_data_before_call_db_Succeed
-ok 20 - UserServiceTest::testValidate_data_before_call_db_Fail
-ok 21 - UserServiceTest::testValidate_change_profile_fail
-ok 22 - UserServiceTest::testValidate_change_profile_succeed
-ok 23 - UserServiceTest::testValidate_before_change_password_fail_id
-ok 24 - UserServiceTest::testValidate_before_change_password_fail_password
-ok 25 - UserServiceTest::testValidate_before_change_password_fail_confirm_password
-ok 26 - UserServiceTest::testValidate_before_change_password_fail_current_password
-ok 27 - UserServiceTest::testValidate_before_change_password_succeed
-ok 28 - UserTest::testTableName
-# 123<script>console.log('PHP: PDO is created');</script>
-ok 29 - UserTest::testName
-# 123<script>console.log('PHP: PDO is created');</script>
-1..29
+1..1
