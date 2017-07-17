@@ -7,14 +7,14 @@
  */
 
 namespace App\Model;
+
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\Model;
 
+class Test extends Model {
 
-class Test extends Model
-{
-	public $name;
-	public $timestamps=[];
-	protected $fillable = ['username'];
+    public    $name;
+    public    $timestamps = [];
+    protected $fillable   = ['username'];
 
 }

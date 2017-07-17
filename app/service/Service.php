@@ -1,16 +1,16 @@
 <?php
-namespace App\Service;
 
+namespace App\Service;
 
 /**
  * Class Service
+ *
  * @package App\Service
  */
-abstract class Service
-{
-	public function __construct()
-	{
-		
-	}
-	
+abstract class Service {
+
+    public function __construct() {
+
+    }
+
 }

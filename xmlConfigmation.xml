@@ -969,7 +969,11 @@
             <column name="fullname">trinhtrinh nguyen sasdasd</column>
             <column name="sex">1</column>
             <column name="birthday">2013-02-05</column>
-            <column name="address">&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot; style=&amp;quot;display: none;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot; style=&amp;quot;display: none;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot; style=&amp;quot;dis</column>
+            <column name="address">&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot; style=&amp;quot;display:
+                none;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot;
+                style=&amp;quot;display: none;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;selection_bubble_root&amp;quot;
+                style=&amp;quot;dis
+            </column>
             <column name="email">nguyenquoctrinhctt3@gmail.com</column>
             <column name="status">1</column>
             <column name="group_id">1</column>

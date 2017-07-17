@@ -3,23 +3,20 @@
 //use App\Model\User;
 require_once('C:\xampp\htdocs\masterlampart\vendor\autoload.php');
 
-class UserTest extends PHPUnit_Framework_TestCase
-{
-	public $test;
+class UserTest extends PHPUnit_Framework_TestCase {
 
-	public function setUp()
-	{
-		$this->test = new \App\Model\User();
-	}
+    public $test;
 
-	public function testTableName()
-	{
-		$this->assertEquals('user', $this->test->getTable());
-	}
+    public function setUp() {
+        $this->test = new \App\Model\User();
+    }
 
-	public function testName()
-	{
-		$jason = $this->test;
-		$this->assertTrue(true, '');
-	}
+    public function testTableName() {
+        $this->assertEquals('user', $this->test->getTable());
+    }
+
+    public function testName() {
+        $jason = $this->test;
+        $this->assertTrue(true, '');
+    }
 }
