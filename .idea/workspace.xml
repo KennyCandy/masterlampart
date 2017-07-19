@@ -45,16 +45,136 @@
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="ClassDiagram.uml" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/ClassDiagram.uml">
+                <provider selected="true" editor-type-id="UmlEditorProvider">
+                  <state>
+                    <ID>PHP</ID>
+                    <OriginalElement>\App\Controller\Controller</OriginalElement>
+                    <nodes>
+                      <node x="0.0" y="311.0">\App\Model\UserLog</node>
+                      <node x="411.0123666343354" y="0.889427740058288">\App\Service\Service</node>
+                      <node x="82.25" y="79.0">\App\Controller\Controller</node>
+                      <node x="480.0" y="538.0">\Config\Route</node>
+                      <node x="339.7623666343354" y="79.8894277400583">\App\Service\UserService</node>
+                      <node x="0.0" y="464.0">\App\Service\Confirm\ConfirmEmail</node>
+                      <node x="451.7623666343354" y="79.8894277400583">\App\Service\HeaderService</node>
+                      <node x="81.0" y="385.0">\App\Service\Confirm\Confirm</node>
+                      <node x="0.0" y="158.0">\App\Controller\UserController</node>
+                      <node x="95.0" y="311.0">\App\Model\User</node>
+                      <node x="125.0" y="538.0">\App\Core\DB\DBMysql</node>
+                      <node x="653.380213385063" y="8.588748787584962">\App\Core\BaseView</node>
+                      <node x="375.0" y="311.0">\App\Model\Group</node>
+                      <node x="125.0" y="464.0">\App\Service\Confirm\ConfirmAccount</node>
+                      <node x="128.0" y="158.0">\App\Controller\WelcomeController</node>
+                      <node x="157.5" y="232.0">\App\Core\BaseModel</node>
+                      <node x="487.62366634335586" y="243.71483996120276">\Config\Database</node>
+                      <node x="170.0" y="311.0">\App\Model\Token</node>
+                      <node x="255.0" y="311.0">\App\Model\UserLogView</node>
+                      <node x="588.0" y="538.0">\Config\Env</node>
+                      <node x="249.0" y="538.0">\App\Exception\Handler</node>
+                      <node x="368.0" y="538.0">\App\Core\Router</node>
+                      <node x="70.25" y="0.0">\App\Core\BaseController</node>
+                    </nodes>
+                    <notes />
+                    <edges>
+                      <edge source="\App\Model\Token" target="\App\Core\BaseModel">
+                        <point x="0.0" y="-14.5" />
+                        <point x="0.0" y="14.5" />
+                      </edge>
+                      <edge source="\App\Model\Group" target="\App\Core\BaseModel">
+                        <point x="0.0" y="-14.5" />
+                        <point x="407.5" y="281.0" />
+                        <point x="238.5" y="281.0" />
+                        <point x="36.0" y="14.5" />
+                      </edge>
+                      <edge source="\App\Service\Confirm\ConfirmEmail" target="\App\Service\Confirm\Confirm">
+                        <point x="0.0" y="-14.5" />
+                        <point x="52.5" y="439.0" />
+                        <point x="100.0" y="439.0" />
+                        <point x="-19.0" y="14.5" />
+                      </edge>
+                      <edge source="\App\Model\User" target="\App\Core\BaseModel">
+                        <point x="0.0" y="-14.5" />
+                        <point x="122.5" y="291.0" />
+                        <point x="184.5" y="291.0" />
+                        <point x="-18.0" y="14.5" />
+                      </edge>
+                      <edge source="\App\Controller\WelcomeController" target="\App\Controller\Controller">
+                        <point x="0.0" y="-14.5" />
+                        <point x="195.5" y="133.0" />
+                        <point x="146.0" y="133.0" />
+                        <point x="21.25" y="14.5" />
+                      </edge>
+                      <edge source="\App\Service\HeaderService" target="\App\Service\Service">
+                        <point x="0.0" y="-14.5" />
+                        <point x="505.2623666343354" y="54.88942774005829" />
+                        <point x="462.7623666343354" y="54.88942774005829" />
+                        <point x="17.25" y="14.5" />
+                      </edge>
+                      <edge source="\App\Service\UserService" target="\App\Service\Service">
+                        <point x="0.0" y="-14.5" />
+                        <point x="385.7623666343354" y="54.88942774005829" />
+                        <point x="428.2623666343354" y="54.88942774005829" />
+                        <point x="-17.25" y="14.5" />
+                      </edge>
+                      <edge source="\App\Model\UserLog" target="\App\Core\BaseModel">
+                        <point x="0.0" y="-14.5" />
+                        <point x="37.5" y="281.0" />
+                        <point x="166.5" y="281.0" />
+                        <point x="-36.0" y="14.5" />
+                      </edge>
+                      <edge source="\App\Controller\UserController" target="\App\Controller\Controller">
+                        <point x="0.0" y="-14.5" />
+                        <point x="54.0" y="133.0" />
+                        <point x="103.5" y="133.0" />
+                        <point x="-21.25" y="14.5" />
+                      </edge>
+                      <edge source="\App\Service\Confirm\ConfirmAccount" target="\App\Service\Confirm\Confirm">
+                        <point x="0.0" y="-14.5" />
+                        <point x="185.5" y="439.0" />
+                        <point x="138.0" y="439.0" />
+                        <point x="19.0" y="14.5" />
+                      </edge>
+                      <edge source="\App\Model\UserLogView" target="\App\Core\BaseModel">
+                        <point x="0.0" y="-14.5" />
+                        <point x="305.0" y="291.0" />
+                        <point x="220.5" y="291.0" />
+                        <point x="18.0" y="14.5" />
+                      </edge>
+                      <edge source="\App\Controller\Controller" target="\App\Core\BaseController">
+                        <point x="0.0" y="-14.5" />
+                        <point x="0.0" y="14.5" />
+                      </edge>
+                    </edges>
+                    <settings layout="Hierarchic Group" zoom="0.868934240362812" x="491.3444676409184" y="305.29514613778696" />
+                    <SelectedNodes />
+                    <Categories />
+                    <VISIBILITY>private</VISIBILITY>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="masterlampart" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="phplampart.sql" pinned="false" current-in-tab="false">
+      <file leaf-file-name="phplampart.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/phplampart.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
+            <state relative-caret-position="21">
               <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
               <folding />
             </state>
@@ -64,7 +184,7 @@
       <file leaf-file-name="phpunit.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phpunit.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
+            <state relative-caret-position="861">
               <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
               <folding>
                 <marker date="1487659369804" expanded="true" signature="1902:2247" ph="..." />
@@ -87,7 +207,7 @@
       <file leaf-file-name="xmlConfigmation.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xmlConfigmation.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
+            <state relative-caret-position="18858">
               <caret line="898" column="41" lean-forward="false" selection-start-line="898" selection-start-column="41" selection-end-line="898" selection-end-column="41" />
               <folding />
             </state>
@@ -97,7 +217,7 @@
       <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controller/Controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-21">
+            <state relative-caret-position="231">
               <caret line="13" column="50" lean-forward="false" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
               <folding />
             </state>
@@ -120,116 +240,6 @@
             <state relative-caret-position="378">
               <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClassDiagram.uml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ClassDiagram.uml">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>PHP</ID>
-              <OriginalElement>\App\Controller\Controller</OriginalElement>
-              <nodes>
-                <node x="0.0" y="311.0">\App\Model\UserLog</node>
-                <node x="411.0123666343354" y="0.889427740058288">\App\Service\Service</node>
-                <node x="82.25" y="79.0">\App\Controller\Controller</node>
-                <node x="480.0" y="538.0">\Config\Route</node>
-                <node x="0.0" y="464.0">\App\Service\Confirm\ConfirmEmail</node>
-                <node x="339.7623666343354" y="79.8894277400583">\App\Service\UserService</node>
-                <node x="451.7623666343354" y="79.8894277400583">\App\Service\HeaderService</node>
-                <node x="81.0" y="385.0">\App\Service\Confirm\Confirm</node>
-                <node x="0.0" y="158.0">\App\Controller\UserController</node>
-                <node x="95.0" y="311.0">\App\Model\User</node>
-                <node x="125.0" y="538.0">\App\Core\DB\DBMysql</node>
-                <node x="653.380213385063" y="8.588748787584962">\App\Core\BaseView</node>
-                <node x="375.0" y="311.0">\App\Model\Group</node>
-                <node x="125.0" y="464.0">\App\Service\Confirm\ConfirmAccount</node>
-                <node x="128.0" y="158.0">\App\Controller\WelcomeController</node>
-                <node x="157.5" y="232.0">\App\Core\BaseModel</node>
-                <node x="487.62366634335586" y="243.71483996120276">\Config\Database</node>
-                <node x="170.0" y="311.0">\App\Model\Token</node>
-                <node x="255.0" y="311.0">\App\Model\UserLogView</node>
-                <node x="588.0" y="538.0">\Config\Env</node>
-                <node x="249.0" y="538.0">\App\Exception\Handler</node>
-                <node x="368.0" y="538.0">\App\Core\Router</node>
-                <node x="70.25" y="0.0">\App\Core\BaseController</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="\App\Model\Token" target="\App\Core\BaseModel">
-                  <point x="0.0" y="-14.5" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="\App\Model\Group" target="\App\Core\BaseModel">
-                  <point x="0.0" y="-14.5" />
-                  <point x="407.5" y="281.0" />
-                  <point x="238.5" y="281.0" />
-                  <point x="36.0" y="14.5" />
-                </edge>
-                <edge source="\App\Service\Confirm\ConfirmEmail" target="\App\Service\Confirm\Confirm">
-                  <point x="0.0" y="-14.5" />
-                  <point x="52.5" y="439.0" />
-                  <point x="100.0" y="439.0" />
-                  <point x="-19.0" y="14.5" />
-                </edge>
-                <edge source="\App\Controller\WelcomeController" target="\App\Controller\Controller">
-                  <point x="0.0" y="-14.5" />
-                  <point x="195.5" y="133.0" />
-                  <point x="146.0" y="133.0" />
-                  <point x="21.25" y="14.5" />
-                </edge>
-                <edge source="\App\Service\HeaderService" target="\App\Service\Service">
-                  <point x="0.0" y="-14.5" />
-                  <point x="505.2623666343354" y="54.88942774005829" />
-                  <point x="462.7623666343354" y="54.88942774005829" />
-                  <point x="17.25" y="14.5" />
-                </edge>
-                <edge source="\App\Model\User" target="\App\Core\BaseModel">
-                  <point x="0.0" y="-14.5" />
-                  <point x="122.5" y="291.0" />
-                  <point x="184.5" y="291.0" />
-                  <point x="-18.0" y="14.5" />
-                </edge>
-                <edge source="\App\Service\UserService" target="\App\Service\Service">
-                  <point x="0.0" y="-14.5" />
-                  <point x="385.7623666343354" y="54.88942774005829" />
-                  <point x="428.2623666343354" y="54.88942774005829" />
-                  <point x="-17.25" y="14.5" />
-                </edge>
-                <edge source="\App\Model\UserLog" target="\App\Core\BaseModel">
-                  <point x="0.0" y="-14.5" />
-                  <point x="37.5" y="281.0" />
-                  <point x="166.5" y="281.0" />
-                  <point x="-36.0" y="14.5" />
-                </edge>
-                <edge source="\App\Controller\UserController" target="\App\Controller\Controller">
-                  <point x="0.0" y="-14.5" />
-                  <point x="54.0" y="133.0" />
-                  <point x="103.5" y="133.0" />
-                  <point x="-21.25" y="14.5" />
-                </edge>
-                <edge source="\App\Service\Confirm\ConfirmAccount" target="\App\Service\Confirm\Confirm">
-                  <point x="0.0" y="-14.5" />
-                  <point x="185.5" y="439.0" />
-                  <point x="138.0" y="439.0" />
-                  <point x="19.0" y="14.5" />
-                </edge>
-                <edge source="\App\Model\UserLogView" target="\App\Core\BaseModel">
-                  <point x="0.0" y="-14.5" />
-                  <point x="305.0" y="291.0" />
-                  <point x="220.5" y="291.0" />
-                  <point x="18.0" y="14.5" />
-                </edge>
-                <edge source="\App\Controller\Controller" target="\App\Core\BaseController">
-                  <point x="0.0" y="-14.5" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="0.868934240362812" x="490.9196242171188" y="165.74217118997905" />
-              <SelectedNodes />
-              <Categories />
-              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
@@ -428,7 +438,7 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1873" />
-    <option name="height" value="1096" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -510,6 +520,20 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masterlampart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masterlampart" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="tmp" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -539,34 +563,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="helper" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="masterlampart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="masterlampart" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="masterlampart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="masterlampart" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="boostrap" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -746,8 +742,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -965,7 +961,9 @@
       <workItem from="1487898714151" duration="84000" />
       <workItem from="1498805242101" duration="2843000" />
       <workItem from="1499042536884" duration="38000" />
-      <workItem from="1500284576505" duration="1106000" />
+      <workItem from="1500284576505" duration="2347000" />
+      <workItem from="1500428460407" duration="658000" />
+      <workItem from="1500429868960" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="Final commit">
       <created>1500285113503</created>
@@ -981,7 +979,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500285278882</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Final commit">
+      <created>1500285690371</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1500285690371</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1017,7 +1022,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230346000" />
+    <option name="totallyTimeSpent" value="232262000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1029,15 +1034,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1873" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1873" height="1092" extended-state="0" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910696" sideWeight="0.4945355" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18146718" sideWeight="0.48801744" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18532819" sideWeight="0.48801744" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.49558985" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32870865" sideWeight="0.50441015" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.48907104" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46793762" sideWeight="0.8180816" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32550693" sideWeight="0.49558985" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32475883" sideWeight="0.49558985" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44717184" sideWeight="0.49779493" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3511206" sideWeight="0.49338478" order="3" side_tool="false" content_ui="tabs" />
@@ -1346,7 +1351,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1354,7 +1358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1362,7 +1365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1378,7 +1380,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1386,7 +1387,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1394,9 +1394,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="60" column="22" lean-forward="false" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
-          <folding>
-            <marker date="1500285266468" expanded="true" signature="2343:2361" ph="SELECT * FRO... user" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1404,9 +1401,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
-          <folding>
-            <marker date="1500285266755" expanded="true" signature="2400:2418" ph="SELECT * FRO... user" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1422,7 +1416,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
           <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1430,7 +1423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
           <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1438,7 +1430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1446,7 +1437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1462,7 +1452,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1470,7 +1459,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1492,7 +1480,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/phplampart.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
+        <state relative-caret-position="21">
           <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
           <folding />
         </state>
@@ -1500,7 +1488,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/phpunit.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
+        <state relative-caret-position="861">
           <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
           <folding>
             <marker date="1487659369804" expanded="true" signature="1902:2247" ph="..." />
@@ -1519,7 +1507,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xmlConfigmation.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
+        <state relative-caret-position="18858">
           <caret line="898" column="41" lean-forward="false" selection-start-line="898" selection-start-column="41" selection-end-line="898" selection-end-column="41" />
           <folding />
         </state>
@@ -1527,7 +1515,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21">
+        <state relative-caret-position="231">
           <caret line="13" column="50" lean-forward="false" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
           <folding />
         </state>
@@ -1575,8 +1563,8 @@
             <node x="411.0123666343354" y="0.889427740058288">\App\Service\Service</node>
             <node x="82.25" y="79.0">\App\Controller\Controller</node>
             <node x="480.0" y="538.0">\Config\Route</node>
-            <node x="0.0" y="464.0">\App\Service\Confirm\ConfirmEmail</node>
             <node x="339.7623666343354" y="79.8894277400583">\App\Service\UserService</node>
+            <node x="0.0" y="464.0">\App\Service\Confirm\ConfirmEmail</node>
             <node x="451.7623666343354" y="79.8894277400583">\App\Service\HeaderService</node>
             <node x="81.0" y="385.0">\App\Service\Confirm\Confirm</node>
             <node x="0.0" y="158.0">\App\Controller\UserController</node>
@@ -1613,6 +1601,12 @@
               <point x="100.0" y="439.0" />
               <point x="-19.0" y="14.5" />
             </edge>
+            <edge source="\App\Model\User" target="\App\Core\BaseModel">
+              <point x="0.0" y="-14.5" />
+              <point x="122.5" y="291.0" />
+              <point x="184.5" y="291.0" />
+              <point x="-18.0" y="14.5" />
+            </edge>
             <edge source="\App\Controller\WelcomeController" target="\App\Controller\Controller">
               <point x="0.0" y="-14.5" />
               <point x="195.5" y="133.0" />
@@ -1624,12 +1618,6 @@
               <point x="505.2623666343354" y="54.88942774005829" />
               <point x="462.7623666343354" y="54.88942774005829" />
               <point x="17.25" y="14.5" />
-            </edge>
-            <edge source="\App\Model\User" target="\App\Core\BaseModel">
-              <point x="0.0" y="-14.5" />
-              <point x="122.5" y="291.0" />
-              <point x="184.5" y="291.0" />
-              <point x="-18.0" y="14.5" />
             </edge>
             <edge source="\App\Service\UserService" target="\App\Service\Service">
               <point x="0.0" y="-14.5" />
@@ -1666,7 +1654,7 @@
               <point x="0.0" y="14.5" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.868934240362812" x="490.9196242171188" y="165.74217118997905" />
+          <settings layout="Hierarchic Group" zoom="0.868934240362812" x="491.3444676409184" y="305.29514613778696" />
           <SelectedNodes />
           <Categories />
           <VISIBILITY>private</VISIBILITY>
